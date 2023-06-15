@@ -1,0 +1,11 @@
+In blockchain technology, a transaction is a transfer of cryptocurrency from one address to another. Transactions are recorded on the blockchain network and are secured using cryptographic algorithms, such as SHA256.
+
+An address is a unique identifier that is associated with a user's public key. Addresses are used to send and receive cryptocurrency transactions on the blockchain network. Each address has a balance of cryptocurrency, which can be used to send transactions to other addresses.
+
+When a user sends a transaction on the blockchain network, they must include a transaction fee. The transaction fee is paid to the miners who validate and add the transaction to the blockchain. The transaction fee is typically calculated based on the size of the transaction and the current demand for block space on the network.
+
+In addition to the transaction fee, users must also pay a gas fee. Gas is a unit of measurement that is used to determine the computational cost of executing a transaction on the blockchain network. Each block on the blockchain network has a gas limit, which is the maximum amount of gas that can be used to execute transactions within the block. The gas fee is the price per unit of gas that the user is willing to pay to execute the transaction. The gas fee is typically denominated in gwei units, which are a subunit of the cryptocurrency being used on the network.
+
+For example, on the Ethereum network, the gas fee is denominated in gwei units, which are a subunit of Ether (ETH). One gwei is equal to one billionth of an ETH. The gas price is determined by the user, and the total gas fee is calculated by multiplying the gas price by the amount of gas required to execute the transaction.
+
+In summary, transactions on the blockchain network require a transaction fee and a gas fee. The transaction fee is paid to the miners who validate and add the transaction to the blockchain, while the gas fee is paid to compensate for the computational cost of executing the transaction. The gas fee is typically denominated in gwei units, which are a subunit of the cryptocurrency being used on the network, and is determined by the user based on the gas price they are willing to pay.
