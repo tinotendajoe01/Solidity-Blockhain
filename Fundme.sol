@@ -1,6 +1,6 @@
 
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.19;
+pragma solidity ^0.8.20;
 
 import {AggregatorV3Interface} from "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
 import {PriceConverter} from "./PriceConverter.sol";
@@ -34,7 +34,7 @@ struct Funder {
     uint256 amountFunded;
 }
     function setMaxGoal(uint256 _maxGoal) onlyOwner public{
-        maxGoal= _maxGoal
+        maxGoal= _maxGoal;
     }
     function setDeadline(uint256 _deadline) public onlyOwner {
     deadline = _deadline;
@@ -101,25 +101,25 @@ function hasDeadlinePassed() public view returns (bool) {
     function setFundsDestination(address payable _fundsDestination) public onlyOwner {
     fundsDestination = _fundsDestination;
 }
-     function getContractBalance() public  view returns(uint256{
-        return address(this).balance
+     function getContractBalance() public  view returns(uint256){
+        return address(this).balance;
      }
 
 function withdrawFunds() public {
     if (maxGoal>0){
-        require (address(this).balance<maxGoal,"Max balance reached, cannot withdraw funds")
+        require (address(this).balance < maxGoal,"Max balance reached, cannot withdraw funds");
     }
      uint256 ammountFunded = addressToAmountFunded[msg.sender];
-     require(ammountFunded>0). "Sender has not funded any amount"
+     require(ammountFunded>0, "Sender has not funded any amount");
      addressToAmountFunded[msg.sender]=0;
      for (uint256 funderIndex=0; funderIndex< funders.length; funderIndex++){
         if (funders[funderIndex]== msg.sender){
-            funders[funderIndex]= funders[funders.length- 1]
+            funders[funderIndex]= funders[funders.length- 1];
             funders.pop();
-            break
+            break;
         }
      }
-     payable(msg.sender).transfer(amountFunded);
+     payable(msg.sender).transfer(ammountFunded);
 }
 function getDonations() public view returns (Funder[] memory) {
     Funder[] memory donations = new Funder[](funders.length);
