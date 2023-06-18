@@ -8,6 +8,6 @@ Chainlink uses a decentralized network of nodes to provide tamper-proof inputs a
 
 Chainlink's decentralized oracle network is designed to be compatible with various blockchain platforms, such as Ethereum, Bitcoin, and Hyperledger. Its modular architecture allows for upgradability, and it incentivizes good behavior among nodes with a reputation system and penalties for bad behavior medium.com.
 
-By providing a secure and reliable connection between off-chain data sources and on-chain smart contracts, Chainlink enables a wide range of use cases. For example, Arbol uses Chainlink for weather data to create weather risk products, and Theta Network leverages Chainlink for viewership data to fight ad fraud for online content chain.link.
+By providing a secure and reliable connection between off-chain data sources and on-chain smart contracts, Chainlink enables a wide range of use cases. For example, Arbol uses Chainlink for weather data to create weather risk products, and Theta Network leverages Chainlink for viewership data to fight ad fraud for online content https://chain.link/education/blockchain-oracles
 
 In summary, decentralized oracles like Chainlink play a crucial role in the development of smart contracts and blockchain applications. They provide a secure and reliable bridge between off-chain data sources and on-chain smart contracts, enabling more sophisticated and flexible applications on the blockchain gemini.com.
