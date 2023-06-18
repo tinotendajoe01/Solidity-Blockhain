@@ -13,7 +13,7 @@ contract  SimpleStorage {
 // Person public myFriend = Person(7, 'James');
 Person[] public listofPeople; //dynamic array
 mapping (string => uint256) public nameToFavoriteNumber;
-    function store(uint256 _favoriteNumber) public {
+    function store(uint256 _favoriteNumber) public virtual{
         myFavoriteNumber = _favoriteNumber;
   }
   //view ,pure
