@@ -14,8 +14,8 @@ contract FundMe {
     mapping(address => uint256) public addressToAmountFunded;
     address[] public funders;
 
-    // Could we make this constant?  /* hint: no! We should make it immutable! */
-    address public /* immutable */ i_owner;
+   
+    address public i_owner; /* immutable */ 
     uint256 public constant MINIMUM_USD = 5 * 10 ** 18;
     
     constructor() {
@@ -34,7 +34,7 @@ contract FundMe {
     }
     
     modifier onlyOwner {
-        // require(msg.sender == owner);
+        // require(msg.sender == owner, sender not owner);
         if (msg.sender != i_owner) revert NotOwner();
         _;
     }
