@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book List</title>
+    <style>
+      /* Add CSS styles here */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+      }
+      nav {
+        background-color: #f2f2f2;
+        padding: 10px;
+      }
+      main {
+        padding: 20px;
+      }
+      h2 {
+        margin-top: 0;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      th,
+      td {
+        text-align: left;
+        padding: 8px;
+      }
+      th {
+        background-color: #333;
+        color: #fff;
+      }
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+      img {
+        height: 100px;
+        width: auto;
+        cursor: pointer;
+      }
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.9);
+      }
+      .modal-content {
+        display: block;
+        margin: auto;
+        max-width: 800px;
+        max-height: 80%;
+      }
+      .close {
+        color: #fff;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 30px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .close:hover,
+      .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      @media screen and (max-width: 768px) {
+        /* Add responsive styles here */
+        table {
+          font-size: 12px;
+        }
+        img {
+          height: 80px;
+        }
+        .modal-content {
+          max-height: 60%;
+        }
+      }
+      /* Additional CSS styles for the form */
+      form {
+        margin: 20px auto;
+        max-width: 500px;
+        padding: 20px;
+        background-color: #f2f2f2;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+      input[type="text"],
+      input[type="url"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        border: none;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        font-size: 16px;
+      }
+      input[type="submit"] {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-top: 20px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.2s;
+      }
+      input[type="submit"]:hover {
+        background-color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Book List</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="#books">Books</a></li>
+        <li><a href="#add-book">Add Book</a></li>
+      </ul>
+    </nav>
+    <main>
+      <section id="books">
+        <h2>Books</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Author</th>
+              <th>Cover</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>The Great Gatsby</td>
+              <td>F. Scott Fitzgerald</td>
+              <td>
+                <img
+                  src="https://images.penguinrandomhouse.com/cover/9780593382143"
+                  alt="Book cover for The Great Gatsby"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>To Kill a Mockingbird</td>
+              <td>Harper Lee</td>
+              <td>
+                <img
+                  src="https://images2.penguinrandomhouse.com/cover/9780446310789"
+                  alt="Book cover for To Kill a Mockingbird"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>1984</td>
+              <td>George Orwell</td>
+              <td>
+                <img
+                  src="https://images.penguinrandomhouse.com/cover/9780451524935"
+                  alt="Book cover for 1984"
+                />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section id="add-book">
+        <h2>Add Book</h2>
+        <form>
+          <label for="title">Title:</label>
+          <input type="text" id="title" name="title" required />
+          <label for="author">Author:</label>
+          <input type="text" id="author" name="author" required />
+          <label for="cover">Cover (URL):</label>
+          <input type="url" id="cover" name="cover" required />
+          <input type="submit" value="Add Book" />
+        </form>
+      </section>
+    </main>
+    <div id="myModal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="modalImg" />
+    </div>
+    <script>
+      // Add JavaScript code here
+      const modal = document.getElementById("myModal");
+      const img = document.getElementsByTagName("img");
+      const modalImg = document.getElementById("modalImg");
+      const close = document.getElementsByClassName("close")[0];
+      for (let i = 0; i < img.length; i++) {
+        img[i].addEventListener("click", function () {
+          modal.style.display = "block";
+          modalImg.src = this.src;
+        });
+      }
+      close.onclick = function () {
+        modal.style.display = "none";
+      };
+    </script>
+  </body>
+</html>
