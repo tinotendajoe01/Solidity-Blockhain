@@ -5,15 +5,13 @@ import { FundMe } from "../src/Fundme.sol";
 import { HelperConfig } from "./HelperConfig.s.sol";
 
 contract DeployFundme is Script {
-    function run() external returns (FundMe) {
-        //befor startBroadcast -- not a real tx / mock tx
-        HelperConfig helperConfig = new HelperConfig();
-        address ethUsdPriceFeed = helperConfig.activeNetworkConfig();
-        vm.startBroadcast();
-        //afta --real tx
+    function run() external returns (FundMe, HelperConfig) {
+        HelperConfig helperConfig = new HelperConfig(); // This comes with our mocks!
+        address priceFeed = helperConfig.activeNetworkConfig();
 
-        FundMe fundMe = new FundMe(ethUsdPriceFeed);
+        vm.startBroadcast();
+        FundMe fundMe = new FundMe(priceFeed);
         vm.stopBroadcast();
-        return fundMe;
+        return (fundMe, helperConfig);
     }
 }
