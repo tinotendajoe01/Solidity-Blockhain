@@ -23,10 +23,12 @@ contract FundMe {
 
     // an event to be emitted when new funds are donated
     event NewDonation(address indexed funder, uint256 amount);
+    AggregatorV3Interface private s_priceFeed;
 
     // this constructor sets the contract owner to the deployer
-    constructor() {
+    constructor(address priceFeed) {
         i_owner = msg.sender;
+        s_priceFeed = AggregatorV3Interface(priceFeed);
     }
 
     // a struct to store the details of a funder
@@ -45,7 +47,7 @@ contract FundMe {
 
     function fund() public payable {
         // Check that the amount of ETH being sent is at least the minimum amount in USD
-        require(msg.value.getConversionRate() >= MINIMUM_USD, "You need to spend more ETH!");
+        require(msg.value.getConversionRate(s_priceFeed) >= MINIMUM_USD, "You need to spend more ETH!");
 
         // Check that the maximum goal has not been reached yet
         if (maxGoal > 0) {
@@ -72,8 +74,9 @@ contract FundMe {
 
     //get the version of chainlink pricefeed being use--- help in geting the contract ABI
     function getVersion() public view returns (uint256) {
-        AggregatorV3Interface priceFeed = AggregatorV3Interface(0x694AA1769357215DE4FAC081bf1f309aDC325306);
-        return priceFeed.version();
+        // AggregatorV3Interface priceFeed = AggregatorV3Interface(0x694AA1769357215DE4FAC081bf1f309aDC325306);
+
+        return s_priceFeed.version();
     }
 
     // a function to check if the deadline has passed
