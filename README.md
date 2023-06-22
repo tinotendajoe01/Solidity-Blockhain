@@ -1,4 +1,4 @@
-# Blockchain Developer, Smart Contract, & Solidity Course | Powered By AI | Beginner to Expert Course | Foundry Edition 2023
+# Blockchain Developer, Smart Contract, & Solidity | Powered By AI | Beginner to Expert Course | Foundry Edition 2023
 
 ## Table of Contents
 
@@ -12,9 +12,7 @@
 
 ## About The Project
 
-This repository was made through a learning journey in the Blockchain Developer, Smart Contract, & Solidity Course - Powered By AI - Beginner to Expert Course | Foundry Edition 2023
-and takes more credit to PatricCollins @patricAlphaC and this repo:
-https://github.com/Cyfrin/foundry-full-course-f23
+This repository was created as part of my learning journey in the Blockchain Developer, Smart Contract, & Solidity Course - Powered By AI - Beginner to Expert Course | Foundry Edition 2023. I would like to acknowledge and give credit to PatricCollins (@patricAlphaC)/https://github.com/PatrickAlphaC/PatrickAlphaC. for his valuable contributions to this course and for sharing his knowledge and expertise on the subject. Additionally, I would like to thank the creators of the repository (https://github.com/Cyfrin/foundry-full-course-f23) that I followed as a resource during my learning process. Their contributions have been instrumental in helping me gain a deeper understanding of the concepts covered in the course.
 
 ## Installation
 
@@ -34,24 +32,24 @@ Contributions to this project are welcome. If you have any suggestions or would 
 
 ## Links
 
-- [Repo](https://github.com/your_username_/Project-Name)
-- [Live](<Homepage url>)
-- [Bugs](https://github.com/your_username_/Project-Name/issues)
-- [API](<API Link>)
+- [Repo](https://github.com/tinotenda01/blockchain-solidity.git)
 
 ## Built With
 
 - JavaScript
 - Solidity
 - HTML/CSS
+- Foundry
+- Chainlink
+- Alchemy
 
 ## Author
 
-**Your Name**
+**Tinotenda Joe**
 
-- [Profile](https://github.com/your_username_)
-- [Email](mailto:your_email@example.com)
-- ~[Website](https://yourwebsite.com)~
+- [Profile](https://github.com/tinotenda01)
+- [Email](mailto:tinotendajoe01@gmail.com)
+- ~[twitter](https://twitter.com/tinotendajoe01)~
 
 ## Support
 
