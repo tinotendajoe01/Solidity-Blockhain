@@ -49,7 +49,7 @@ Contributions to this project are welcome. If you have any suggestions or would 
 
 - [Profile](https://github.com/tinotenda01)
 - [Email](mailto:tinotendajoe01@gmail.com)
-- ~[twitter](https://twitter.com/tinotendajoe01)~
+- [twitter](https://twitter.com/tinotendajoe01)
 
 ## Support
 
