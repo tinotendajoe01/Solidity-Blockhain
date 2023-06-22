@@ -12,6 +12,7 @@ contract DeployFundme is Script {
         vm.startBroadcast();
         FundMe fundMe = new FundMe(priceFeed);
         vm.stopBroadcast();
-        return (fundMe, helperConfig);
+        // return (fundMe, helperConfig);
+        return (FundMe(address(fundMe)), HelperConfig(address(helperConfig)));
     }
 }

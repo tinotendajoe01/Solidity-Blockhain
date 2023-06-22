@@ -25,7 +25,8 @@ contract IntegrationsTest is StdCheats, Test {
 
     function setUp() external {
         DeployFundme deployer = new DeployFundme();
-        (fundMe, helperConfig) = deployer.run();
+        // (fundMe, helperConfig) = deployer.run();
+        (address fundMeAddress, address helperConfigAddress) = deployer.run();
         vm.deal(USER, STARTING_USER_BALANCE);
     }
 
