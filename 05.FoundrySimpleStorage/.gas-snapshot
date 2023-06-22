@@ -1,0 +1,8 @@
+SimpleStorageTest:testAddPersonAndGetDetails() (gas: 98946)
+SimpleStorageTest:testDeletePerson_EmptyList() (gas: 10931)
+SimpleStorageTest:testDeletePerson_InvalidName() (gas: 169981)
+SimpleStorageTest:testDeletePerson_ValidName() (gas: 134889)
+SimpleStorageTest:testGetFavoriteNumber() (gas: 96611)
+SimpleStorageTest:testGetTotalPipo() (gas: 96091)
+SimpleStorageTest:testRetrieveFavoriteNumber() (gas: 28389)
+SimpleStorageTest:testStoreIsStoringFavoriteNumber() (gas: 27549)
