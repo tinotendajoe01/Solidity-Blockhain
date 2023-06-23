@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fund Me App</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Fund Me App</h1>
+      <button id="connectButton" class="secondary-button">Connect</button>
+    </header>
+    <main>
+      <section class="funding-info">
+        <h2>Funding Information</h2>
+        <div class="total-funds">
+          <h3>Total Funds: <span id="balance">0 ETH</span></h3>
+          <h3>Goal: <span id="goal">100 ETH</span></h3>
+          <h3>Deadline in: <span id="deadline">5 Days</span></h3>
+          <div class="progress-container">
+            <div id="progress-bar" class="progress-bar"></div>
+          </div>
+        </div>
+        <div class="funders-list">
+          <h3>Funders:</h3>
+          <ul id="funders">
+            <!-- List of funders will be populated here -->
+          </ul>
+        </div>
+      </section>
+      <section class="public-functions">
+        <!-- <h2>Fund Here</h2> -->
+        <div class="fund-container">
+          <label for="ethAmount">Fund Here</label>
+          <input id="ethAmount" placeholder="0.1 ETH" />
+          <button type="button" id="fundButton" class="primary-button">Fund</button>
+        </div>
+        <button id="refundButton" class="secondary-button">Refund</button>
+        <button id="balanceButton" class="secondary-button">getBalance</button>
+      </section>
+
+      <section class="owner-functions">
+        <h2>Owner Functions</h2>
+
+        <button id="withdrawButton" class="secondary-button">Withdraw</button>
+        <button id="distributeFundsButton" class="secondary-button">Distribute Funds</button>
+        <h3>Owner Address: <span id="owner">0x00</span></h3>
+      </section>
+      <section>
+        <h1>Funders List</h1>
+        <div id="funders-container"></div>
+      </section>
+    </main>
+
+    <script src="./index.js" type="module"></script>
+  </body>
+</html>

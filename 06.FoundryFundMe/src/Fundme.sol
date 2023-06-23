@@ -43,6 +43,12 @@ contract FundMe {
 		if (msg.sender != i_owner) revert FundMe__NotOwner();
 		_;
 	}
+	struct Funder {
+		address funderAddress;
+		uint256 fundedAmount;
+	}
+
+	Funder[] private s_fundersInfo;
 
 	// Constructor
 	// Initialize the contract with the price feed address
@@ -65,6 +71,9 @@ contract FundMe {
 		s_addressToAmountFunded[msg.sender] += msg.value;
 		// Add the sender's address to the funders array
 		s_funders.push(msg.sender);
+		s_fundersInfo.push(
+			Funder({ funderAddress: msg.sender, fundedAmount: msg.value })
+		);
 	}
 
 	// Function to withdraw funds by the owner
@@ -151,6 +160,10 @@ contract FundMe {
 
 	function getFundersList() public view returns (address[] memory) {
 		return s_funders;
+	}
+
+	function getFundersInfo() public view returns (Funder[] memory) {
+		return s_fundersInfo;
 	}
 
 	/**

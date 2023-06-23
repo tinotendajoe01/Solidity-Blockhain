@@ -1,6 +1,7 @@
 # html-fund-me-f23
 
-*[⭐️ (2:37:02) | Lesson 8: HTML Fund Me](https://www.youtube.com/watch?v=sas02qSFZ74&t=9422s)*
+![APP](app.png)
+_[⭐️ (2:37:02) | Lesson 8: HTML Fund Me](https://www.youtube.com/watch?v=sas02qSFZ74&t=9422s)_
 
 This is a minimalistic example what you can find in the [metamask docs](https://docs.metamask.io/guide/create-dapp.html#basic-action-part-1).
 
@@ -53,6 +54,7 @@ make anvil
 ```
 
 Then, in a second terminal
+
 ```
 make deploy
 ```

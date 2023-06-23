@@ -1,4 +1,4 @@
-export const contractAddress = "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512"
+export const contractAddress = "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512";
 export const abi = [
   {
     inputs: [
@@ -10,6 +10,11 @@ export const abi = [
     ],
     stateMutability: "nonpayable",
     type: "constructor",
+  },
+  {
+    inputs: [],
+    name: "FundMe__NotOwner",
+    type: "error",
   },
   {
     inputs: [],
@@ -28,7 +33,20 @@ export const abi = [
     inputs: [],
     name: "cheaperWithdraw",
     outputs: [],
-    stateMutability: "payable",
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "distributionPercentage",
+        type: "uint256",
+      },
+    ],
+    name: "distributeFunds",
+    outputs: [],
+    stateMutability: "nonpayable",
     type: "function",
   },
   {
@@ -78,6 +96,19 @@ export const abi = [
   },
   {
     inputs: [],
+    name: "getFundersList",
+    outputs: [
+      {
+        internalType: "address[]",
+        name: "",
+        type: "address[]",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
     name: "getOwner",
     outputs: [
       {
@@ -104,6 +135,19 @@ export const abi = [
   },
   {
     inputs: [],
+    name: "getTotalFundedAmount",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
     name: "getVersion",
     outputs: [
       {
@@ -117,9 +161,16 @@ export const abi = [
   },
   {
     inputs: [],
-    name: "withdraw",
+    name: "refund",
     outputs: [],
-    stateMutability: "payable",
+    stateMutability: "nonpayable",
     type: "function",
   },
-]
+  {
+    inputs: [],
+    name: "withdraw",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+];

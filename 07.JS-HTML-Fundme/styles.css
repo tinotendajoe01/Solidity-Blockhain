@@ -1,0 +1,134 @@
+/* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #282a36;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 5px;
+}
+
+header {
+  width: 85%;
+  text-align: center;
+  padding: 10px 0;
+  background-color: #44475a;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+section {
+  background-color: #44475a;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.primary-button {
+  background-color: #ff79c6;
+  font-size: 20px;
+  padding: 12px 24px;
+  margin-bottom: 16px;
+}
+
+.secondary-button {
+  background-color: #6272a4;
+}
+
+button,
+input {
+  border: none;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  padding: 8px 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+input {
+  background-color: #44475a;
+  width: 100%;
+  max-width: 200px;
+  margin-bottom: 16px;
+}
+
+label {
+  font-size: 16px;
+  margin-right: 8px;
+}
+
+.fund-container {
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.fundinginfo {
+  width: 100%;
+  max-width: 600px;
+  padding: 16px;
+  background-color: #44475a;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.total-funds h3,
+.funders-list h3 {
+  margin-bottom: 8px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  padding: 4px 0;
+}
+/* Add this to the existing styles.css */
+.progress-container {
+  background-color: #6272a4;
+  border-radius: 4px;
+  width: 100%;
+  height: 20px;
+  margin-bottom: 16px;
+}
+
+.progress-bar {
+  background-color: #ff79c6;
+  height: 100%;
+  width: 0%; /* Update this value with JavaScript */
+  border-radius: 4px;
+}
+.owner-functions {
+  width: 80%;
+}
