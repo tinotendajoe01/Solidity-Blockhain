@@ -6,12 +6,18 @@
   "singleQuote": false,
   "tabWidth": 2,
   "trailingComma": "all",
-  "semi": true,
+
   "overrides": [
     {
       "files": "*.sol",
       "options": {
-        "tabWidth": 4
+        "printWidth": 80,
+        "tabWidth": 4,
+        "useTabs": true,
+        "singleQuote": false,
+        "bracketSpacing": true,
+        "explicitTypes": "always",
+        "semi": false
       }
     }
   ]
