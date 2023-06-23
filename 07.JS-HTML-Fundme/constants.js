@@ -96,6 +96,31 @@ export const abi = [
   },
   {
     inputs: [],
+    name: "getFundersInfo",
+    outputs: [
+      {
+        components: [
+          {
+            internalType: "address",
+            name: "funderAddress",
+            type: "address",
+          },
+          {
+            internalType: "uint256",
+            name: "fundedAmount",
+            type: "uint256",
+          },
+        ],
+        internalType: "struct FundMe.Funder[]",
+        name: "",
+        type: "tuple[]",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
     name: "getFundersList",
     outputs: [
       {
