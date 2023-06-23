@@ -3,7 +3,7 @@ pragma solidity ^0.8.20;
 
 import { Script, console } from "forge-std/Script.sol";
 import { HelperConfig } from "./HelperConfig.s.sol";
-import { FunWithStorage } from "../src/LearnStorage.sol";
+import { FunWithStorage } from "../src/exampleContracts/FunWithStorage.sol";
 
 contract DeployFundMe is Script {
     function run() external returns (FunWithStorage) {

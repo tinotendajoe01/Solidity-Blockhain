@@ -1,10 +1,11 @@
-// SPDX-License-Identifier: SEE LICENSE IN LICENSE
+// SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.20;
-import { Script } from "forge-std/Script.sol";
-import { FundMe } from "../src/Fundme.sol";
-import { HelperConfig } from "./HelperConfig.s.sol";
 
-contract DeployFundme is Script {
+import { Script } from "forge-std/Script.sol";
+import { HelperConfig } from "./HelperConfig.s.sol";
+import { FundMe } from "../src/FundMe.sol";
+
+contract DeployFundMe is Script {
     function run() external returns (FundMe, HelperConfig) {
         HelperConfig helperConfig = new HelperConfig(); // This comes with our mocks!
         address priceFeed = helperConfig.activeNetworkConfig();
@@ -12,7 +13,6 @@ contract DeployFundme is Script {
         vm.startBroadcast();
         FundMe fundMe = new FundMe(priceFeed);
         vm.stopBroadcast();
-        // return (fundMe, helperConfig);
-        return (FundMe(address(fundMe)), HelperConfig(address(helperConfig)));
+        return (fundMe, helperConfig);
     }
 }

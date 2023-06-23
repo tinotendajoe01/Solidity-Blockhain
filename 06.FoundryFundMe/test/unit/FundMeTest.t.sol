@@ -2,11 +2,11 @@
 
 pragma solidity 0.8.20;
 
-import { FundMe } from "../../src/Fundme.sol";
+import { DeployFundMe } from "../../script/DeployFundMe.s.sol";
+import { FundMe } from "../../src/FundMe.sol";
 import { HelperConfig } from "../../script/HelperConfig.s.sol";
 import { Test, console } from "forge-std/Test.sol";
 import { StdCheats } from "forge-std/StdCheats.sol";
-import { DeployFundme } from "../../script/DeployFundme.s.sol";
 
 contract FundMeTest is StdCheats, Test {
     FundMe public fundMe;
@@ -23,18 +23,17 @@ contract FundMeTest is StdCheats, Test {
     // uint256 public constant SEND_VALUE = 1000000000000000000;
 
     function setUp() external {
-        DeployFundme deployer = new DeployFundme();
+        DeployFundMe deployer = new DeployFundMe();
         (fundMe, helperConfig) = deployer.run();
-        // fundMe = deployer.run();
         vm.deal(USER, STARTING_USER_BALANCE);
     }
 
-    // function testPriceFeedSetCorrectly() public {
-    //     address retreivedPriceFeed = address(fundMe.getPriceFeed());
-    //     // (address expectedPriceFeed) = helperConfig.activeNetworkConfig();
-    //     address expectedPriceFeed = helperConfig.activeNetworkConfig();
-    //     assertEq(retreivedPriceFeed, expectedPriceFeed);
-    // }
+    function testPriceFeedSetCorrectly() public {
+        address retreivedPriceFeed = address(fundMe.getPriceFeed());
+        // (address expectedPriceFeed) = helperConfig.activeNetworkConfig();
+        address expectedPriceFeed = helperConfig.activeNetworkConfig();
+        assertEq(retreivedPriceFeed, expectedPriceFeed);
+    }
 
     function testFundFailsWithoutEnoughETH() public {
         vm.expectRevert();
