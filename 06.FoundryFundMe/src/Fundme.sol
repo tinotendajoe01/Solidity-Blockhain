@@ -48,7 +48,7 @@ contract FundMe {
 		uint256 fundedAmount;
 	}
 
-	Funder[] private s_fundersInfo;
+	Funder[] public s_fundersInfo;
 
 	// Constructor
 	// Initialize the contract with the price feed address

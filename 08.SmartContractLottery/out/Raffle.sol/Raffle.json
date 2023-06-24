@@ -1,0 +1,160 @@
+{
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    }
+  ],
+  "bytecode": {
+    "object": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea264697066735822122050002135a38493132b117f698e7701d016eeb027c70dbe1a7d6f59bb8b9cb3e264736f6c63430008140033",
+    "sourceMap": "77:37:0:-:0;;;96:16;;;;;;;;;;77:37;;;;;;",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x6080604052600080fdfea264697066735822122050002135a38493132b117f698e7701d016eeb027c70dbe1a7d6f59bb8b9cb3e264736f6c63430008140033",
+    "sourceMap": "77:37:0:-:0;;;;;",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {},
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/Raffle.sol\":\"Raffle\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@chainlink/contracts/=lib/chainlink-brownie-contracts/contracts/\",\":chainlink-brownie-contracts/=lib/chainlink-brownie-contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\",\":foundry-devops/=lib/foundry-devops/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"src/Raffle.sol\":{\"keccak256\":\"0x245a7d2eb934bf354464262a9ab20e85bd20439610e8ab8eb578b70fade4a5b6\",\"license\":\"SEE LICENSE IN LICENSE\",\"urls\":[\"bzz-raw://38f80f2b31c87755453bd328157b3a26c3b7aeeb084a12c9788fa059ddd3a76b\",\"dweb:/ipfs/Qmf8qJVsN7Nf8iLAdyFCKLReu2uV6RjPQBqxvnfXn4wmnv\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.20+commit.a1b79de6"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [],
+          "stateMutability": "nonpayable",
+          "type": "constructor"
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {},
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        ":@chainlink/contracts/=lib/chainlink-brownie-contracts/contracts/",
+        ":chainlink-brownie-contracts/=lib/chainlink-brownie-contracts/",
+        ":ds-test/=lib/forge-std/lib/ds-test/src/",
+        ":forge-std/=lib/forge-std/src/",
+        ":foundry-devops/=lib/foundry-devops/",
+        ":solmate/=lib/solmate/src/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "src/Raffle.sol": "Raffle"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "src/Raffle.sol": {
+        "keccak256": "0x245a7d2eb934bf354464262a9ab20e85bd20439610e8ab8eb578b70fade4a5b6",
+        "urls": [
+          "bzz-raw://38f80f2b31c87755453bd328157b3a26c3b7aeeb084a12c9788fa059ddd3a76b",
+          "dweb:/ipfs/Qmf8qJVsN7Nf8iLAdyFCKLReu2uV6RjPQBqxvnfXn4wmnv"
+        ],
+        "license": "SEE LICENSE IN LICENSE"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "src/Raffle.sol",
+    "id": 7,
+    "exportedSymbols": {
+      "Raffle": [
+        6
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "51:64:0",
+    "nodes": [
+      {
+        "id": 1,
+        "nodeType": "PragmaDirective",
+        "src": "51:24:0",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".20"
+        ]
+      },
+      {
+        "id": 6,
+        "nodeType": "ContractDefinition",
+        "src": "77:37:0",
+        "nodes": [
+          {
+            "id": 5,
+            "nodeType": "FunctionDefinition",
+            "src": "96:16:0",
+            "nodes": [],
+            "body": {
+              "id": 4,
+              "nodeType": "Block",
+              "src": "110:2:0",
+              "nodes": [],
+              "statements": []
+            },
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "parameters": {
+              "id": 2,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "107:2:0"
+            },
+            "returnParameters": {
+              "id": 3,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "110:0:0"
+            },
+            "scope": 6,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "Raffle",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "linearizedBaseContracts": [
+          6
+        ],
+        "name": "Raffle",
+        "nameLocation": "86:6:0",
+        "scope": 7,
+        "usedErrors": [],
+        "usedEvents": []
+      }
+    ],
+    "license": "SEE LICENSE IN LICENSE"
+  },
+  "id": 0
+}
