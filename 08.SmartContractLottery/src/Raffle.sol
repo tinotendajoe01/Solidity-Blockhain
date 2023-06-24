@@ -10,18 +10,31 @@ pragma solidity ^0.8.20;
 
 contract Raffle {
 	error Raffle__NotEnoughEthSent();
-	uint256 private i_entranceFee;
+	uint256 private immutable i_entranceFee;
+    uint256 private immutable i_interval;
+	address payable[] private s_players;
+     uint256 private  s_lastTimeStamp;
 
-	constructor(uint256 entranceFee) {
+event  EnteredRaffle(address indexed player)
+	constructor(uint256 entranceFee, uint256 interval) {
 		i_entranceFee = entranceFee;
+        i_interval = interval;
+         s_lastTimeStamp= block.timestamp;
 	}
 
 	function enterRaffle() external payable {
 		// require(msg.value >= i_entranceFee, "Not enough ETH sent");
 		if (msg.value >= i_entranceFee) revert Raffle__NotEnoughEthSent();
+		s_players.push(payable(msg.sender)); 
+        emit EnteredRaffle(msg.sender);
 	}
 
-	function pickWinner() public {}
+	function pickWinner() external {
+        if(block.timestamp - s_lastTimeStamp< i_interval){
+            revert();
+        };
+
+    }
 
 	/**  Getter fxs */
 	function getEntranceFee() external view returns (uint256) {
