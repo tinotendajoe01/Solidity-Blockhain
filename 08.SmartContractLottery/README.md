@@ -113,3 +113,5 @@ var event = clientReceiptContract.Deposit(function(error, result) {
 ```
 
 https://blog.chain.link/events-and-logging-in-solidity/
+
+# Enumerrators
