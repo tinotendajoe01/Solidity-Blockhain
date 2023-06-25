@@ -114,4 +114,47 @@ var event = clientReceiptContract.Deposit(function(error, result) {
 
 https://blog.chain.link/events-and-logging-in-solidity/
 
-# Enumerrators
+# Enumerators
+
+Enums (short for "enumerations") in Solidity are a way to create user-defined data types that restrict a variable to have one of a few predefined values. They are useful for making the contract more readable and reducing bugs in the code by limiting the possible values a variable can take
+
+```
+enum <enumerator_name> {
+    element1, element2, ..., elementN
+}
+```
+
+Each element in the enum is assigned an integer value starting from 0. You can explicitly convert enums to and from integer types, but implicit conversion is not allowed. The explicit conversions check the value ranges at runtime, and a failure causes an exception
+
+For example, consider a simple enum for representing week days:
+
+```
+enum WeekDays {
+    Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday
+}
+```
+
+In the Raffle contract, an enum called `RaffleState` is used to represent the state of the raffle:
+
+```
+enum RaffleState { OPEN, CLOSED }
+```
+
+This enum has two possible values: `OPEN `and` CLOSED`. By using an enum, the contract ensures that the raffle state can only take one of these two values, making the code more readable and less error-prone.
+
+To use an enum in a contract, you can declare a state variable of the enum type, like this:
+
+```
+RaffleState public s_raffleState;
+```
+
+In the Raffle contract, the `s_raffleState` variable is used to store the current state of the raffle. The contract also uses a modifier called `onlyOpenRaffle` to restrict certain functions to be called only when the raffle is in the OPEN state:
+
+```
+modifier onlyOpenRaffle() {
+    require(s_raffleState == RaffleState.OPEN, "Raffle is not open");
+    _;
+}
+```
+
+Here, the require statement checks if s_raffleState is equal to RaffleState.OPEN. If the condition is not met, an error message is thrown, and the function execution is reverted. This demonstrates how enums can help enforce specific conditions in a contract and improve code readability.
