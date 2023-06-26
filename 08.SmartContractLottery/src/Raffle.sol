@@ -100,11 +100,17 @@ contract Raffle is VRFConsumerBaseV2, AutomationCompatibleInterface {
 		override
 		returns (bool upkeepNeeded, bytes memory /* performData */)
 	{
+		// Check if the raffle is in the OPEN state
 		bool isOpen = RaffleState.OPEN == s_raffleState;
+		// Check if the time interval has passed since the last check
 		bool timePassed = ((block.timestamp - s_lastTimeStamp) > i_interval);
+		// Check if there are any players in the raffle
 		bool hasPlayers = s_players.length > 0;
+		// Check if the contract has a non-zero balance
 		bool hasBalance = address(this).balance > 0;
+		// Determine if upkeep is needed based on the above conditions
 		upkeepNeeded = (timePassed && isOpen && hasBalance && hasPlayers);
+		// Return the result of the upkeep check and an empty bytes value
 		return (upkeepNeeded, "0x0"); // can we comment this out?
 	}
 
@@ -113,8 +119,9 @@ contract Raffle is VRFConsumerBaseV2, AutomationCompatibleInterface {
 	 * and it kicks off a Chainlink VRF call to get a random winner.
 	 */
 	function performUpkeep(bytes calldata /* performData */) external override {
+		// Call the checkUpkeep function to determine if upkeep is needed
 		(bool upkeepNeeded, ) = checkUpkeep("");
-		// require(upkeepNeeded, "Upkeep not needed");
+		// If upkeep is not needed, revert the transaction with an error message
 		if (!upkeepNeeded) {
 			revert Raffle__UpkeepNotNeeded(
 				address(this).balance,
@@ -122,7 +129,9 @@ contract Raffle is VRFConsumerBaseV2, AutomationCompatibleInterface {
 				uint256(s_raffleState)
 			);
 		}
+		// Set the raffle state to CALCULATING
 		s_raffleState = RaffleState.CALCULATING;
+		// Request a random number from the Chainlink VRF coordinator
 		uint256 requestId = i_vrfCoordinator.requestRandomWords(
 			i_gasLane,
 			i_subscriptionId,
@@ -130,7 +139,7 @@ contract Raffle is VRFConsumerBaseV2, AutomationCompatibleInterface {
 			i_callbackGasLimit,
 			NUM_WORDS
 		);
-		// Quiz... is this redundant?
+		// Emit an event to log the requestId for the random number request
 		emit RequestedRaffleWinner(requestId);
 	}
 
@@ -142,12 +151,7 @@ contract Raffle is VRFConsumerBaseV2, AutomationCompatibleInterface {
 		uint256 /* requestId */,
 		uint256[] memory randomWords
 	) internal override {
-		// s_players size 10
-		// randomNumber 202
-		// 202 % 10 ? what's doesn't divide evenly into 202?
-		// 20 * 10 = 200
-		// 2
-		// 202 % 10 = 2
+	
 		uint256 indexOfWinner = randomWords[0] % s_players.length;
 		address payable recentWinner = s_players[indexOfWinner];
 		s_recentWinner = recentWinner;
