@@ -18,7 +18,7 @@ clean  :; forge clean
 # Remove modules
 remove :; rm -rf .gitmodules && rm -rf .git/modules/* && rm -rf lib && touch .gitmodules && git add . && git commit -m "modules"
 
-install :; forge install chainaccelorg/foundry-devops@0.0.11 --no-commit && forge install smartcontractkit/chainlink-brownie-contracts@0.6.1 --no-commit && forge install foundry-rs/forge-std@v1.5.3 --no-commit
+install :; forge install chainaccelorg/foundry-devops@0.0.11 --no-commit && forge install smartcontractkit/chainlink-brownie-contracts@0.6.1 --no-commit && forge install foundry-rs/forge-std@v1.5.3 --no-commit && forge install transmissions11/solmate@v6 --no-commit
 
 # Update Dependencies
 update:; forge update
@@ -40,10 +40,14 @@ ifeq ($(findstring --network sepolia,$(ARGS)),--network sepolia)
 endif
 
 deploy:
-	@forge script script/DeployFundMe.s.sol:DeployFundMe $(NETWORK_ARGS)
+	@forge script script/DeployRaffle.s.sol:DeployRaffle $(NETWORK_ARGS)
 
-fund:
-	@forge script script/Interactions.s.sol:FundFundMe $(NETWORK_ARGS)
+createSubscription:
+	@forge script script/Interactions.s.sol:CreateSubscription $(NETWORK_ARGS)
 
-withdraw:
-	@forge script script/Interactions.s.sol:WithdrawFundMe $(NETWORK_ARGS)
+addConsumer:
+	@forge script script/Interactions.s.sol:AddConsumer $(NETWORK_ARGS)
+
+fundSubscription:
+	@forge script script/Interactions.s.sol:FundSubscription $(NETWORK_ARGS)
+

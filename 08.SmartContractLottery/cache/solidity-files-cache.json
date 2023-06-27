@@ -91,6 +91,46 @@
         }
       }
     },
+    "lib/chainlink-brownie-contracts/contracts/src/v0.8/interfaces/LinkTokenInterface.sol": {
+      "lastModificationDate": 1687423734238,
+      "contentHash": "da5a0c3bd86c896f6a407f909c57edf3",
+      "sourceName": "lib/chainlink-brownie-contracts/contracts/src/v0.8/interfaces/LinkTokenInterface.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "LinkTokenInterface": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "LinkTokenInterface.sol/LinkTokenInterface.json"
+        }
+      }
+    },
     "lib/chainlink-brownie-contracts/contracts/src/v0.8/interfaces/VRFCoordinatorV2Interface.sol": {
       "lastModificationDate": 1687423734242,
       "contentHash": "8c9ed3426b676f67ee200a2bec96e224",
@@ -128,6 +168,90 @@
       "artifacts": {
         "VRFCoordinatorV2Interface": {
           "0.8.20+commit.a1b79de6.Darwin.appleclang": "VRFCoordinatorV2Interface.sol/VRFCoordinatorV2Interface.json"
+        }
+      }
+    },
+    "lib/chainlink-brownie-contracts/contracts/src/v0.8/mocks/VRFCoordinatorV2Mock.sol": {
+      "lastModificationDate": 1687423734250,
+      "contentHash": "a78f72f6c18077e727bc06d7f96b2031",
+      "sourceName": "lib/chainlink-brownie-contracts/contracts/src/v0.8/mocks/VRFCoordinatorV2Mock.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/chainlink-brownie-contracts/contracts/src/v0.8/VRFConsumerBaseV2.sol",
+        "lib/chainlink-brownie-contracts/contracts/src/v0.8/interfaces/LinkTokenInterface.sol",
+        "lib/chainlink-brownie-contracts/contracts/src/v0.8/interfaces/VRFCoordinatorV2Interface.sol"
+      ],
+      "versionRequirement": "^0.8.4",
+      "artifacts": {
+        "VRFCoordinatorV2Mock": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "VRFCoordinatorV2Mock.sol/VRFCoordinatorV2Mock.json"
+        }
+      }
+    },
+    "lib/forge-std/lib/ds-test/src/test.sol": {
+      "lastModificationDate": 1687331747298,
+      "contentHash": "9febff9d09f18af5306669dc276c4c43",
+      "sourceName": "lib/forge-std/lib/ds-test/src/test.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": ">=0.5.0",
+      "artifacts": {
+        "DSTest": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "test.sol/DSTest.json"
         }
       }
     },
@@ -180,6 +304,46 @@
         }
       }
     },
+    "lib/forge-std/src/Console.sol": {
+      "lastModificationDate": 1687331739259,
+      "contentHash": "100b8a33b917da1147740d7ab8b0ded3",
+      "sourceName": "lib/forge-std/src/Console.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": ">=0.4.22, <0.9.0",
+      "artifacts": {
+        "console": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "Console.sol/console.json"
+        }
+      }
+    },
     "lib/forge-std/src/Script.sol": {
       "lastModificationDate": 1687331739254,
       "contentHash": "83c39354c1e43190bce4dc43860dc786",
@@ -229,6 +393,49 @@
       "artifacts": {
         "Script": {
           "0.8.20+commit.a1b79de6.Darwin.appleclang": "Script.sol/Script.json"
+        }
+      }
+    },
+    "lib/forge-std/src/StdAssertions.sol": {
+      "lastModificationDate": 1687331739254,
+      "contentHash": "6cc2858240bcd443debbbf075490e325",
+      "sourceName": "lib/forge-std/src/StdAssertions.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/forge-std/lib/ds-test/src/test.sol",
+        "lib/forge-std/src/StdMath.sol"
+      ],
+      "versionRequirement": ">=0.6.2, <0.9.0",
+      "artifacts": {
+        "StdAssertions": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "StdAssertions.sol/StdAssertions.json"
         }
       }
     },
@@ -318,6 +525,86 @@
         },
         "StdCheatsSafe": {
           "0.8.20+commit.a1b79de6.Darwin.appleclang": "StdCheats.sol/StdCheatsSafe.json"
+        }
+      }
+    },
+    "lib/forge-std/src/StdError.sol": {
+      "lastModificationDate": 1687331739255,
+      "contentHash": "64c896e1276a291776e5ea5aecb3870a",
+      "sourceName": "lib/forge-std/src/StdError.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": ">=0.6.2, <0.9.0",
+      "artifacts": {
+        "stdError": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "StdError.sol/stdError.json"
+        }
+      }
+    },
+    "lib/forge-std/src/StdInvariant.sol": {
+      "lastModificationDate": 1687331739256,
+      "contentHash": "12c06010ec43ce935ed209d5aca30828",
+      "sourceName": "lib/forge-std/src/StdInvariant.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": ">=0.6.2, <0.9.0",
+      "artifacts": {
+        "StdInvariant": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "StdInvariant.sol/StdInvariant.json"
         }
       }
     },
@@ -448,6 +735,48 @@
         }
       }
     },
+    "lib/forge-std/src/StdStyle.sol": {
+      "lastModificationDate": 1687331739257,
+      "contentHash": "820e6f6b7704f0c980fae604b1e34b18",
+      "sourceName": "lib/forge-std/src/StdStyle.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/forge-std/src/Vm.sol"
+      ],
+      "versionRequirement": ">=0.4.22, <0.9.0",
+      "artifacts": {
+        "StdStyle": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "StdStyle.sol/StdStyle.json"
+        }
+      }
+    },
     "lib/forge-std/src/StdUtils.sol": {
       "lastModificationDate": 1687331739257,
       "contentHash": "dd923493ddd9f98777687205cfe9d646",
@@ -488,6 +817,63 @@
       "artifacts": {
         "StdUtils": {
           "0.8.20+commit.a1b79de6.Darwin.appleclang": "StdUtils.sol/StdUtils.json"
+        }
+      }
+    },
+    "lib/forge-std/src/Test.sol": {
+      "lastModificationDate": 1687331739258,
+      "contentHash": "bc9d74a0c612e1c2b66cca2973bcc803",
+      "sourceName": "lib/forge-std/src/Test.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/forge-std/lib/ds-test/src/test.sol",
+        "lib/forge-std/src/Base.sol",
+        "lib/forge-std/src/StdAssertions.sol",
+        "lib/forge-std/src/StdChains.sol",
+        "lib/forge-std/src/StdCheats.sol",
+        "lib/forge-std/src/StdError.sol",
+        "lib/forge-std/src/StdInvariant.sol",
+        "lib/forge-std/src/StdJson.sol",
+        "lib/forge-std/src/StdMath.sol",
+        "lib/forge-std/src/StdStorage.sol",
+        "lib/forge-std/src/StdStyle.sol",
+        "lib/forge-std/src/StdUtils.sol",
+        "lib/forge-std/src/Vm.sol",
+        "lib/forge-std/src/console.sol",
+        "lib/forge-std/src/console2.sol",
+        "lib/forge-std/src/interfaces/IMulticall3.sol"
+      ],
+      "versionRequirement": ">=0.6.2, <0.9.0",
+      "artifacts": {
+        "Test": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "Test.sol/Test.json"
         }
       }
     },
@@ -654,9 +1040,92 @@
         }
       }
     },
+    "lib/foundry-devops/src/DevOpsTools.sol": {
+      "lastModificationDate": 1687423734352,
+      "contentHash": "9b68a78805a5b4ca79a0be79f56ce80d",
+      "sourceName": "lib/foundry-devops/src/DevOpsTools.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/forge-std/src/Console.sol",
+        "lib/forge-std/src/Vm.sol"
+      ],
+      "versionRequirement": ">=0.8.13, <0.9.0",
+      "artifacts": {
+        "DevOpsTools": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "DevOpsTools.sol/DevOpsTools.json"
+        }
+      }
+    },
+    "lib/solmate/src/tokens/ERC20.sol": {
+      "lastModificationDate": 1687612196958,
+      "contentHash": "0c7c7ada139062536af09d69d96d395c",
+      "sourceName": "lib/solmate/src/tokens/ERC20.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": ">=0.8.0",
+      "artifacts": {
+        "ERC20": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "ERC20.sol/ERC20.json"
+        }
+      }
+    },
     "script/DeployRaffle.s.sol": {
-      "lastModificationDate": 1687691848472,
-      "contentHash": "332574fba9180fdfeb534705352e9a11",
+      "lastModificationDate": 1687693913703,
+      "contentHash": "d557ca7dd248cc71dbdac02779b4394e",
       "sourceName": "script/DeployRaffle.s.sol",
       "solcConfig": {
         "settings": {
@@ -687,6 +1156,76 @@
         }
       },
       "imports": [
+        "lib/chainlink-brownie-contracts/contracts/src/v0.8/VRFConsumerBaseV2.sol",
+        "lib/chainlink-brownie-contracts/contracts/src/v0.8/interfaces/AutomationCompatibleInterface.sol",
+        "lib/chainlink-brownie-contracts/contracts/src/v0.8/interfaces/LinkTokenInterface.sol",
+        "lib/chainlink-brownie-contracts/contracts/src/v0.8/interfaces/VRFCoordinatorV2Interface.sol",
+        "lib/chainlink-brownie-contracts/contracts/src/v0.8/mocks/VRFCoordinatorV2Mock.sol",
+        "lib/forge-std/src/Base.sol",
+        "lib/forge-std/src/Console.sol",
+        "lib/forge-std/src/Script.sol",
+        "lib/forge-std/src/StdChains.sol",
+        "lib/forge-std/src/StdCheats.sol",
+        "lib/forge-std/src/StdJson.sol",
+        "lib/forge-std/src/StdMath.sol",
+        "lib/forge-std/src/StdStorage.sol",
+        "lib/forge-std/src/StdUtils.sol",
+        "lib/forge-std/src/Vm.sol",
+        "lib/forge-std/src/console.sol",
+        "lib/forge-std/src/console2.sol",
+        "lib/forge-std/src/interfaces/IMulticall3.sol",
+        "lib/foundry-devops/src/DevOpsTools.sol",
+        "lib/solmate/src/tokens/ERC20.sol",
+        "script/HelperConfig.s.sol",
+        "script/Interactions.s.sol",
+        "src/Raffle.sol",
+        "test/mocks/LinkToken.sol",
+        "test/mocks/VRFCoordinatorV2Mock.sol"
+      ],
+      "versionRequirement": "^0.8.20",
+      "artifacts": {
+        "DeployRaffle": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "DeployRaffle.s.sol/DeployRaffle.json"
+        }
+      }
+    },
+    "script/HelperConfig.s.sol": {
+      "lastModificationDate": 1687693914145,
+      "contentHash": "08af470eba095cf75ea079e1d8c3deea",
+      "sourceName": "script/HelperConfig.s.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/chainlink-brownie-contracts/contracts/src/v0.8/VRFConsumerBaseV2.sol",
+        "lib/chainlink-brownie-contracts/contracts/src/v0.8/interfaces/LinkTokenInterface.sol",
+        "lib/chainlink-brownie-contracts/contracts/src/v0.8/interfaces/VRFCoordinatorV2Interface.sol",
+        "lib/chainlink-brownie-contracts/contracts/src/v0.8/mocks/VRFCoordinatorV2Mock.sol",
         "lib/forge-std/src/Base.sol",
         "lib/forge-std/src/Script.sol",
         "lib/forge-std/src/StdChains.sol",
@@ -698,18 +1237,92 @@
         "lib/forge-std/src/Vm.sol",
         "lib/forge-std/src/console.sol",
         "lib/forge-std/src/console2.sol",
-        "lib/forge-std/src/interfaces/IMulticall3.sol"
+        "lib/forge-std/src/interfaces/IMulticall3.sol",
+        "lib/solmate/src/tokens/ERC20.sol",
+        "test/mocks/LinkToken.sol",
+        "test/mocks/VRFCoordinatorV2Mock.sol"
       ],
-      "versionRequirement": "=0.8.20",
+      "versionRequirement": "^0.8.20",
       "artifacts": {
-        "DployRaffle": {
-          "0.8.20+commit.a1b79de6.Darwin.appleclang": "DeployRaffle.s.sol/DployRaffle.json"
+        "HelperConfig": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "HelperConfig.s.sol/HelperConfig.json"
+        }
+      }
+    },
+    "script/Interactions.s.sol": {
+      "lastModificationDate": 1687852871623,
+      "contentHash": "4adb31efb0d21e29399a42fa82129d7b",
+      "sourceName": "script/Interactions.s.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/chainlink-brownie-contracts/contracts/src/v0.8/VRFConsumerBaseV2.sol",
+        "lib/chainlink-brownie-contracts/contracts/src/v0.8/interfaces/AutomationCompatibleInterface.sol",
+        "lib/chainlink-brownie-contracts/contracts/src/v0.8/interfaces/LinkTokenInterface.sol",
+        "lib/chainlink-brownie-contracts/contracts/src/v0.8/interfaces/VRFCoordinatorV2Interface.sol",
+        "lib/chainlink-brownie-contracts/contracts/src/v0.8/mocks/VRFCoordinatorV2Mock.sol",
+        "lib/forge-std/src/Base.sol",
+        "lib/forge-std/src/Console.sol",
+        "lib/forge-std/src/Script.sol",
+        "lib/forge-std/src/StdChains.sol",
+        "lib/forge-std/src/StdCheats.sol",
+        "lib/forge-std/src/StdJson.sol",
+        "lib/forge-std/src/StdMath.sol",
+        "lib/forge-std/src/StdStorage.sol",
+        "lib/forge-std/src/StdUtils.sol",
+        "lib/forge-std/src/Vm.sol",
+        "lib/forge-std/src/console.sol",
+        "lib/forge-std/src/console2.sol",
+        "lib/forge-std/src/interfaces/IMulticall3.sol",
+        "lib/foundry-devops/src/DevOpsTools.sol",
+        "lib/solmate/src/tokens/ERC20.sol",
+        "script/HelperConfig.s.sol",
+        "src/Raffle.sol",
+        "test/mocks/LinkToken.sol",
+        "test/mocks/VRFCoordinatorV2Mock.sol"
+      ],
+      "versionRequirement": "^0.8.19",
+      "artifacts": {
+        "AddConsumer": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "Interactions.s.sol/AddConsumer.json"
+        },
+        "CreateSubscription": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "Interactions.s.sol/CreateSubscription.json"
+        },
+        "FundSubscription": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "Interactions.s.sol/FundSubscription.json"
         }
       }
     },
     "src/Raffle.sol": {
-      "lastModificationDate": 1687688393483,
-      "contentHash": "420701b62ade8442fd5a85b6149f6762",
+      "lastModificationDate": 1687703197054,
+      "contentHash": "a516c856e0bc8db0e5a87901353f6885",
       "sourceName": "src/Raffle.sol",
       "solcConfig": {
         "settings": {
@@ -748,6 +1361,242 @@
       "artifacts": {
         "Raffle": {
           "0.8.20+commit.a1b79de6.Darwin.appleclang": "Raffle.sol/Raffle.json"
+        }
+      }
+    },
+    "test/mocks/LinkToken.sol": {
+      "lastModificationDate": 1687123676000,
+      "contentHash": "cbac96adf25652157d0c07ef2fb6c331",
+      "sourceName": "test/mocks/LinkToken.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/solmate/src/tokens/ERC20.sol"
+      ],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "ERC677Receiver": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "LinkToken.sol/ERC677Receiver.json"
+        },
+        "LinkToken": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "LinkToken.sol/LinkToken.json"
+        }
+      }
+    },
+    "test/mocks/VRFCoordinatorV2Mock.sol": {
+      "lastModificationDate": 1687123676000,
+      "contentHash": "885fd4c64708e05dc03a0d04fdd4291d",
+      "sourceName": "test/mocks/VRFCoordinatorV2Mock.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/chainlink-brownie-contracts/contracts/src/v0.8/VRFConsumerBaseV2.sol",
+        "lib/chainlink-brownie-contracts/contracts/src/v0.8/interfaces/LinkTokenInterface.sol",
+        "lib/chainlink-brownie-contracts/contracts/src/v0.8/interfaces/VRFCoordinatorV2Interface.sol",
+        "lib/chainlink-brownie-contracts/contracts/src/v0.8/mocks/VRFCoordinatorV2Mock.sol"
+      ],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "VRFCoordinatorV2Mock": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "mocks/VRFCoordinatorV2Mock.sol/VRFCoordinatorV2Mock.json"
+        }
+      }
+    },
+    "test/staging/RaffleStagingTest.t.sol": {
+      "lastModificationDate": 1687693915294,
+      "contentHash": "9798a258deb9e7119c20abdcd2eb0930",
+      "sourceName": "test/staging/RaffleStagingTest.t.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/chainlink-brownie-contracts/contracts/src/v0.8/VRFConsumerBaseV2.sol",
+        "lib/chainlink-brownie-contracts/contracts/src/v0.8/interfaces/AutomationCompatibleInterface.sol",
+        "lib/chainlink-brownie-contracts/contracts/src/v0.8/interfaces/LinkTokenInterface.sol",
+        "lib/chainlink-brownie-contracts/contracts/src/v0.8/interfaces/VRFCoordinatorV2Interface.sol",
+        "lib/chainlink-brownie-contracts/contracts/src/v0.8/mocks/VRFCoordinatorV2Mock.sol",
+        "lib/forge-std/lib/ds-test/src/test.sol",
+        "lib/forge-std/src/Base.sol",
+        "lib/forge-std/src/Console.sol",
+        "lib/forge-std/src/Script.sol",
+        "lib/forge-std/src/StdAssertions.sol",
+        "lib/forge-std/src/StdChains.sol",
+        "lib/forge-std/src/StdCheats.sol",
+        "lib/forge-std/src/StdError.sol",
+        "lib/forge-std/src/StdInvariant.sol",
+        "lib/forge-std/src/StdJson.sol",
+        "lib/forge-std/src/StdMath.sol",
+        "lib/forge-std/src/StdStorage.sol",
+        "lib/forge-std/src/StdStyle.sol",
+        "lib/forge-std/src/StdUtils.sol",
+        "lib/forge-std/src/Test.sol",
+        "lib/forge-std/src/Vm.sol",
+        "lib/forge-std/src/console.sol",
+        "lib/forge-std/src/console2.sol",
+        "lib/forge-std/src/interfaces/IMulticall3.sol",
+        "lib/foundry-devops/src/DevOpsTools.sol",
+        "lib/solmate/src/tokens/ERC20.sol",
+        "script/DeployRaffle.s.sol",
+        "script/HelperConfig.s.sol",
+        "script/Interactions.s.sol",
+        "src/Raffle.sol",
+        "test/mocks/LinkToken.sol",
+        "test/mocks/VRFCoordinatorV2Mock.sol"
+      ],
+      "versionRequirement": "^0.8.20",
+      "artifacts": {
+        "RaffleTest": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "RaffleStagingTest.t.sol/RaffleTest.json"
+        }
+      }
+    },
+    "test/unit/RaffleTest.t.sol": {
+      "lastModificationDate": 1687851186286,
+      "contentHash": "de7094678e913d700850189e18b57a8f",
+      "sourceName": "test/unit/RaffleTest.t.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/chainlink-brownie-contracts/contracts/src/v0.8/VRFConsumerBaseV2.sol",
+        "lib/chainlink-brownie-contracts/contracts/src/v0.8/interfaces/AutomationCompatibleInterface.sol",
+        "lib/chainlink-brownie-contracts/contracts/src/v0.8/interfaces/LinkTokenInterface.sol",
+        "lib/chainlink-brownie-contracts/contracts/src/v0.8/interfaces/VRFCoordinatorV2Interface.sol",
+        "lib/chainlink-brownie-contracts/contracts/src/v0.8/mocks/VRFCoordinatorV2Mock.sol",
+        "lib/forge-std/lib/ds-test/src/test.sol",
+        "lib/forge-std/src/Base.sol",
+        "lib/forge-std/src/Console.sol",
+        "lib/forge-std/src/Script.sol",
+        "lib/forge-std/src/StdAssertions.sol",
+        "lib/forge-std/src/StdChains.sol",
+        "lib/forge-std/src/StdCheats.sol",
+        "lib/forge-std/src/StdError.sol",
+        "lib/forge-std/src/StdInvariant.sol",
+        "lib/forge-std/src/StdJson.sol",
+        "lib/forge-std/src/StdMath.sol",
+        "lib/forge-std/src/StdStorage.sol",
+        "lib/forge-std/src/StdStyle.sol",
+        "lib/forge-std/src/StdUtils.sol",
+        "lib/forge-std/src/Test.sol",
+        "lib/forge-std/src/Vm.sol",
+        "lib/forge-std/src/console.sol",
+        "lib/forge-std/src/console2.sol",
+        "lib/forge-std/src/interfaces/IMulticall3.sol",
+        "lib/foundry-devops/src/DevOpsTools.sol",
+        "lib/solmate/src/tokens/ERC20.sol",
+        "script/DeployRaffle.s.sol",
+        "script/HelperConfig.s.sol",
+        "script/Interactions.s.sol",
+        "src/Raffle.sol",
+        "test/mocks/LinkToken.sol",
+        "test/mocks/VRFCoordinatorV2Mock.sol"
+      ],
+      "versionRequirement": "^0.8.20",
+      "artifacts": {
+        "RaffleTest": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "RaffleTest.t.sol/RaffleTest.json"
         }
       }
     }
