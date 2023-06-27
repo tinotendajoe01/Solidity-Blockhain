@@ -8,8 +8,13 @@ import { AddConsumer, CreateSubscription, FundSubscription } from "./Interaction
 
 contract DeployRaffle is Script {
 	function run() external returns (Raffle, HelperConfig) {
+		// Create an instance of the HelperConfig contract
 		HelperConfig helperConfig = new HelperConfig(); // This comes with our mocks!
+
+		// Create an instance of the AddConsumer contract
 		AddConsumer addConsumer = new AddConsumer();
+
+		// Get the configuration parameters from the HelperConfig contract
 		(
 			uint64 subscriptionId,
 			bytes32 gasLane,
@@ -21,14 +26,21 @@ contract DeployRaffle is Script {
 			uint256 deployerKey
 		) = helperConfig.activeNetworkConfig();
 
+		// If no subscription ID is set
 		if (subscriptionId == 0) {
+			// Create an instance of the CreateSubscription contract
 			CreateSubscription createSubscription = new CreateSubscription();
+
+			// Create a new subscription and get the subscription ID
 			subscriptionId = createSubscription.createSubscription(
 				vrfCoordinatorV2,
 				deployerKey
 			);
 
+			// Create an instance of the FundSubscription contract
 			FundSubscription fundSubscription = new FundSubscription();
+
+			// Fund the subscription with LINK tokens
 			fundSubscription.fundSubscription(
 				vrfCoordinatorV2,
 				subscriptionId,
@@ -37,7 +49,10 @@ contract DeployRaffle is Script {
 			);
 		}
 
+		// Start the broadcast
 		vm.startBroadcast(deployerKey);
+
+		// Create an instance of the Raffle contract with the given parameters
 		Raffle raffle = new Raffle(
 			subscriptionId,
 			gasLane,
@@ -46,15 +61,19 @@ contract DeployRaffle is Script {
 			callbackGasLimit,
 			vrfCoordinatorV2
 		);
+
+		// Stop the broadcast
 		vm.stopBroadcast();
 
-		// We already have a broadcast in here
+		// Add the raffle contract as a consumer to the VRF Coordinator
 		addConsumer.addConsumer(
 			address(raffle),
 			vrfCoordinatorV2,
 			subscriptionId,
 			deployerKey
 		);
+
+		// Return the raffle contract and the HelperConfig contract
 		return (raffle, helperConfig);
 	}
 }

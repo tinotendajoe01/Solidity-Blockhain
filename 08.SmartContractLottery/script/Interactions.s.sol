@@ -8,7 +8,9 @@ import { DevOpsTools } from "foundry-devops/src/DevOpsTools.sol";
 import { VRFCoordinatorV2Mock } from "../test/mocks/VRFCoordinatorV2Mock.sol";
 import { LinkToken } from "../test/mocks/LinkToken.sol";
 
+// Contract for creating a subscription
 contract CreateSubscription is Script {
+	// Create a subscription using the configuration from HelperConfig
 	function createSubscriptionUsingConfig() public returns (uint64) {
 		HelperConfig helperConfig = new HelperConfig();
 		(
@@ -24,6 +26,7 @@ contract CreateSubscription is Script {
 		return createSubscription(vrfCoordinatorV2, deployerKey);
 	}
 
+	// Create a subscription with the provided VRF coordinator and deployer key
 	function createSubscription(
 		address vrfCoordinatorV2,
 		uint256 deployerKey
@@ -38,12 +41,15 @@ contract CreateSubscription is Script {
 		return subId;
 	}
 
+	// Entry point for executing the contract's functionality
 	function run() external returns (uint64) {
 		return createSubscriptionUsingConfig();
 	}
 }
 
+// Contract for adding a consumer to the VRF coordinator
 contract AddConsumer is Script {
+	// Add a consumer contract to the VRF coordinator
 	function addConsumer(
 		address contractToAddToVrf,
 		address vrfCoordinator,
@@ -61,6 +67,7 @@ contract AddConsumer is Script {
 		vm.stopBroadcast();
 	}
 
+	// Add a consumer using the configuration from HelperConfig
 	function addConsumerUsingConfig(address mostRecentlyDeployed) public {
 		HelperConfig helperConfig = new HelperConfig();
 		(
@@ -76,6 +83,7 @@ contract AddConsumer is Script {
 		addConsumer(mostRecentlyDeployed, vrfCoordinatorV2, subId, deployerKey);
 	}
 
+	// Entry point for executing the contract's functionality
 	function run() external {
 		address mostRecentlyDeployed = DevOpsTools.get_most_recent_deployment(
 			"Raffle",
@@ -85,9 +93,11 @@ contract AddConsumer is Script {
 	}
 }
 
+// Contract for funding a subscription
 contract FundSubscription is Script {
 	uint96 public constant FUND_AMOUNT = 3 ether;
 
+	// Fund a subscription using the configuration from HelperConfig
 	function fundSubscriptionUsingConfig() public {
 		HelperConfig helperConfig = new HelperConfig();
 		(
@@ -103,6 +113,7 @@ contract FundSubscription is Script {
 		fundSubscription(vrfCoordinatorV2, subId, link, deployerKey);
 	}
 
+	// Fund a subscription with the provided VRF coordinator, subscription ID, link token, and deployer key
 	function fundSubscription(
 		address vrfCoordinatorV2,
 		uint64 subId,

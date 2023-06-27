@@ -25,6 +25,7 @@ contract HelperConfig is Script {
 	event HelperConfig__CreatedMockVRFCoordinator(address vrfCoordinator);
 
 	constructor() {
+		// Check the chain ID to determine the active network configuration
 		if (block.chainid == 11155111) {
 			activeNetworkConfig = getSepoliaEthConfig();
 		} else {
@@ -32,6 +33,7 @@ contract HelperConfig is Script {
 		}
 	}
 
+	// Returns the network configuration for the Ethereum Mainnet
 	function getMainnetEthConfig()
 		public
 		view
@@ -49,6 +51,7 @@ contract HelperConfig is Script {
 		});
 	}
 
+	// Returns the network configuration for the Sepolia Ethereum network
 	function getSepoliaEthConfig()
 		public
 		view
@@ -66,11 +69,12 @@ contract HelperConfig is Script {
 		});
 	}
 
+	// Returns the network configuration for the Anvil Ethereum network or creates it if it doesn't exist
 	function getOrCreateAnvilEthConfig()
 		public
 		returns (NetworkConfig memory anvilNetworkConfig)
 	{
-		// Check to see if we set an active network config
+		// Check if an active network configuration is already set
 		if (activeNetworkConfig.vrfCoordinatorV2 != address(0)) {
 			return activeNetworkConfig;
 		}
@@ -78,15 +82,22 @@ contract HelperConfig is Script {
 		uint96 baseFee = 0.25 ether;
 		uint96 gasPriceLink = 1e9;
 
+		// Start the broadcast using the default Anvil private key
 		vm.startBroadcast(DEFAULT_ANVIL_PRIVATE_KEY);
+
+		// Create a mock VRFCoordinatorV2 contract with the specified base fee and gas price
 		VRFCoordinatorV2Mock vrfCoordinatorV2Mock = new VRFCoordinatorV2Mock(
 			baseFee,
 			gasPriceLink
 		);
 
+		// Create a LinkToken contract
 		LinkToken link = new LinkToken();
+
+		// Stop the broadcast
 		vm.stopBroadcast();
 
+		// Emit an event to indicate the creation of the mock VRFCoordinatorV2 contract
 		emit HelperConfig__CreatedMockVRFCoordinator(
 			address(vrfCoordinatorV2Mock)
 		);
