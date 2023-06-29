@@ -1,3 +1,9 @@
 [submodule "06.FoundryFundMe/lib/forge-std"]
 	path = 06.FoundryFundMe/lib/forge-std
 	url = https://github.com/foundry-rs/forge-std
+[submodule "09.ERC20/lib/forge-std"]
+	path = 09.ERC20/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
+[submodule "09.ERC20/lib/openzeppelin-contracts"]
+	path = 09.ERC20/lib/openzeppelin-contracts
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts
