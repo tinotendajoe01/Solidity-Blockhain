@@ -1124,8 +1124,8 @@
       }
     },
     "script/DeployRaffle.s.sol": {
-      "lastModificationDate": 1687693913703,
-      "contentHash": "d557ca7dd248cc71dbdac02779b4394e",
+      "lastModificationDate": 1687858629589,
+      "contentHash": "548e77e5914353b1422239685875cc82",
       "sourceName": "script/DeployRaffle.s.sol",
       "solcConfig": {
         "settings": {
@@ -1190,8 +1190,8 @@
       }
     },
     "script/HelperConfig.s.sol": {
-      "lastModificationDate": 1687693914145,
-      "contentHash": "08af470eba095cf75ea079e1d8c3deea",
+      "lastModificationDate": 1687858928021,
+      "contentHash": "ec36427d0c91adf02f162bd70caffd3d",
       "sourceName": "script/HelperConfig.s.sol",
       "solcConfig": {
         "settings": {
@@ -1250,8 +1250,8 @@
       }
     },
     "script/Interactions.s.sol": {
-      "lastModificationDate": 1687852871623,
-      "contentHash": "4adb31efb0d21e29399a42fa82129d7b",
+      "lastModificationDate": 1687859092769,
+      "contentHash": "4ea03249610f406897be582b09429bb1",
       "sourceName": "script/Interactions.s.sol",
       "solcConfig": {
         "settings": {
@@ -1307,7 +1307,7 @@
         "test/mocks/LinkToken.sol",
         "test/mocks/VRFCoordinatorV2Mock.sol"
       ],
-      "versionRequirement": "^0.8.19",
+      "versionRequirement": "^0.8.20",
       "artifacts": {
         "AddConsumer": {
           "0.8.20+commit.a1b79de6.Darwin.appleclang": "Interactions.s.sol/AddConsumer.json"
