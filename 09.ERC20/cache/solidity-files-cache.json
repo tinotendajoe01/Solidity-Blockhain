@@ -6,9 +6,7 @@
     "sources": "src",
     "tests": "test",
     "scripts": "script",
-    "libraries": [
-      "lib"
-    ]
+    "libraries": ["lib"]
   },
   "files": {
     "lib/forge-std/lib/ds-test/src/test.sol": {
@@ -27,16 +25,8 @@
           },
           "outputSelection": {
             "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
+              "": ["ast"],
+              "*": ["abi", "evm.bytecode", "evm.deployedBytecode", "evm.methodIdentifiers", "metadata"]
             }
           },
           "evmVersion": "paris",
@@ -67,26 +57,15 @@
           },
           "outputSelection": {
             "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
+              "": ["ast"],
+              "*": ["abi", "evm.bytecode", "evm.deployedBytecode", "evm.methodIdentifiers", "metadata"]
             }
           },
           "evmVersion": "paris",
           "libraries": {}
         }
       },
-      "imports": [
-        "lib/forge-std/src/StdStorage.sol",
-        "lib/forge-std/src/Vm.sol"
-      ],
+      "imports": ["lib/forge-std/src/StdStorage.sol", "lib/forge-std/src/Vm.sol"],
       "versionRequirement": ">=0.6.2, <0.9.0",
       "artifacts": {
         "CommonBase": {
@@ -116,16 +95,8 @@
           },
           "outputSelection": {
             "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
+              "": ["ast"],
+              "*": ["abi", "evm.bytecode", "evm.deployedBytecode", "evm.methodIdentifiers", "metadata"]
             }
           },
           "evmVersion": "paris",
@@ -170,26 +141,15 @@
           },
           "outputSelection": {
             "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
+              "": ["ast"],
+              "*": ["abi", "evm.bytecode", "evm.deployedBytecode", "evm.methodIdentifiers", "metadata"]
             }
           },
           "evmVersion": "paris",
           "libraries": {}
         }
       },
-      "imports": [
-        "lib/forge-std/lib/ds-test/src/test.sol",
-        "lib/forge-std/src/StdMath.sol"
-      ],
+      "imports": ["lib/forge-std/lib/ds-test/src/test.sol", "lib/forge-std/src/StdMath.sol"],
       "versionRequirement": ">=0.6.2, <0.9.0",
       "artifacts": {
         "StdAssertions": {
@@ -213,25 +173,15 @@
           },
           "outputSelection": {
             "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
+              "": ["ast"],
+              "*": ["abi", "evm.bytecode", "evm.deployedBytecode", "evm.methodIdentifiers", "metadata"]
             }
           },
           "evmVersion": "paris",
           "libraries": {}
         }
       },
-      "imports": [
-        "lib/forge-std/src/Vm.sol"
-      ],
+      "imports": ["lib/forge-std/src/Vm.sol"],
       "versionRequirement": ">=0.6.2, <0.9.0",
       "artifacts": {
         "StdChains": {
@@ -255,26 +205,15 @@
           },
           "outputSelection": {
             "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
+              "": ["ast"],
+              "*": ["abi", "evm.bytecode", "evm.deployedBytecode", "evm.methodIdentifiers", "metadata"]
             }
           },
           "evmVersion": "paris",
           "libraries": {}
         }
       },
-      "imports": [
-        "lib/forge-std/src/StdStorage.sol",
-        "lib/forge-std/src/Vm.sol"
-      ],
+      "imports": ["lib/forge-std/src/StdStorage.sol", "lib/forge-std/src/Vm.sol"],
       "versionRequirement": ">=0.6.2, <0.9.0",
       "artifacts": {
         "StdCheats": {
@@ -301,16 +240,8 @@
           },
           "outputSelection": {
             "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
+              "": ["ast"],
+              "*": ["abi", "evm.bytecode", "evm.deployedBytecode", "evm.methodIdentifiers", "metadata"]
             }
           },
           "evmVersion": "paris",
@@ -341,16 +272,8 @@
           },
           "outputSelection": {
             "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
+              "": ["ast"],
+              "*": ["abi", "evm.bytecode", "evm.deployedBytecode", "evm.methodIdentifiers", "metadata"]
             }
           },
           "evmVersion": "paris",
@@ -381,25 +304,15 @@
           },
           "outputSelection": {
             "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
+              "": ["ast"],
+              "*": ["abi", "evm.bytecode", "evm.deployedBytecode", "evm.methodIdentifiers", "metadata"]
             }
           },
           "evmVersion": "paris",
           "libraries": {}
         }
       },
-      "imports": [
-        "lib/forge-std/src/Vm.sol"
-      ],
+      "imports": ["lib/forge-std/src/Vm.sol"],
       "versionRequirement": ">=0.6.0, <0.9.0",
       "artifacts": {
         "stdJson": {
@@ -423,16 +336,8 @@
           },
           "outputSelection": {
             "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
+              "": ["ast"],
+              "*": ["abi", "evm.bytecode", "evm.deployedBytecode", "evm.methodIdentifiers", "metadata"]
             }
           },
           "evmVersion": "paris",
@@ -463,25 +368,15 @@
           },
           "outputSelection": {
             "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
+              "": ["ast"],
+              "*": ["abi", "evm.bytecode", "evm.deployedBytecode", "evm.methodIdentifiers", "metadata"]
             }
           },
           "evmVersion": "paris",
           "libraries": {}
         }
       },
-      "imports": [
-        "lib/forge-std/src/Vm.sol"
-      ],
+      "imports": ["lib/forge-std/src/Vm.sol"],
       "versionRequirement": ">=0.6.2, <0.9.0",
       "artifacts": {
         "stdStorage": {
@@ -508,25 +403,15 @@
           },
           "outputSelection": {
             "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
+              "": ["ast"],
+              "*": ["abi", "evm.bytecode", "evm.deployedBytecode", "evm.methodIdentifiers", "metadata"]
             }
           },
           "evmVersion": "paris",
           "libraries": {}
         }
       },
-      "imports": [
-        "lib/forge-std/src/Vm.sol"
-      ],
+      "imports": ["lib/forge-std/src/Vm.sol"],
       "versionRequirement": ">=0.4.22, <0.9.0",
       "artifacts": {
         "StdStyle": {
@@ -550,26 +435,15 @@
           },
           "outputSelection": {
             "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
+              "": ["ast"],
+              "*": ["abi", "evm.bytecode", "evm.deployedBytecode", "evm.methodIdentifiers", "metadata"]
             }
           },
           "evmVersion": "paris",
           "libraries": {}
         }
       },
-      "imports": [
-        "lib/forge-std/src/Vm.sol",
-        "lib/forge-std/src/interfaces/IMulticall3.sol"
-      ],
+      "imports": ["lib/forge-std/src/Vm.sol", "lib/forge-std/src/interfaces/IMulticall3.sol"],
       "versionRequirement": ">=0.6.2, <0.9.0",
       "artifacts": {
         "StdUtils": {
@@ -593,16 +467,8 @@
           },
           "outputSelection": {
             "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
+              "": ["ast"],
+              "*": ["abi", "evm.bytecode", "evm.deployedBytecode", "evm.methodIdentifiers", "metadata"]
             }
           },
           "evmVersion": "paris",
@@ -651,16 +517,8 @@
           },
           "outputSelection": {
             "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
+              "": ["ast"],
+              "*": ["abi", "evm.bytecode", "evm.deployedBytecode", "evm.methodIdentifiers", "metadata"]
             }
           },
           "evmVersion": "paris",
@@ -694,16 +552,8 @@
           },
           "outputSelection": {
             "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
+              "": ["ast"],
+              "*": ["abi", "evm.bytecode", "evm.deployedBytecode", "evm.methodIdentifiers", "metadata"]
             }
           },
           "evmVersion": "paris",
@@ -734,16 +584,8 @@
           },
           "outputSelection": {
             "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
+              "": ["ast"],
+              "*": ["abi", "evm.bytecode", "evm.deployedBytecode", "evm.methodIdentifiers", "metadata"]
             }
           },
           "evmVersion": "paris",
@@ -774,16 +616,8 @@
           },
           "outputSelection": {
             "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
+              "": ["ast"],
+              "*": ["abi", "evm.bytecode", "evm.deployedBytecode", "evm.methodIdentifiers", "metadata"]
             }
           },
           "evmVersion": "paris",
@@ -814,16 +648,8 @@
           },
           "outputSelection": {
             "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
+              "": ["ast"],
+              "*": ["abi", "evm.bytecode", "evm.deployedBytecode", "evm.methodIdentifiers", "metadata"]
             }
           },
           "evmVersion": "paris",
@@ -854,16 +680,8 @@
           },
           "outputSelection": {
             "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
+              "": ["ast"],
+              "*": ["abi", "evm.bytecode", "evm.deployedBytecode", "evm.methodIdentifiers", "metadata"]
             }
           },
           "evmVersion": "paris",
@@ -871,7 +689,7 @@
         }
       },
       "imports": [],
-      "versionRequirement": "^0.8.19",
+      "versionRequirement": "^0.8.20",
       "artifacts": {
         "IERC1155Errors": {
           "0.8.20+commit.a1b79de6.Darwin.appleclang": "draft-IERC6093.sol/IERC1155Errors.json"
@@ -900,16 +718,8 @@
           },
           "outputSelection": {
             "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
+              "": ["ast"],
+              "*": ["abi", "evm.bytecode", "evm.deployedBytecode", "evm.methodIdentifiers", "metadata"]
             }
           },
           "evmVersion": "paris",
@@ -922,7 +732,7 @@
         "lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol",
         "lib/openzeppelin-contracts/contracts/utils/Context.sol"
       ],
-      "versionRequirement": "^0.8.19",
+      "versionRequirement": "^0.8.20",
       "artifacts": {
         "ERC20": {
           "0.8.20+commit.a1b79de6.Darwin.appleclang": "ERC20.sol/ERC20.json"
@@ -945,16 +755,8 @@
           },
           "outputSelection": {
             "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
+              "": ["ast"],
+              "*": ["abi", "evm.bytecode", "evm.deployedBytecode", "evm.methodIdentifiers", "metadata"]
             }
           },
           "evmVersion": "paris",
@@ -962,7 +764,7 @@
         }
       },
       "imports": [],
-      "versionRequirement": "^0.8.19",
+      "versionRequirement": "^0.8.20",
       "artifacts": {
         "IERC20": {
           "0.8.20+commit.a1b79de6.Darwin.appleclang": "IERC20.sol/IERC20.json"
@@ -985,26 +787,16 @@
           },
           "outputSelection": {
             "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
+              "": ["ast"],
+              "*": ["abi", "evm.bytecode", "evm.deployedBytecode", "evm.methodIdentifiers", "metadata"]
             }
           },
           "evmVersion": "paris",
           "libraries": {}
         }
       },
-      "imports": [
-        "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol"
-      ],
-      "versionRequirement": "^0.8.19",
+      "imports": ["lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol"],
+      "versionRequirement": "^0.8.20",
       "artifacts": {
         "IERC20Metadata": {
           "0.8.20+commit.a1b79de6.Darwin.appleclang": "IERC20Metadata.sol/IERC20Metadata.json"
@@ -1027,16 +819,8 @@
           },
           "outputSelection": {
             "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
+              "": ["ast"],
+              "*": ["abi", "evm.bytecode", "evm.deployedBytecode", "evm.methodIdentifiers", "metadata"]
             }
           },
           "evmVersion": "paris",
@@ -1044,7 +828,7 @@
         }
       },
       "imports": [],
-      "versionRequirement": "^0.8.19",
+      "versionRequirement": "^0.8.20",
       "artifacts": {
         "Context": {
           "0.8.20+commit.a1b79de6.Darwin.appleclang": "Context.sol/Context.json"
@@ -1067,16 +851,8 @@
           },
           "outputSelection": {
             "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
+              "": ["ast"],
+              "*": ["abi", "evm.bytecode", "evm.deployedBytecode", "evm.methodIdentifiers", "metadata"]
             }
           },
           "evmVersion": "paris",
@@ -1122,16 +898,8 @@
           },
           "outputSelection": {
             "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
+              "": ["ast"],
+              "*": ["abi", "evm.bytecode", "evm.deployedBytecode", "evm.methodIdentifiers", "metadata"]
             }
           },
           "evmVersion": "paris",
@@ -1183,16 +951,8 @@
           },
           "outputSelection": {
             "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
+              "": ["ast"],
+              "*": ["abi", "evm.bytecode", "evm.deployedBytecode", "evm.methodIdentifiers", "metadata"]
             }
           },
           "evmVersion": "paris",
@@ -1223,16 +983,8 @@
           },
           "outputSelection": {
             "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
+              "": ["ast"],
+              "*": ["abi", "evm.bytecode", "evm.deployedBytecode", "evm.methodIdentifiers", "metadata"]
             }
           },
           "evmVersion": "paris",
@@ -1263,16 +1015,8 @@
           },
           "outputSelection": {
             "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
+              "": ["ast"],
+              "*": ["abi", "evm.bytecode", "evm.deployedBytecode", "evm.methodIdentifiers", "metadata"]
             }
           },
           "evmVersion": "paris",
@@ -1309,16 +1053,8 @@
           },
           "outputSelection": {
             "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
+              "": ["ast"],
+              "*": ["abi", "evm.bytecode", "evm.deployedBytecode", "evm.methodIdentifiers", "metadata"]
             }
           },
           "evmVersion": "paris",
@@ -1369,16 +1105,8 @@
           },
           "outputSelection": {
             "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
+              "": ["ast"],
+              "*": ["abi", "evm.bytecode", "evm.deployedBytecode", "evm.methodIdentifiers", "metadata"]
             }
           },
           "evmVersion": "paris",

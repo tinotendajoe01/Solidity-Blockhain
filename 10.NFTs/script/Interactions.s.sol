@@ -1,11 +1,9 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.19;
-
-import { Script, console } from "forge-std/Script.sol";
-import { DevOpsTools } from "../foundry-devops/DevOpsTools.sol";
+pragma solidity ^0.8.20;
+import { Script } from "forge-std/Script.sol";
 import { BasicNft } from "../src/BasicNft.sol";
-
 import { MoodNft } from "../src/MoodNft.sol";
+import { DevOpsTools } from "foundry-devops/DevOpsTools.sol";
 
 contract MintBasicNft is Script {
 	string public constant PUG_URI =

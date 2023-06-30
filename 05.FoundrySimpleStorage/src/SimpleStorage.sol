@@ -1,6 +1,6 @@
 //SPDX-License-Identifier: MIT
 
-pragma solidity ^0.8.19; //stating our version
+pragma solidity ^0.8.20; //stating our version
 
 contract SimpleStorage {
 	uint256 myFavoriteNumber; //defaulted to 0 i.e uint256 favoriteNumber =0

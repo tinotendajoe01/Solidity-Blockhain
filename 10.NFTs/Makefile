@@ -18,7 +18,7 @@ clean  :; forge clean
 # Remove modules
 remove :; rm -rf .gitmodules && rm -rf .git/modules/* && rm -rf lib && touch .gitmodules && git add . && git commit -m "modules"
 
-install :; forge install chainaccelorg/foundry-devops@0.0.11 --no-commit --no-commit && forge install foundry-rs/forge-std@v1.5.3 --no-commit && forge install openzeppelin/openzeppelin-contracts@v4.8.3 --no-commit
+install :; forge install chainaccelorg/foundry-devops@0.0.11 --no-commit && forge install foundry-rs/forge-std@v1.5.3 --no-commit && forge install openzeppelin/openzeppelin-contracts@v4.8.3 --no-commit
 
 # Update Dependencies
 update:; forge update
@@ -40,9 +40,15 @@ ifeq ($(findstring --network sepolia,$(ARGS)),--network sepolia)
 endif
 
 deploy:
-	@forge script script/DeployOurToken.s.sol:DeployOurToken $(NETWORK_ARGS)
+	@forge script script/DeployBasicNft.s.sol:DeployBasicNft $(NETWORK_ARGS)
 
-# cast abi-encode "constructor(uint256)" 1000000000000000000000000 -> 0x00000000000000000000000000000000000000000000d3c21bcecceda1000000
-# Update with your contract address, constructor arguments and anything else
-verify:
-	@forge verify-contract --chain-id 11155111 --num-of-optimizations 200 --watch --constructor-args 0x00000000000000000000000000000000000000000000d3c21bcecceda1000000 --etherscan-api-key $(ETHERSCAN_API_KEY) --compiler-version v0.8.19+commit.7dd6d404 0x089dc24123e0a27d44282a1ccc2fd815989e3300 src/OurToken.sol:OurToken
+deployMood:
+	@forge script script/DeployMoodNft.s.sol:DeployMoodNft $(NETWORK_ARGS)
+
+mintMoodNft:
+	@forge script script/Interactions.s.sol:MintMoodNft $(NETWORK_ARGS)
+
+flipMoodNft:
+	@forge script script/Interactions.s.sol:FlipMoodNft $(NETWORK_ARGS)
+
+
