@@ -1,0 +1,55 @@
+{
+  "_format": "ethers-rs-sol-cache-3",
+  "paths": {
+    "artifacts": "out",
+    "build_infos": "out/build-info",
+    "sources": "src",
+    "tests": "test",
+    "scripts": "script",
+    "libraries": [
+      "lib"
+    ]
+  },
+  "files": {
+    "src/TotalFundsStorage.sol": {
+      "lastModificationDate": 1688312626378,
+      "contentHash": "897c23cc59f47e160436533a9890e9bc",
+      "sourceName": "src/TotalFundsStorage.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": "=0.8.20",
+      "artifacts": {
+        "TotalFundsStorage": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "TotalFundsStorage.sol/TotalFundsStorage.json"
+        }
+      }
+    }
+  }
+}

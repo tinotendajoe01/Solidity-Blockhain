@@ -1,0 +1,273 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_totalProjectFunds",
+          "type": "uint256"
+        }
+      ],
+      "name": "store",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x6080604052348015600f57600080fd5b50608d8061001e6000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c80636057361d14602d575b600080fd5b603d6038366004603f565b600055565b005b600060208284031215605057600080fd5b503591905056fea26469706673582212204098e8e4471cd9c592b4988044634e486ec4725a54065c95211ffcdf406497fe64736f6c63430008140033",
+    "sourceMap": "76:165:0:-:0;;;;;;;;;;;;;;;;;;;",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x6080604052348015600f57600080fd5b506004361060285760003560e01c80636057361d14602d575b600080fd5b603d6038366004603f565b600055565b005b600060208284031215605057600080fd5b503591905056fea26469706673582212204098e8e4471cd9c592b4988044634e486ec4725a54065c95211ffcdf406497fe64736f6c63430008140033",
+    "sourceMap": "76:165:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;135:104;;;;;;:::i;:::-;197:17;:38;135:104;;;14:180:1;73:6;126:2;114:9;105:7;101:23;97:32;94:52;;;142:1;139;132:12;94:52;-1:-1:-1;165:23:1;;14:180;-1:-1:-1;14:180:1:o",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "store(uint256)": "6057361d"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_totalProjectFunds\",\"type\":\"uint256\"}],\"name\":\"store\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/TotalFundsStorage.sol\":\"TotalFundsStorage\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\"]},\"sources\":{\"src/TotalFundsStorage.sol\":{\"keccak256\":\"0xf1613c082172710f1aed86b1f15d16ed3c4c6944ba3b06d34c39208631a26f52\",\"license\":\"SEE LICENSE IN LICENSE\",\"urls\":[\"bzz-raw://09f532f10715679a47aa504e5f0244e0a90b76d4e659d71204d2a3bed99345a4\",\"dweb:/ipfs/QmayHzbT1PFzR6bRvhWhzgc2EkR1iRWRkgSFR28qDgnuV6\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.20+commit.a1b79de6"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "_totalProjectFunds",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "store"
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {},
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        ":ds-test/=lib/forge-std/lib/ds-test/src/",
+        ":forge-std/=lib/forge-std/src/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "src/TotalFundsStorage.sol": "TotalFundsStorage"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "src/TotalFundsStorage.sol": {
+        "keccak256": "0xf1613c082172710f1aed86b1f15d16ed3c4c6944ba3b06d34c39208631a26f52",
+        "urls": [
+          "bzz-raw://09f532f10715679a47aa504e5f0244e0a90b76d4e659d71204d2a3bed99345a4",
+          "dweb:/ipfs/QmayHzbT1PFzR6bRvhWhzgc2EkR1iRWRkgSFR28qDgnuV6"
+        ],
+        "license": "SEE LICENSE IN LICENSE"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "src/TotalFundsStorage.sol",
+    "id": 15,
+    "exportedSymbols": {
+      "TotalFundsStorage": [
+        14
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "51:191:0",
+    "nodes": [
+      {
+        "id": 1,
+        "nodeType": "PragmaDirective",
+        "src": "51:23:0",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "0.8",
+          ".20"
+        ]
+      },
+      {
+        "id": 14,
+        "nodeType": "ContractDefinition",
+        "src": "76:165:0",
+        "nodes": [
+          {
+            "id": 3,
+            "nodeType": "VariableDeclaration",
+            "src": "106:25:0",
+            "nodes": [],
+            "constant": false,
+            "mutability": "mutable",
+            "name": "totalProjectFunds",
+            "nameLocation": "114:17:0",
+            "scope": 14,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 2,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "106:7:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "id": 13,
+            "nodeType": "FunctionDefinition",
+            "src": "135:104:0",
+            "nodes": [],
+            "body": {
+              "id": 12,
+              "nodeType": "Block",
+              "src": "193:46:0",
+              "nodes": [],
+              "statements": [
+                {
+                  "expression": {
+                    "id": 10,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 8,
+                      "name": "totalProjectFunds",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3,
+                      "src": "197:17:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 9,
+                      "name": "_totalProjectFunds",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5,
+                      "src": "217:18:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "197:38:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 11,
+                  "nodeType": "ExpressionStatement",
+                  "src": "197:38:0"
+                }
+              ]
+            },
+            "functionSelector": "6057361d",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "store",
+            "nameLocation": "144:5:0",
+            "parameters": {
+              "id": 6,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5,
+                  "mutability": "mutable",
+                  "name": "_totalProjectFunds",
+                  "nameLocation": "158:18:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13,
+                  "src": "150:26:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "150:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "149:28:0"
+            },
+            "returnParameters": {
+              "id": 7,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "193:0:0"
+            },
+            "scope": 14,
+            "stateMutability": "nonpayable",
+            "virtual": true,
+            "visibility": "public"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "TotalFundsStorage",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "linearizedBaseContracts": [
+          14
+        ],
+        "name": "TotalFundsStorage",
+        "nameLocation": "85:17:0",
+        "scope": 15,
+        "usedErrors": [],
+        "usedEvents": []
+      }
+    ],
+    "license": "SEE LICENSE IN LICENSE"
+  },
+  "id": 0
+}
