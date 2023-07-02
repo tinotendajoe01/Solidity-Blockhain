@@ -1,25 +1,29 @@
-# BasicNft.sol
+```markdown
+# BasicNft Smart Contract
 
-The BasicNft smart contract is an implementation of a basic Non-Fungible Token (NFT) contract using the ERC721 standard from OpenZeppelin. The contract allows for the minting of new tokens, each with a unique URI that links to its metadata.
+The `BasicNft` smart contract is an implementation of a basic Non-Fungible Token (NFT) contract using the `ERC721` standard from `OpenZeppelin`. The contract allows for the minting of new tokens, each with a unique URI that links to its metadata.
 
 Breaking down this contract:
 
 The contract starts with specifying the Solidity version and importing the ERC721 contract from OpenZeppelin. OpenZeppelin is a library for secure smart contract development.
-
 ```
+
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.20;
 
 import { ERC721 } from "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+
 ```
 
 The contract BasicNft is defined, which inherits from the ERC721 contract. The contract has a mapping `s_tokenIdToUri` to store the URI for each token ID, and a counter `s_tokenCounter` to keep track of the total number of minted tokens.
 
 ```
+
 contract BasicNft is ERC721 {
-	error BasicNft__TokenUriNotFound();
-	mapping(uint256 => string) private s_tokenIdToUri;
-	uint256 private s_tokenCounter;
+error BasicNft\_\_TokenUriNotFound();
+mapping(uint256 => string) private s_tokenIdToUri;
+uint256 private s_tokenCounter;
+
 ```
 
 The constructor initializes the ERC721 contract with a name and symbol, and sets the token counter to zero.
@@ -29,36 +33,42 @@ s_tokenCounter = 0;
 The mintNft function allows a user to mint a new token with a specific URI. The function updates the `s_tokenIdToUri` mapping and increments the token counter.
 
 ```
+
 function mintNft(string memory tokenUri) public {
 s_tokenIdToUri[s_tokenCounter] = tokenUri;
 \_safeMint(msg.sender, s_tokenCounter);
 s_tokenCounter = s_tokenCounter + 1;
 }
+
 ```
 
 The tokenURI function is an override of the tokenURI function in the ERC721 contract. It returns the URI of a specific token. If the token does not exist, it reverts the transaction with a BasicNft\*\*TokenUriNotFound error.
 
 ```
+
 function tokenURI(
 uint256 tokenId
 ) public view override returns (string memory) {
 if (!\_exists(tokenId)) {
-revert BasicNft**TokenUriNotFound();
+revert BasicNft\*\*TokenUriNotFound();
 }
 return s_tokenIdToUri[tokenId];
 }
+
 ```
 
 The getTokenCounter function returns the current value of the token counter.
 
 ```
+
 function getTokenCounter() public view returns (uint256) {
 return s_tokenCounter;
 }
 }
+
 ```
 
-Certainly! Here is the `README.md` file that you can copy and paste:
+```
 
 ```markdown
 # MoodNft Smart Contract
@@ -110,7 +120,14 @@ Please note that this is a high-level explanation of the `MoodNft` smart contrac
 The `constructor` function initializes the contract by setting the initial values for the sad and happy SVG URIs. It takes two parameters, `sadSvgUri` and `happySvgUri`, which are the URIs for the SVG images representing the sad and happy moods respectively. These URIs are stored in the contract's state variables `s_sadSvgUri` and `s_happySvgUri`. Here's the code snippet:
 
 ```
-solidity constructor(string memory sadSvgUri, string memory happySvgUri) ERC721("Mood NFT", "MN") { s_tokenCounter = 0; s_sadSvgUri = sadSvgUri; s_happySvgUri = happySvgUri; }
+	constructor(
+		string memory sadSvgUri,
+		string memory happySvgUri
+	) ERC721("Mood NFT", "MN") {
+		s_tokenCounter = 0;
+		s_sadSvgUri = sadSvgUri;
+		s_happySvgUri = happySvgUri;
+	}
 ```
 
 ### `_baseURI` Function
@@ -118,7 +135,9 @@ solidity constructor(string memory sadSvgUri, string memory happySvgUri) ERC721(
 The `_baseURI` function is an internal function that is used to return the base URI for the token metadata. In this contract, the base URI is set to `"data:application/json;base64,"`, which indicates that the metadata is encoded in base64 format. Here's the code snippet:
 
 ```
-solidity function _baseURI() internal pure override returns (string memory) { return "data:application/json;base64,"; }
+	function _baseURI() internal pure override returns (string memory) {
+		return "data:application/json;base64,";
+	}
 
 ```
 
@@ -164,7 +183,5 @@ The `tokenURI` function is a public view function that returns the metadata URI 
 The `abi.encodePacked` function is used to concatenate multiple strings and variables into a single byte array. In the `tokenURI` function, it is used to concatenate the different components of the JSON metadata string.
 
 The `Base64.encode` function from the OpenZeppelin library is used to encode the JSON string in base64 format. It takes a byte array as input and returns the base64 encoded string.
-
-Please note that the code snippets provided are simplified for explanation purposes. The actual implementation might include additional checks and error handling.
 
 ...
