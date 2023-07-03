@@ -796,6 +796,61 @@
         }
       }
     },
+    "script/DeployFundProject.s.sol": {
+      "lastModificationDate": 1688388116098,
+      "contentHash": "60e393ec66334000f813e777c9af4c63",
+      "sourceName": "script/DeployFundProject.s.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/forge-std/src/Base.sol",
+        "lib/forge-std/src/Script.sol",
+        "lib/forge-std/src/StdChains.sol",
+        "lib/forge-std/src/StdCheats.sol",
+        "lib/forge-std/src/StdJson.sol",
+        "lib/forge-std/src/StdMath.sol",
+        "lib/forge-std/src/StdStorage.sol",
+        "lib/forge-std/src/StdUtils.sol",
+        "lib/forge-std/src/Vm.sol",
+        "lib/forge-std/src/console.sol",
+        "lib/forge-std/src/console2.sol",
+        "lib/forge-std/src/interfaces/IMulticall3.sol",
+        "src/FundProject.sol",
+        "src/ProjectsStorage.sol"
+      ],
+      "versionRequirement": "=0.8.20",
+      "artifacts": {
+        "DeployFundProject": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "DeployFundProject.s.sol/DeployFundProject.json"
+        }
+      }
+    },
     "script/DeployProjectsStorage.s.sol": {
       "lastModificationDate": 1688375179418,
       "contentHash": "5325c4bf127bbaca2ef27c51e290a68a",
@@ -851,8 +906,8 @@
       }
     },
     "src/FundProject.sol": {
-      "lastModificationDate": 1688374509491,
-      "contentHash": "e47ea73dfd458cee81a7bbd92311a516",
+      "lastModificationDate": 1688389629301,
+      "contentHash": "5046223a2660b99d4d412f68a92f435c",
       "sourceName": "src/FundProject.sol",
       "solcConfig": {
         "settings": {
@@ -929,6 +984,68 @@
       "artifacts": {
         "ProjectsStorage": {
           "0.8.20+commit.a1b79de6.Darwin.appleclang": "ProjectsStorage.sol/ProjectsStorage.json"
+        }
+      }
+    },
+    "test/testFundProject.t.sol": {
+      "lastModificationDate": 1688389752693,
+      "contentHash": "4cc7c4151eba1c5278411905e421f057",
+      "sourceName": "test/testFundProject.t.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/forge-std/lib/ds-test/src/test.sol",
+        "lib/forge-std/src/Base.sol",
+        "lib/forge-std/src/Script.sol",
+        "lib/forge-std/src/StdAssertions.sol",
+        "lib/forge-std/src/StdChains.sol",
+        "lib/forge-std/src/StdCheats.sol",
+        "lib/forge-std/src/StdError.sol",
+        "lib/forge-std/src/StdInvariant.sol",
+        "lib/forge-std/src/StdJson.sol",
+        "lib/forge-std/src/StdMath.sol",
+        "lib/forge-std/src/StdStorage.sol",
+        "lib/forge-std/src/StdStyle.sol",
+        "lib/forge-std/src/StdUtils.sol",
+        "lib/forge-std/src/Test.sol",
+        "lib/forge-std/src/Vm.sol",
+        "lib/forge-std/src/console.sol",
+        "lib/forge-std/src/console2.sol",
+        "lib/forge-std/src/interfaces/IMulticall3.sol",
+        "script/DeployFundProject.s.sol",
+        "src/FundProject.sol",
+        "src/ProjectsStorage.sol"
+      ],
+      "versionRequirement": "=0.8.20",
+      "artifacts": {
+        "TestFundProject": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "testFundProject.t.sol/TestFundProject.json"
         }
       }
     },
