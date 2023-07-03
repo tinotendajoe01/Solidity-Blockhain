@@ -6,7 +6,7 @@ import { FundProject } from "../src/FundProject.sol";
 
 contract TestFundProject is Test {
 	FundProject fundProject;
-	uint256 public constant AMOUNT = 70; // just a value to make sure we are sending enough!
+	uint256 public constant AMOUNT = 70;
 
 	address public constant FUNDER = address(1);
 
@@ -17,12 +17,18 @@ contract TestFundProject is Test {
 	}
 
 	function testCanFundProject() public {
-		vm.prank(msg.sender);
+		vm.startPrank(msg.sender);
 		fundProject.addProject("Sushi", 500);
-		vm.prank(FUNDER);
-		fundProject.fund{ value: AMOUNT }("Sushi");
 
-		uint256 expectedTotalFunds = AMOUNT;
+		vm.stopPrank();
+		vm.startPrank(FUNDER);
+		fundProject.fund{ value: 2 }("Sushi");
+		fundProject.fund{ value: 2 }("Sushi");
+		vm.stopPrank();
+		uint256 endingUserBalance = FUNDER.balance;
+		console.log(endingUserBalance);
+
+		uint256 expectedTotalFunds = 4;
 		uint256 actualTotalFunds = fundProject.projectBalance("Sushi");
 		assertEq(expectedTotalFunds, actualTotalFunds);
 	}
