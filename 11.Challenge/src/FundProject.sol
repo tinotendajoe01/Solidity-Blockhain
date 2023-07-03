@@ -1,9 +1,22 @@
 // SPDX-License-Identifier: SEE LICENSE IN LICENSE
 pragma solidity 0.8.20;
 import { ProjectsStorage } from "./ProjectsStorage.sol";
+import { PriceConvertor } from "./PriceConvertor.sol";
+import { AggregatorV3Interface } from "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
+
 error Project_Does_Not_Exist();
 
+/**
+ * @title A Funding contract for a crowdfunding app
+ * @author Tinotenda Joe
+ * @notice ///
+ * @dev This implements price feeds AggregatorV3Interface from the Chainlink package
+ */
 contract FundProject is ProjectsStorage {
+	using PriceConvertor for uint256;
+	uint256 private constant MINIMUN_USD = 5e18;
+	AggregatorV3Interface private s_privateFeed;
+
 	constructor() {}
 
 	function fund(string memory _name) public payable {
