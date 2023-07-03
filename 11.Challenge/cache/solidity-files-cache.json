@@ -11,9 +11,51 @@
     ]
   },
   "files": {
+    "src/FundProject.sol": {
+      "lastModificationDate": 1688371943738,
+      "contentHash": "b6d7c950cf736efec9b6a153d75c248c",
+      "sourceName": "src/FundProject.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "src/TotalFundsStorage.sol"
+      ],
+      "versionRequirement": "=0.8.20",
+      "artifacts": {
+        "FundProject": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "FundProject.sol/FundProject.json"
+        }
+      }
+    },
     "src/TotalFundsStorage.sol": {
-      "lastModificationDate": 1688312626378,
-      "contentHash": "897c23cc59f47e160436533a9890e9bc",
+      "lastModificationDate": 1688372552838,
+      "contentHash": "353600a03d35bbe14ec1b63205b08f77",
       "sourceName": "src/TotalFundsStorage.sol",
       "solcConfig": {
         "settings": {
@@ -46,8 +88,8 @@
       "imports": [],
       "versionRequirement": "=0.8.20",
       "artifacts": {
-        "TotalFundsStorage": {
-          "0.8.20+commit.a1b79de6.Darwin.appleclang": "TotalFundsStorage.sol/TotalFundsStorage.json"
+        "ProjectsStorage": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "TotalFundsStorage.sol/ProjectsStorage.json"
         }
       }
     }
