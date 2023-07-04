@@ -88,6 +88,20 @@ contract FundProject is ProjectsStorage, ERC721 {
 		}
 	}
 
+	function mintRaffleNFT(address recipient) internal returns (uint256) {
+		raffleTokenIdCounter++;
+		uint256 tokenId = raffleTokenIdCounter;
+
+		// Generate random metadata for the NFT
+		string memory metadata = generateRandomMetadata();
+		raffleTokenIdToMetadata[tokenId] = metadata;
+
+		// Mint the NFT and assign it to the recipient
+		_mint(recipient, tokenId);
+
+		return tokenId;
+	}
+
 	function projectBalance(string memory _name) public view returns (uint256) {
 		uint256 projectId = projectNameToId[_name];
 
