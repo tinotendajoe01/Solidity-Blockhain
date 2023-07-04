@@ -26,8 +26,8 @@ contract FundProject is ProjectsStorage {
 		uint256 projectId = projectNameToId[_name];
 
 		if (projectId == 0) revert Project_Does_Not_Exist();
-		if (msg.value.getConversionRate(s_priceFeed) < MINIMUN_USD)
-			revert Insuficient_Eth();
+		// if (msg.value.getConversionRate(s_priceFeed) < MINIMUN_USD)
+		// revert Insuficient_Eth();
 		Project storage project = listofProjects[projectId - 1];
 		project.totalFundsRaised += msg.value;
 		project.funders.push(msg.sender);
@@ -39,5 +39,9 @@ contract FundProject is ProjectsStorage {
 		if (projectId == 0) revert Project_Does_Not_Exist();
 		Project storage project = listofProjects[projectId - 1];
 		return project.totalFundsRaised;
+	}
+
+	function getPriceFeed() public view returns (AggregatorV3Interface) {
+		return s_priceFeed;
 	}
 }

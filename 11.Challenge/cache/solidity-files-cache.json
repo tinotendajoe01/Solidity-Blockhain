@@ -11,6 +11,46 @@
     ]
   },
   "files": {
+    "lib/chainlink-brownie-contracts/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol": {
+      "lastModificationDate": 1687423734232,
+      "contentHash": "d9654a0fc044a31d4106ee6bca772add",
+      "sourceName": "lib/chainlink-brownie-contracts/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "AggregatorV3Interface": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "AggregatorV3Interface.sol/AggregatorV3Interface.json"
+        }
+      }
+    },
     "lib/forge-std/lib/ds-test/src/test.sol": {
       "lastModificationDate": 1687331747298,
       "contentHash": "9febff9d09f18af5306669dc276c4c43",
@@ -797,8 +837,8 @@
       }
     },
     "script/DeployFundProject.s.sol": {
-      "lastModificationDate": 1688388116098,
-      "contentHash": "60e393ec66334000f813e777c9af4c63",
+      "lastModificationDate": 1688456445109,
+      "contentHash": "b1d17d7e7e53e70953e4c3a54e7ec113",
       "sourceName": "script/DeployFundProject.s.sol",
       "solcConfig": {
         "settings": {
@@ -829,6 +869,7 @@
         }
       },
       "imports": [
+        "lib/chainlink-brownie-contracts/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol",
         "lib/forge-std/src/Base.sol",
         "lib/forge-std/src/Script.sol",
         "lib/forge-std/src/StdChains.sol",
@@ -841,8 +882,11 @@
         "lib/forge-std/src/console.sol",
         "lib/forge-std/src/console2.sol",
         "lib/forge-std/src/interfaces/IMulticall3.sol",
+        "script/HelperConfig.s.sol",
         "src/FundProject.sol",
-        "src/ProjectsStorage.sol"
+        "src/PriceConvertor.sol",
+        "src/ProjectsStorage.sol",
+        "test/mock/MockV3Aggregator.sol"
       ],
       "versionRequirement": "=0.8.20",
       "artifacts": {
@@ -905,9 +949,63 @@
         }
       }
     },
+    "script/HelperConfig.s.sol": {
+      "lastModificationDate": 1688456157062,
+      "contentHash": "58c7454f66b1e7dd8e00ccd5d239ce2d",
+      "sourceName": "script/HelperConfig.s.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/forge-std/src/Base.sol",
+        "lib/forge-std/src/Script.sol",
+        "lib/forge-std/src/StdChains.sol",
+        "lib/forge-std/src/StdCheats.sol",
+        "lib/forge-std/src/StdJson.sol",
+        "lib/forge-std/src/StdMath.sol",
+        "lib/forge-std/src/StdStorage.sol",
+        "lib/forge-std/src/StdUtils.sol",
+        "lib/forge-std/src/Vm.sol",
+        "lib/forge-std/src/console.sol",
+        "lib/forge-std/src/console2.sol",
+        "lib/forge-std/src/interfaces/IMulticall3.sol",
+        "test/mock/MockV3Aggregator.sol"
+      ],
+      "versionRequirement": "=0.8.20",
+      "artifacts": {
+        "HelperConfig": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "HelperConfig.s.sol/HelperConfig.json"
+        }
+      }
+    },
     "src/FundProject.sol": {
-      "lastModificationDate": 1688389629301,
-      "contentHash": "5046223a2660b99d4d412f68a92f435c",
+      "lastModificationDate": 1688459152617,
+      "contentHash": "800ff41a4f8235742f14374ed285fea0",
       "sourceName": "src/FundProject.sol",
       "solcConfig": {
         "settings": {
@@ -938,12 +1036,56 @@
         }
       },
       "imports": [
+        "lib/chainlink-brownie-contracts/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol",
+        "src/PriceConvertor.sol",
         "src/ProjectsStorage.sol"
       ],
       "versionRequirement": "=0.8.20",
       "artifacts": {
         "FundProject": {
           "0.8.20+commit.a1b79de6.Darwin.appleclang": "FundProject.sol/FundProject.json"
+        }
+      }
+    },
+    "src/PriceConvertor.sol": {
+      "lastModificationDate": 1688394719354,
+      "contentHash": "de26480033e12c0ec1bd0d4a7d0b93ed",
+      "sourceName": "src/PriceConvertor.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/chainlink-brownie-contracts/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol"
+      ],
+      "versionRequirement": "=0.8.20",
+      "artifacts": {
+        "PriceConvertor": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "PriceConvertor.sol/PriceConvertor.json"
         }
       }
     },
@@ -987,9 +1129,49 @@
         }
       }
     },
+    "test/mock/MockV3Aggregator.sol": {
+      "lastModificationDate": 1688455129045,
+      "contentHash": "e25ba624110fd5bc7391d46be924fe1a",
+      "sourceName": "test/mock/MockV3Aggregator.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "MockV3Aggregator": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "MockV3Aggregator.sol/MockV3Aggregator.json"
+        }
+      }
+    },
     "test/testFundProject.t.sol": {
-      "lastModificationDate": 1688390968506,
-      "contentHash": "eff81e05303802c158062e6ed2da16f3",
+      "lastModificationDate": 1688458444391,
+      "contentHash": "4d4fd91a2dab04e7e499789b76117736",
       "sourceName": "test/testFundProject.t.sol",
       "solcConfig": {
         "settings": {
@@ -1020,6 +1202,7 @@
         }
       },
       "imports": [
+        "lib/chainlink-brownie-contracts/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol",
         "lib/forge-std/lib/ds-test/src/test.sol",
         "lib/forge-std/src/Base.sol",
         "lib/forge-std/src/Script.sol",
@@ -1039,8 +1222,11 @@
         "lib/forge-std/src/console2.sol",
         "lib/forge-std/src/interfaces/IMulticall3.sol",
         "script/DeployFundProject.s.sol",
+        "script/HelperConfig.s.sol",
         "src/FundProject.sol",
-        "src/ProjectsStorage.sol"
+        "src/PriceConvertor.sol",
+        "src/ProjectsStorage.sol",
+        "test/mock/MockV3Aggregator.sol"
       ],
       "versionRequirement": "=0.8.20",
       "artifacts": {

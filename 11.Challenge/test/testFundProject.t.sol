@@ -3,17 +3,28 @@ pragma solidity 0.8.20;
 import { Test, console } from "forge-std/Test.sol";
 import { DeployFundProject } from "../script/DeployFundProject.s.sol";
 import { FundProject } from "../src/FundProject.sol";
+import { HelperConfig } from "../script/HelperConfig.s.sol";
+import { StdCheats } from "forge-std/StdCheats.sol";
 
 contract TestFundProject is Test {
 	FundProject fundProject;
-	uint256 public constant AMOUNT = 70;
-
+	HelperConfig public helperConfig;
+	uint256 public constant AMOUNT = 0.2 ether;
+	uint256 public constant STARTING_FUNDER_BALANCE = 10 ether;
+	uint256 public constant GAS_PRICE = 1;
 	address public constant FUNDER = address(1);
 
 	function setUp() external {
 		DeployFundProject deployer = new DeployFundProject();
-		fundProject = deployer.run();
-		vm.deal(FUNDER, AMOUNT);
+		(fundProject, helperConfig) = deployer.run();
+		vm.deal(FUNDER, STARTING_FUNDER_BALANCE);
+	}
+
+	function testPriceFeedSetCorrectly() public {
+		address retreivedPriceFeed = address(fundProject.getPriceFeed());
+		// (address expectedPriceFeed) = helperConfig.activeNetworkConfig();
+		address expectedPriceFeed = helperConfig.activeNetworkConfig();
+		assertEq(retreivedPriceFeed, expectedPriceFeed);
 	}
 
 	function testCanFundProject() public {
@@ -22,13 +33,13 @@ contract TestFundProject is Test {
 
 		vm.stopPrank();
 		vm.startPrank(FUNDER);
-		fundProject.fund{ value: 2 }("Sushi");
-		fundProject.fund{ value: 2 }("Sushi");
+		fundProject.fund{ value: AMOUNT }("Sushi");
+
 		vm.stopPrank();
 		uint256 endingUserBalance = FUNDER.balance;
 		console.log(endingUserBalance);
 
-		uint256 expectedTotalFunds = 4;
+		uint256 expectedTotalFunds = AMOUNT;
 		uint256 actualTotalFunds = fundProject.projectBalance("Sushi");
 		assertEq(expectedTotalFunds, actualTotalFunds);
 	}
