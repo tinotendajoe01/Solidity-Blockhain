@@ -59,7 +59,7 @@ contract FundMe {
 		i_owner = msg.sender;
 	}
 
-	/// @notice Funds our contract based on the ETH/USD price
+	/// @notice Funds ou`r contract based on the ETH/USD price
 	// Function to fund the contract
 	function fund() public payable {
 		// Check if the amount of ETH sent is enough based on the current conversion rate
