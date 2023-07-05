@@ -3,15 +3,12 @@ pragma solidity 0.8.20;
 
 contract Name {
 	function generateRandomMetadata() internal view returns (string memory) {
-		// Generate a random identifier using the block timestamp and the current block number
 		bytes32 randomHash = keccak256(
 			abi.encodePacked(block.timestamp, block.number)
 		);
 
-		// Convert the random hash to a string
 		string memory randomString = bytes32ToString(randomHash);
 
-		// Concatenate the random string with a prefix to create the final metadata
 		string memory metadata = string(
 			abi.encodePacked("Random NFT Metadata: ", randomString)
 		);
