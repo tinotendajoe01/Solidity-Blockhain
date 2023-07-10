@@ -1,6 +1,6 @@
 # Blockchain and the Evolution of the Web - A Primer
 
-This README serves as a high-level guide to some key concepts in the blockchain space and the evolution of the internet.
+This section serves as a high-level guide to some key concepts in the blockchain space and the evolution of the internet.
 
 ## Blockchain Overview
 
