@@ -3,6 +3,7 @@ pragma solidity 0.8.20;
 import { ProjectsStorage } from "./ProjectsStorage.sol";
 import { AggregatorV3Interface } from "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
 import { PriceConvertor } from "./PriceConvertor.sol";
+import { FundRaffleMoodNft } from "./FundRaffleNft.sol";
 
 error Project_Does_Not_Exist();
 error Insufficient_Eth();
@@ -11,9 +12,12 @@ contract FundProject is ProjectsStorage {
 	using PriceConvertor for uint256;
 	uint256 public constant MINIMUM_USD = 5e18;
 	AggregatorV3Interface private s_priceFeed;
+	// NFT Minting contract
+	FundRaffleMoodNft private raffleMOODNFT;
 
-	constructor(address priceFeed) {
+	constructor(address priceFeed, address raffleMOODNFTAddress) {
 		s_priceFeed = AggregatorV3Interface(priceFeed);
+		raffleMOODNFT = FundRaffleMoodNft(raffleMOODNFTAddress);
 	}
 
 	function fund(string memory _name, uint256 _amount) public payable {
@@ -26,6 +30,9 @@ contract FundProject is ProjectsStorage {
 		Project storage project = listofProjects[projectId - 1];
 		project.totalFundsRaised += _amount;
 		project.funders.push(msg.sender);
+
+		// Call the mintNft function of the FundRaffleMoodNft contract
+		raffleMOODNFT.mintNft(msg.sender);
 	}
 
 	function getProjectBalance(

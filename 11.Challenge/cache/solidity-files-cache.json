@@ -836,9 +836,558 @@
         }
       }
     },
+    "lib/openzeppelin-contracts/contracts/access/Ownable.sol": {
+      "lastModificationDate": 1688117657796,
+      "contentHash": "ecaa15ec87a72bf88d7be9482325657c",
+      "sourceName": "lib/openzeppelin-contracts/contracts/access/Ownable.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/openzeppelin-contracts/contracts/utils/Context.sol"
+      ],
+      "versionRequirement": "^0.8.20",
+      "artifacts": {
+        "Ownable": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "Ownable.sol/Ownable.json"
+        }
+      }
+    },
+    "lib/openzeppelin-contracts/contracts/interfaces/draft-IERC6093.sol": {
+      "lastModificationDate": 1688117654514,
+      "contentHash": "fda91ae44c2a88b828a0a9dfd8c7bac0",
+      "sourceName": "lib/openzeppelin-contracts/contracts/interfaces/draft-IERC6093.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.20",
+      "artifacts": {
+        "IERC1155Errors": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "draft-IERC6093.sol/IERC1155Errors.json"
+        },
+        "IERC20Errors": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "draft-IERC6093.sol/IERC20Errors.json"
+        },
+        "IERC721Errors": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "draft-IERC6093.sol/IERC721Errors.json"
+        }
+      }
+    },
+    "lib/openzeppelin-contracts/contracts/token/ERC721/ERC721.sol": {
+      "lastModificationDate": 1688117662683,
+      "contentHash": "8c2774810d1fa2a739967b1f3c44858b",
+      "sourceName": "lib/openzeppelin-contracts/contracts/token/ERC721/ERC721.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/openzeppelin-contracts/contracts/interfaces/draft-IERC6093.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/IERC721.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/IERC721Receiver.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/extensions/IERC721Metadata.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Context.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Strings.sol",
+        "lib/openzeppelin-contracts/contracts/utils/introspection/ERC165.sol",
+        "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol",
+        "lib/openzeppelin-contracts/contracts/utils/math/Math.sol",
+        "lib/openzeppelin-contracts/contracts/utils/math/SignedMath.sol"
+      ],
+      "versionRequirement": "^0.8.20",
+      "artifacts": {
+        "ERC721": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "ERC721.sol/ERC721.json"
+        }
+      }
+    },
+    "lib/openzeppelin-contracts/contracts/token/ERC721/IERC721.sol": {
+      "lastModificationDate": 1688117662501,
+      "contentHash": "a6f410da7ea9c38fa437345aae205a62",
+      "sourceName": "lib/openzeppelin-contracts/contracts/token/ERC721/IERC721.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol"
+      ],
+      "versionRequirement": "^0.8.20",
+      "artifacts": {
+        "IERC721": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "IERC721.sol/IERC721.json"
+        }
+      }
+    },
+    "lib/openzeppelin-contracts/contracts/token/ERC721/IERC721Receiver.sol": {
+      "lastModificationDate": 1688117662378,
+      "contentHash": "2a849a7a71d5463f2462feba9bedfaeb",
+      "sourceName": "lib/openzeppelin-contracts/contracts/token/ERC721/IERC721Receiver.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.20",
+      "artifacts": {
+        "IERC721Receiver": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "IERC721Receiver.sol/IERC721Receiver.json"
+        }
+      }
+    },
+    "lib/openzeppelin-contracts/contracts/token/ERC721/extensions/IERC721Metadata.sol": {
+      "lastModificationDate": 1688117663560,
+      "contentHash": "dd62eb98d27190d58287ab411db93ef0",
+      "sourceName": "lib/openzeppelin-contracts/contracts/token/ERC721/extensions/IERC721Metadata.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/openzeppelin-contracts/contracts/token/ERC721/IERC721.sol",
+        "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol"
+      ],
+      "versionRequirement": "^0.8.20",
+      "artifacts": {
+        "IERC721Metadata": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "IERC721Metadata.sol/IERC721Metadata.json"
+        }
+      }
+    },
+    "lib/openzeppelin-contracts/contracts/utils/Base64.sol": {
+      "lastModificationDate": 1688117656891,
+      "contentHash": "9976230f9c1376e12cde2bd551075b4a",
+      "sourceName": "lib/openzeppelin-contracts/contracts/utils/Base64.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.20",
+      "artifacts": {
+        "Base64": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "Base64.sol/Base64.json"
+        }
+      }
+    },
+    "lib/openzeppelin-contracts/contracts/utils/Context.sol": {
+      "lastModificationDate": 1688117656841,
+      "contentHash": "09334082e90e487d918823170e4806b1",
+      "sourceName": "lib/openzeppelin-contracts/contracts/utils/Context.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.20",
+      "artifacts": {
+        "Context": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "Context.sol/Context.json"
+        }
+      }
+    },
+    "lib/openzeppelin-contracts/contracts/utils/Strings.sol": {
+      "lastModificationDate": 1688117656709,
+      "contentHash": "6aae38829261ab762999a0ab9780c595",
+      "sourceName": "lib/openzeppelin-contracts/contracts/utils/Strings.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/openzeppelin-contracts/contracts/utils/math/Math.sol",
+        "lib/openzeppelin-contracts/contracts/utils/math/SignedMath.sol"
+      ],
+      "versionRequirement": "^0.8.20",
+      "artifacts": {
+        "Strings": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "Strings.sol/Strings.json"
+        }
+      }
+    },
+    "lib/openzeppelin-contracts/contracts/utils/introspection/ERC165.sol": {
+      "lastModificationDate": 1688117661585,
+      "contentHash": "ebc29e4145e325da09f11fe2481abe21",
+      "sourceName": "lib/openzeppelin-contracts/contracts/utils/introspection/ERC165.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol"
+      ],
+      "versionRequirement": "^0.8.20",
+      "artifacts": {
+        "ERC165": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "ERC165.sol/ERC165.json"
+        }
+      }
+    },
+    "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol": {
+      "lastModificationDate": 1688117661331,
+      "contentHash": "5a21a24ec719b683e7faf6eae0db9181",
+      "sourceName": "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.20",
+      "artifacts": {
+        "IERC165": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "IERC165.sol/IERC165.json"
+        }
+      }
+    },
+    "lib/openzeppelin-contracts/contracts/utils/math/Math.sol": {
+      "lastModificationDate": 1688117660833,
+      "contentHash": "c6cb629d1ae31fba35697ff3f0e3f953",
+      "sourceName": "lib/openzeppelin-contracts/contracts/utils/math/Math.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.20",
+      "artifacts": {
+        "Math": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "Math.sol/Math.json"
+        }
+      }
+    },
+    "lib/openzeppelin-contracts/contracts/utils/math/SignedMath.sol": {
+      "lastModificationDate": 1688117660303,
+      "contentHash": "043001b4a3a329e572ece8f9cd5e7c2b",
+      "sourceName": "lib/openzeppelin-contracts/contracts/utils/math/SignedMath.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.20",
+      "artifacts": {
+        "SignedMath": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "SignedMath.sol/SignedMath.json"
+        }
+      }
+    },
     "script/DeployFundProject.s.sol": {
-      "lastModificationDate": 1688456445109,
-      "contentHash": "b1d17d7e7e53e70953e4c3a54e7ec113",
+      "lastModificationDate": 1689084167120,
+      "contentHash": "89bc89543ff394fca02c4ade98624d23",
       "sourceName": "script/DeployFundProject.s.sol",
       "solcConfig": {
         "settings": {
@@ -882,8 +1431,22 @@
         "lib/forge-std/src/console.sol",
         "lib/forge-std/src/console2.sol",
         "lib/forge-std/src/interfaces/IMulticall3.sol",
+        "lib/openzeppelin-contracts/contracts/access/Ownable.sol",
+        "lib/openzeppelin-contracts/contracts/interfaces/draft-IERC6093.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/ERC721.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/IERC721.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/IERC721Receiver.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/extensions/IERC721Metadata.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Base64.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Context.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Strings.sol",
+        "lib/openzeppelin-contracts/contracts/utils/introspection/ERC165.sol",
+        "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol",
+        "lib/openzeppelin-contracts/contracts/utils/math/Math.sol",
+        "lib/openzeppelin-contracts/contracts/utils/math/SignedMath.sol",
         "script/HelperConfig.s.sol",
         "src/FundProject.sol",
+        "src/FundRaffleNft.sol",
         "src/PriceConvertor.sol",
         "src/ProjectsStorage.sol",
         "test/mock/MockV3Aggregator.sol"
@@ -892,6 +1455,73 @@
       "artifacts": {
         "DeployFundProject": {
           "0.8.20+commit.a1b79de6.Darwin.appleclang": "DeployFundProject.s.sol/DeployFundProject.json"
+        }
+      }
+    },
+    "script/DeployFundRaffleNft.sol": {
+      "lastModificationDate": 1689084712976,
+      "contentHash": "2af4299f857574206e26a006e166f838",
+      "sourceName": "script/DeployFundRaffleNft.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/forge-std/src/Base.sol",
+        "lib/forge-std/src/Script.sol",
+        "lib/forge-std/src/StdChains.sol",
+        "lib/forge-std/src/StdCheats.sol",
+        "lib/forge-std/src/StdJson.sol",
+        "lib/forge-std/src/StdMath.sol",
+        "lib/forge-std/src/StdStorage.sol",
+        "lib/forge-std/src/StdUtils.sol",
+        "lib/forge-std/src/Vm.sol",
+        "lib/forge-std/src/console.sol",
+        "lib/forge-std/src/console2.sol",
+        "lib/forge-std/src/interfaces/IMulticall3.sol",
+        "lib/openzeppelin-contracts/contracts/access/Ownable.sol",
+        "lib/openzeppelin-contracts/contracts/interfaces/draft-IERC6093.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/ERC721.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/IERC721.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/IERC721Receiver.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/extensions/IERC721Metadata.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Base64.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Context.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Strings.sol",
+        "lib/openzeppelin-contracts/contracts/utils/introspection/ERC165.sol",
+        "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol",
+        "lib/openzeppelin-contracts/contracts/utils/math/Math.sol",
+        "lib/openzeppelin-contracts/contracts/utils/math/SignedMath.sol",
+        "src/FundRaffleNft.sol"
+      ],
+      "versionRequirement": "=0.8.20",
+      "artifacts": {
+        "DeployMoodNft": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "DeployFundRaffleNft.sol/DeployMoodNft.json"
         }
       }
     },
@@ -1004,8 +1634,8 @@
       }
     },
     "src/FundProject.sol": {
-      "lastModificationDate": 1689076135111,
-      "contentHash": "1fe68fc0671b6bc823869fef727e0f9c",
+      "lastModificationDate": 1689083893235,
+      "contentHash": "b1e049ca56e08478b12b2da6a952b10e",
       "sourceName": "src/FundProject.sol",
       "solcConfig": {
         "settings": {
@@ -1037,6 +1667,20 @@
       },
       "imports": [
         "lib/chainlink-brownie-contracts/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol",
+        "lib/openzeppelin-contracts/contracts/access/Ownable.sol",
+        "lib/openzeppelin-contracts/contracts/interfaces/draft-IERC6093.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/ERC721.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/IERC721.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/IERC721Receiver.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/extensions/IERC721Metadata.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Base64.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Context.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Strings.sol",
+        "lib/openzeppelin-contracts/contracts/utils/introspection/ERC165.sol",
+        "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol",
+        "lib/openzeppelin-contracts/contracts/utils/math/Math.sol",
+        "lib/openzeppelin-contracts/contracts/utils/math/SignedMath.sol",
+        "src/FundRaffleNft.sol",
         "src/PriceConvertor.sol",
         "src/ProjectsStorage.sol"
       ],
@@ -1044,6 +1688,60 @@
       "artifacts": {
         "FundProject": {
           "0.8.20+commit.a1b79de6.Darwin.appleclang": "FundProject.sol/FundProject.json"
+        }
+      }
+    },
+    "src/FundRaffleNft.sol": {
+      "lastModificationDate": 1689082507016,
+      "contentHash": "069bcf443ea22f4cc0ccee0158230f8a",
+      "sourceName": "src/FundRaffleNft.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/openzeppelin-contracts/contracts/access/Ownable.sol",
+        "lib/openzeppelin-contracts/contracts/interfaces/draft-IERC6093.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/ERC721.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/IERC721.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/IERC721Receiver.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/extensions/IERC721Metadata.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Base64.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Context.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Strings.sol",
+        "lib/openzeppelin-contracts/contracts/utils/introspection/ERC165.sol",
+        "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol",
+        "lib/openzeppelin-contracts/contracts/utils/math/Math.sol",
+        "lib/openzeppelin-contracts/contracts/utils/math/SignedMath.sol"
+      ],
+      "versionRequirement": "^0.8.6",
+      "artifacts": {
+        "FundRaffleMoodNft": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "FundRaffleNft.sol/FundRaffleMoodNft.json"
         }
       }
     },
@@ -1170,8 +1868,8 @@
       }
     },
     "test/testFundProject.t.sol": {
-      "lastModificationDate": 1689075536557,
-      "contentHash": "517ac700f131493bb91888219c0452d0",
+      "lastModificationDate": 1689086004385,
+      "contentHash": "3caf3e649473389cfc2c025409f3666a",
       "sourceName": "test/testFundProject.t.sol",
       "solcConfig": {
         "settings": {
@@ -1221,9 +1919,23 @@
         "lib/forge-std/src/console.sol",
         "lib/forge-std/src/console2.sol",
         "lib/forge-std/src/interfaces/IMulticall3.sol",
+        "lib/openzeppelin-contracts/contracts/access/Ownable.sol",
+        "lib/openzeppelin-contracts/contracts/interfaces/draft-IERC6093.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/ERC721.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/IERC721.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/IERC721Receiver.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/extensions/IERC721Metadata.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Base64.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Context.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Strings.sol",
+        "lib/openzeppelin-contracts/contracts/utils/introspection/ERC165.sol",
+        "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol",
+        "lib/openzeppelin-contracts/contracts/utils/math/Math.sol",
+        "lib/openzeppelin-contracts/contracts/utils/math/SignedMath.sol",
         "script/DeployFundProject.s.sol",
         "script/HelperConfig.s.sol",
         "src/FundProject.sol",
+        "src/FundRaffleNft.sol",
         "src/PriceConvertor.sol",
         "src/ProjectsStorage.sol",
         "test/mock/MockV3Aggregator.sol"
@@ -1232,6 +1944,80 @@
       "artifacts": {
         "TestFundProject": {
           "0.8.20+commit.a1b79de6.Darwin.appleclang": "testFundProject.t.sol/TestFundProject.json"
+        }
+      }
+    },
+    "test/testFundRaffleMoodNft.t.sol": {
+      "lastModificationDate": 1689085458003,
+      "contentHash": "079c95b345ceeec7233cdaa609c00f77",
+      "sourceName": "test/testFundRaffleMoodNft.t.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/forge-std/lib/ds-test/src/test.sol",
+        "lib/forge-std/src/Base.sol",
+        "lib/forge-std/src/Script.sol",
+        "lib/forge-std/src/StdAssertions.sol",
+        "lib/forge-std/src/StdChains.sol",
+        "lib/forge-std/src/StdCheats.sol",
+        "lib/forge-std/src/StdError.sol",
+        "lib/forge-std/src/StdInvariant.sol",
+        "lib/forge-std/src/StdJson.sol",
+        "lib/forge-std/src/StdMath.sol",
+        "lib/forge-std/src/StdStorage.sol",
+        "lib/forge-std/src/StdStyle.sol",
+        "lib/forge-std/src/StdUtils.sol",
+        "lib/forge-std/src/Test.sol",
+        "lib/forge-std/src/Vm.sol",
+        "lib/forge-std/src/console.sol",
+        "lib/forge-std/src/console2.sol",
+        "lib/forge-std/src/interfaces/IMulticall3.sol",
+        "lib/openzeppelin-contracts/contracts/access/Ownable.sol",
+        "lib/openzeppelin-contracts/contracts/interfaces/draft-IERC6093.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/ERC721.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/IERC721.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/IERC721Receiver.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/extensions/IERC721Metadata.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Base64.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Context.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Strings.sol",
+        "lib/openzeppelin-contracts/contracts/utils/introspection/ERC165.sol",
+        "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol",
+        "lib/openzeppelin-contracts/contracts/utils/math/Math.sol",
+        "lib/openzeppelin-contracts/contracts/utils/math/SignedMath.sol",
+        "script/DeployFundRaffleNft.sol",
+        "src/FundRaffleNft.sol"
+      ],
+      "versionRequirement": "^0.8.20",
+      "artifacts": {
+        "MoodNftTest": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "testFundRaffleMoodNft.t.sol/MoodNftTest.json"
         }
       }
     },
