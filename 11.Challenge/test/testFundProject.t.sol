@@ -22,7 +22,7 @@ contract TestFundProject is Test {
 
 	function testPriceFeedSetCorrectly() public {
 		address retreivedPriceFeed = address(fundProject.getPriceFeed());
-		// (address expectedPriceFeed) = helperConfig.activeNetworkConfig();
+
 		address expectedPriceFeed = helperConfig.activeNetworkConfig();
 		assertEq(retreivedPriceFeed, expectedPriceFeed);
 	}
@@ -30,17 +30,14 @@ contract TestFundProject is Test {
 	function testCanFundProject() public {
 		vm.startPrank(msg.sender);
 		fundProject.addProject("Sushi", 500);
-
 		vm.stopPrank();
 		vm.startPrank(FUNDER);
-		fundProject.fund{ value: AMOUNT }("Sushi");
-
+		fundProject.fund{ value: AMOUNT }("Sushi", AMOUNT);
 		vm.stopPrank();
 		uint256 endingUserBalance = FUNDER.balance;
 		console.log(endingUserBalance);
-
 		uint256 expectedTotalFunds = AMOUNT;
-		uint256 actualTotalFunds = fundProject.projectBalance("Sushi");
+		uint256 actualTotalFunds = fundProject.getProjectBalance("Sushi");
 		assertEq(expectedTotalFunds, actualTotalFunds);
 	}
 }

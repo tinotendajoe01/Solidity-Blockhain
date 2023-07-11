@@ -950,8 +950,8 @@
       }
     },
     "script/HelperConfig.s.sol": {
-      "lastModificationDate": 1688456157062,
-      "contentHash": "58c7454f66b1e7dd8e00ccd5d239ce2d",
+      "lastModificationDate": 1689076000648,
+      "contentHash": "f64c392ceb91a7b6c77fdb6f7226c1df",
       "sourceName": "script/HelperConfig.s.sol",
       "solcConfig": {
         "settings": {
@@ -996,7 +996,7 @@
         "lib/forge-std/src/interfaces/IMulticall3.sol",
         "test/mock/MockV3Aggregator.sol"
       ],
-      "versionRequirement": "=0.8.20",
+      "versionRequirement": "^0.8.20",
       "artifacts": {
         "HelperConfig": {
           "0.8.20+commit.a1b79de6.Darwin.appleclang": "HelperConfig.s.sol/HelperConfig.json"
@@ -1004,8 +1004,8 @@
       }
     },
     "src/FundProject.sol": {
-      "lastModificationDate": 1688459152617,
-      "contentHash": "800ff41a4f8235742f14374ed285fea0",
+      "lastModificationDate": 1689076135111,
+      "contentHash": "1fe68fc0671b6bc823869fef727e0f9c",
       "sourceName": "src/FundProject.sol",
       "solcConfig": {
         "settings": {
@@ -1170,8 +1170,8 @@
       }
     },
     "test/testFundProject.t.sol": {
-      "lastModificationDate": 1688458444391,
-      "contentHash": "4d4fd91a2dab04e7e499789b76117736",
+      "lastModificationDate": 1689075536557,
+      "contentHash": "517ac700f131493bb91888219c0452d0",
       "sourceName": "test/testFundProject.t.sol",
       "solcConfig": {
         "settings": {
