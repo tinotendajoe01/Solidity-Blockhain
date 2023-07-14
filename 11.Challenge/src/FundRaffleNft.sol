@@ -55,8 +55,8 @@ contract FundRaffleMoodNft is ERC721 {
 						bytes(
 							abi.encodePacked(
 								'{"name":"',
-								name(), // You can add whatever name here
-								'", "description":"An NFT that reflects the mood of the owner, 100% on Chain!", ',
+								name(),
+								'", "description":"An NFT that reflects the  mood of the winner, 100% on Chain!", ',
 								'"attributes": [{"trait_type": "moodiness", "value": 100}], "image":"',
 								imageURI,
 								'"}'

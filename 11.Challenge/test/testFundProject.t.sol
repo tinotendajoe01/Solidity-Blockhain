@@ -58,8 +58,9 @@ contract TestFundProject is Test {
 		);
 		vm.startPrank(msg.sender);
 		fundRaffleMoodNft.mintNft(address(msg.sender));
-
-		assert(fundRaffleMoodNft.balanceOf(msg.sender) == 1);
+		fundRaffleMoodNft.mintNft(address(msg.sender));
+		fundRaffleMoodNft.mintNft(address(msg.sender));
+		assert(fundRaffleMoodNft.balanceOf(msg.sender) == 3);
 
 		assert(
 			keccak256(abi.encodePacked(fundRaffleMoodNft.tokenURI(0))) ==
