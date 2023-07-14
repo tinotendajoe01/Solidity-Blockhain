@@ -51,7 +51,7 @@ contract TestProjectsStorage is Test {
 		projectsStorage.addProject("Football", 0);
 	}
 
-	function testProjectIsNotCreatedWithDupicateName() public {
+	function testProjectIsNotCreatedWithDuplicateName() public {
 		vm.startPrank(msg.sender);
 		projectsStorage.addProject("Football", 400);
 		vm.expectRevert();

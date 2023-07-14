@@ -100,7 +100,18 @@ contract ProjectsStorage {
 	function getProject(
 		uint256 projectId
 	) public view returns (Project memory) {
-		return listofProjects[projectId - 1];
+		Project memory project = listofProjects[projectId - 1];
+		return project;
+	}
+
+	function setProjectDetails(
+		uint256 projectId,
+		uint256 newTotalFundsRaised,
+		address newFunder
+	) public {
+		Project storage project = listofProjects[projectId - 1];
+		project.totalFundsRaised += newTotalFundsRaised;
+		project.funders.push(newFunder);
 	}
 
 	function getUniqueAddress() public view returns (address) {
