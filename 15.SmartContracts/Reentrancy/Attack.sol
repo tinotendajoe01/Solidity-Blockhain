@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-3.0
-pragma solidity ^0.5.16;
+pragma solidity ^0.8.20;
 /// @title A contract for demonstrate payable functions and addresses
 /// @author Tinotenda Joe
 /// @notice  This contract just show how payable functions and addresses can be attacked by reentrancy

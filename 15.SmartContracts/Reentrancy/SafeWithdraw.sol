@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-3.0
-pragma solidity ^0.9.0;
+pragma solidity ^0.8.20;
 
 /// @title A contract for secure deposits and withdrawals
 /// @author Joe Tinotenda

@@ -156,3 +156,5 @@ Cross-Contract Reentrancy: This type refers to interactions that involve unpredi
 Security Audits: Audits boost the confidence level of users in a blockchain environment. They aim to secure contracts and foster trust among users.
 Vulnerability Detection Tools: These tools allow detection of potential vulnerabilities even before the deployment of smart contracts. Examples of such tools include SmartCheck, Remix, Oyente, and Mythril.
 Execution Stage Security: Given the immutable nature of blockchain technology, it's fundamental to address security flaws during the execution stage.
+
+[SEE](https://www.geeksforgeeks.org/reentrancy-attack-in-smart-contracts/)
