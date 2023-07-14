@@ -21,6 +21,7 @@ contract ProjectsStorage {
 		uint256 fundingGoal;
 		uint256 totalFundsRaised;
 		address[] funders;
+		address projectAddress;
 	}
 	modifier onlyOwner() {
 		// Revert with custom error if the caller is not the owner
@@ -34,13 +35,21 @@ contract ProjectsStorage {
 		string memory _name,
 		uint256 _fundingGoal
 	) public onlyOwner {
+		address randomAddress = getUniqueAddress();
 		if (_fundingGoal <= 0) revert Funding_Goal_CanntoBeLess_Than_Zero();
 		if (projectNameAlreadyExists(_name) == true) revert Name_Exists();
 		if (keccak256(bytes(_name)) == keccak256(bytes("")))
 			revert ProjectNam_CntBEmpty();
 		projectIdCounter++;
 		listofProjects.push(
-			Project(projectIdCounter, _name, _fundingGoal, 0, new address[](0))
+			Project(
+				projectIdCounter,
+				_name,
+				_fundingGoal,
+				0,
+				new address[](0),
+				randomAddress
+			)
 		);
 		projectNameToId[_name] = projectIdCounter;
 	}
@@ -71,7 +80,37 @@ contract ProjectsStorage {
 		return project.funders;
 	}
 
+	function checkGoalReached(string memory _name) public view returns (bool) {
+		uint256 projectId = projectNameToId[_name];
+		if (projectId == 0) revert Project_Does_Not_Exist();
+		Project storage project = listofProjects[projectId - 1];
+		return project.totalFundsRaised >= project.fundingGoal;
+	}
+
+	function getProjectId(
+		string memory projectName
+	) public view returns (uint256) {
+		return projectNameToId[projectName];
+	}
+
 	function getProjectsLength() public view returns (uint256) {
 		return listofProjects.length;
+	}
+
+	function getProject(
+		uint256 projectId
+	) public view returns (Project memory) {
+		return listofProjects[projectId - 1];
+	}
+
+	function getUniqueAddress() public view returns (address) {
+		return
+			address(
+				uint160(
+					uint(
+						keccak256(abi.encodePacked(block.timestamp, msg.sender))
+					)
+				)
+			);
 	}
 }

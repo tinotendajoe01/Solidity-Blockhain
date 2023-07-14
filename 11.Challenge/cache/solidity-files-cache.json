@@ -1634,8 +1634,8 @@
       }
     },
     "src/FundProject.sol": {
-      "lastModificationDate": 1689083893235,
-      "contentHash": "b1e049ca56e08478b12b2da6a952b10e",
+      "lastModificationDate": 1689340585072,
+      "contentHash": "60feab16a62b7795bc5ccc6c5f7ac924",
       "sourceName": "src/FundProject.sol",
       "solcConfig": {
         "settings": {
@@ -1692,8 +1692,8 @@
       }
     },
     "src/FundRaffleNft.sol": {
-      "lastModificationDate": 1689082507016,
-      "contentHash": "069bcf443ea22f4cc0ccee0158230f8a",
+      "lastModificationDate": 1689343771912,
+      "contentHash": "1154eb1c8b90ce568fe2957cea93fbd2",
       "sourceName": "src/FundRaffleNft.sol",
       "solcConfig": {
         "settings": {
@@ -1788,8 +1788,8 @@
       }
     },
     "src/ProjectsStorage.sol": {
-      "lastModificationDate": 1688381655265,
-      "contentHash": "b8b387d465795a8f91343396763e3dc1",
+      "lastModificationDate": 1689344224138,
+      "contentHash": "23691c34aa0af2b58723a4a4bd6adc40",
       "sourceName": "src/ProjectsStorage.sol",
       "solcConfig": {
         "settings": {
@@ -1824,6 +1824,62 @@
       "artifacts": {
         "ProjectsStorage": {
           "0.8.20+commit.a1b79de6.Darwin.appleclang": "ProjectsStorage.sol/ProjectsStorage.json"
+        }
+      }
+    },
+    "src/Raffle.sol": {
+      "lastModificationDate": 1689344456229,
+      "contentHash": "c3f0889f9f7ce10ce023f8ff8a187487",
+      "sourceName": "src/Raffle.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/openzeppelin-contracts/contracts/access/Ownable.sol",
+        "lib/openzeppelin-contracts/contracts/interfaces/draft-IERC6093.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/ERC721.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/IERC721.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/IERC721Receiver.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/extensions/IERC721Metadata.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Base64.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Context.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Strings.sol",
+        "lib/openzeppelin-contracts/contracts/utils/introspection/ERC165.sol",
+        "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol",
+        "lib/openzeppelin-contracts/contracts/utils/math/Math.sol",
+        "lib/openzeppelin-contracts/contracts/utils/math/SignedMath.sol",
+        "src/FundRaffleNft.sol",
+        "src/ProjectsStorage.sol"
+      ],
+      "versionRequirement": "=0.8.20",
+      "artifacts": {
+        "Raffle": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "Raffle.sol/Raffle.json"
         }
       }
     },

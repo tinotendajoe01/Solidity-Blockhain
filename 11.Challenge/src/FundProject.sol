@@ -31,7 +31,7 @@ contract FundProject is ProjectsStorage {
 		project.totalFundsRaised += _amount;
 		project.funders.push(msg.sender);
 		// Call the mintNft function of the FundRaffleMoodNft contract
-		raffleMOODNFT.mintNft(msg.sender);
+		raffleMOODNFT.mintNft(project.projectAddress);
 	}
 
 	function getProjectBalance(

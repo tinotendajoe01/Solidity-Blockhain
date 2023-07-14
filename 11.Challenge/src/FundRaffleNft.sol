@@ -16,6 +16,8 @@ contract FundRaffleMoodNft is ERC721 {
 		SAD
 	}
 	mapping(uint256 => NFTState) private s_tokenIdToState;
+	mapping(address => uint256[]) private ownedTokens;
+
 	event CreatedNFT(uint256 indexed tokenId);
 
 	constructor(
@@ -77,5 +79,17 @@ contract FundRaffleMoodNft is ERC721 {
 
 	function getTokenCounter() public view returns (uint256) {
 		return s_tokenCounter;
+	}
+
+	function tokenOfOwnerByIndex(
+		address owner,
+		uint256 index
+	) public view returns (uint256) {
+		require(
+			index < balanceOf(owner),
+			"FundRaffleMoodNft: Invalid token index"
+		);
+
+		return ownedTokens[owner][index];
 	}
 }
