@@ -1,14 +1,14 @@
 # Reentrancy in Smart Contracts
 
-Reentrancy is a type of attack that can occur in smart contracts that allow untrusted external code to be executed within the contract. This can happen when a smart contract calls an external contract, and the external contract then calls back into the original contract, potentially causing an infinite loop geeksforgeeks.org.
+Reentrancy is a type of attack that can occur in smart contracts that allow untrusted external code to be executed within the contract. This can happen when a smart contract calls an external contract, and the external contract then calls back into the original contract, potentially causing an infinite loop
 
-Reentrancy attacks have been a critical issue in smart contract development, as they can lead to loss of funds, compromise the integrity of smart contracts, and cause systemic failures. Therefore, it’s important to be aware of the potential vulnerabilities and take steps to prevent them geeksforgeeks.org.
+Reentrancy attacks have been a critical issue in smart contract development, as they can lead to loss of funds, compromise the integrity of smart contracts, and cause systemic failures. Therefore, it’s important to be aware of the potential vulnerabilities and take steps to prevent them
 
 ## Examples of Reentrancy Attacks
 
-DAO Hack: The DAO (Decentralized Autonomous Organization) smart contract was a decentralized investment fund built on the Ethereum blockchain. An attacker discovered a vulnerability in the DAO smart contract that allowed them to repeatedly call the “split” function, which allowed investors to withdraw their funds from the DAO before the contract had a chance to update the internal balances. The attacker was able to use this vulnerability to repeatedly call the split function and drain the DAO of approximately $50 million worth of Ether (ETH) geeksforgeeks.org.
+DAO Hack: The DAO (Decentralized Autonomous Organization) smart contract was a decentralized investment fund built on the Ethereum blockchain. An attacker discovered a vulnerability in the DAO smart contract that allowed them to repeatedly call the “split” function, which allowed investors to withdraw their funds from the DAO before the contract had a chance to update the internal balances. The attacker was able to use this vulnerability to repeatedly call the split function and drain the DAO of approximately $50 million worth of Ether (ETH)
 
-Lendf.me Protocol: In 2019 an attacker discovered a vulnerability in the smart contract that allowed them to repeatedly borrow and repay the same loan over and over again, while also manipulating the price of the underlying assets to increase the amount of the loan. The attacker was able to exploit this vulnerability to borrow and repay a single loan multiple times, stealing more than $350,000 worth of cryptocurrency assets from the platform geeksforgeeks.org.
+Lendf.me Protocol: In 2019 an attacker discovered a vulnerability in the smart contract that allowed them to repeatedly borrow and repay the same loan over and over again, while also manipulating the price of the underlying assets to increase the amount of the loan. The attacker was able to exploit this vulnerability to borrow and repay a single loan multiple times, stealing more than $350,000 worth of cryptocurrency assets from the platform
 
 ## Code Example of a Reentrancy Attack
 
@@ -36,11 +36,11 @@ contract Reentrancy {
 
 ```
 
-In this contract, the deposit function allows users to deposit funds into their account and the withdraw function allows users to withdraw their deposited funds. However, the contract does not properly check for reentrancy, so an attacker could create a malicious contract that repeatedly calls the deposit function before calling the withdraw function, effectively stealing funds from the contract geeksforgeeks.org.
+In this contract, the deposit function allows users to deposit funds into their account and the withdraw function allows users to withdraw their deposited funds. However, the contract does not properly check for reentrancy, so an attacker could create a malicious contract that repeatedly calls the deposit function before calling the withdraw function, effectively stealing funds from the contract
 
 ## Preventing Reentrancy Attacks
 
-One way to prevent reentrancy attacks is to use a mutex, or mutual exclusion, lock to prevent multiple calls to the same function from occurring at the same time. Another way is to use a guard condition, where a flag is set before external function calls and checked after geeksforgeeks.org.
+One way to prevent reentrancy attacks is to use a mutex, or mutual exclusion, lock to prevent multiple calls to the same function from occurring at the same time. Another way is to use a guard condition, where a flag is set before external function calls and checked after
 
 ```
 // SPDX-License-Identifier: GPL-3.0
