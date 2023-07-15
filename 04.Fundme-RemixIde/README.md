@@ -155,3 +155,44 @@ price = \_price;
 ```
 
 By using the onlyOwner modifier, the changePrice function will only be executed if the transaction sender is the contract owner, ensuring that only the owner can change the price.
+
+In Solidity, both the fallback and receive functions are special functions that a contract can have to handle situations where no other function matches the incoming request. Let's explore each of these functions in detail:
+
+## Receive Function:
+
+The receive function was introduced in Solidity 0.6.x as a special function that only triggers when the contract receives Ether without any function being explicitly called, i.e., when the calldata is empty.
+
+Here is how it is generally defined:
+
+```
+receive() external payable {
+	// code to execute
+}
+```
+
+This function has to be external and payable, cannot have arguments, cannot return anything, and you can have at most one receive function in a contract.
+
+If a contract receives Ether via regular transaction (that is, a transaction with empty calldata), and the contract has a defined receive function, that function is triggered. If no receive function exists but a payable fallback function does, then the fallback function is triggered.
+
+## Fallback Function:
+
+The fallback function is executed in two scenarios:
+
+If a function is called on the contract, but no function in the contract matches the identifier in the calldata, the fallback function is executed.
+If a contract receives Ether along with calldata for a function that does not exist, the fallback function is triggered.
+Here is how it is generally defined:
+
+```
+fallback() external payable {
+	// code to execute
+}
+```
+
+Differences and Relationship:
+The receive and fallback functions act as safety nets for a contract, catching Ether sent to the contract in non-standard ways. The main difference lies in when these functions are executed:
+
+The receive function is specifically used for handling plain Ether transfers, i.e., transactions with empty calldata.
+The fallback function is a more general catch-all function that is executed if no other function matches the function identifier, or if no data was provided with the function call.
+Their relationship can be summarized in this way: in a situation where a contract receives Ether without any data and a receive function is defined, the receive function is triggered. If a receive function is not defined but a payable fallback function exists, then the fallback function is triggered. If neither a receive nor a payable fallback function are present, the contract can't receive Ether through regular transactions and throws an exception.
+
+Thus, these functions work together to ensure that the contract can handle any unexpected Ether transfers robustly.
