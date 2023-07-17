@@ -211,10 +211,11 @@ contract DSCEngine is ReentrancyGuard {
     ///////////////////
     // Public Functions
     ///////////////////
-    /*
-    * @param amountDscToMint: The amount of DSC you want to mint
-    * You can only mint DSC if you hav enough collateral
-    */
+    /**
+     * @dev Mint DSC tokens.
+     * @param amountDscToMint The amount of DSC you want to mint.
+     * @notice You can only mint DSC if you have enough collateral.
+     */
     function mintDsc(uint256 amountDscToMint) public moreThanZero(amountDscToMint) nonReentrant {
         s_DSCMinted[msg.sender] += amountDscToMint;
         revertIfHealthFactorIsBroken(msg.sender);
@@ -283,11 +284,6 @@ contract DSCEngine is ReentrancyGuard {
         collateralValueInUsd = getAccountCollateralValue(user);
     }
 
-    function _healthFactor(address user) private view returns (uint256) {
-        (uint256 totalDscMinted, uint256 collateralValueInUsd) = _getAccountInformation(user);
-        return _calculateHealthFactor(totalDscMinted, collateralValueInUsd);
-    }
-
     function _getUsdValue(address token, uint256 amount) private view returns (uint256) {
         AggregatorV3Interface priceFeed = AggregatorV3Interface(s_priceFeeds[token]);
         (, int256 price,,,) = priceFeed.staleCheckLatestRoundData();
@@ -298,6 +294,18 @@ contract DSCEngine is ReentrancyGuard {
         return ((uint256(price) * ADDITIONAL_FEED_PRECISION) * amount) / PRECISION;
     }
 
+    /// @notice Calculates the health factor of a user based on their totalDscMinted and collateralValueInUsd.
+    /// @param user The address of the user for whom to calculate the health factor.
+    /// @return The health factor value.
+    function _healthFactor(address user) private view returns (uint256) {
+        (uint256 totalDscMinted, uint256 collateralValueInUsd) = _getAccountInformation(user);
+        return _calculateHealthFactor(totalDscMinted, collateralValueInUsd);
+    }
+
+    /// @notice Calculates the health factor based on the totalDscMinted and collateralValueInUsd.
+    /// @param totalDscMinted The total amount of DSC minted.
+    /// @param collateralValueInUsd The collateral value in USD.
+    /// @return The calculated health factor value.
     function _calculateHealthFactor(uint256 totalDscMinted, uint256 collateralValueInUsd)
         internal
         pure
@@ -308,6 +316,8 @@ contract DSCEngine is ReentrancyGuard {
         return (collateralAdjustedForThreshold * 1e18) / totalDscMinted;
     }
 
+    /// @notice Reverts if the user's health factor is below the minimum health factor.
+    /// @param user The address of the user to check.
     function revertIfHealthFactorIsBroken(address user) internal view {
         uint256 userHealthFactor = _healthFactor(user);
         if (userHealthFactor < MIN_HEALTH_FACTOR) {
