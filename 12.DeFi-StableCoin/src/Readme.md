@@ -148,4 +148,52 @@ bool success = IERC20(tokenCollateralAddress).transferFrom(msg.sender, address(t
 
 This line transfers the `amountCollateral` of the specified `tokenCollateralAddress` from the `msg.sender` to the contract (`address(this)`). It uses the `transferFrom` function of the ERC20 token contract to perform the transfer. The function returns a boolean value (`success`) indicating whether the transfer was successful or not.
 
----
+## MintDSC
+
+### Health factor
+
+```
+/**
+ * @title HealthFactorCalculator
+ * @dev A contract that calculates the health factor of a user based on their totalDscMinted and collateralValueInUsd.
+ */
+contract HealthFactorCalculator {
+    /**
+     * @notice Calculates the health factor of a user based on their totalDscMinted and collateralValueInUsd.
+     * @param user The address of the user for whom to calculate the health factor.
+     * @return The health factor value.
+     */
+    function _healthFactor(address user) private view returns (uint256) {
+        (uint256 totalDscMinted, uint256 collateralValueInUsd) = _getAccountInformation(user);
+        return _calculateHealthFactor(totalDscMinted, collateralValueInUsd);
+    }
+
+    /**
+     * @notice Calculates the health factor based on the totalDscMinted and collateralValueInUsd.
+     * @param totalDscMinted The total amount of DSC minted.
+     * @param collateralValueInUsd The collateral value in USD.
+     * @return The calculated health factor value.
+     */
+    function _calculateHealthFactor(uint256 totalDscMinted, uint256 collateralValueInUsd)
+        internal
+        pure
+        returns (uint256)
+    {
+        if (totalDscMinted == 0) return type(uint256).max;
+        uint256 collateralAdjustedForThreshold = (collateralValueInUsd * LIQUIDATION_THRESHOLD) / 100;
+        return (collateralAdjustedForThreshold * 1e18) / totalDscMinted;
+    }
+
+    /**
+     * @notice Reverts if the user's health factor is below the minimum health factor.
+     * @param user The address of the user to check.
+     */
+    function revertIfHealthFactorIsBroken(address user) internal view {
+        uint256 userHealthFactor = _healthFactor(user);
+        if (userHealthFactor < MIN_HEALTH_FACTOR) {
+            revert DSCEngine__BreaksHealthFactor(userHealthFactor);
+        }
+    }
+}
+
+```
