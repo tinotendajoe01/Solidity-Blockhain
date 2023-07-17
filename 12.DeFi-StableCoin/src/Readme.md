@@ -118,3 +118,34 @@ function getTimeout(
 This function, `getTimeout`, returns the `TIMEOUT` value when called. Note that it declares an unused variable `chainlinkFeed` - presumably this function could be modified in the future to return different timeouts for different feeds.
 
 In summary, the purpose of this library is to create reusable code to interact with a Chainlink price feed, specifically checking whether the latest data is stale based on some predefined conditions.
+
+# DCSEngine.sol
+
+## Deposit Collateral fx
+
+### 1. Increment Collateral Balance
+
+```
+s_collateralDeposited[msg.sender][tokenCollateralAddress] += amountCollateral;
+
+
+```
+
+This line increments the amount of collateral deposited by the `msg.sender` for the specified `tokenCollateralAddress`. It adds the `amountCollateral` to the existing collateral balance.
+
+### 2. Emit Collateral Deposited Event
+
+`emit CollateralDeposited(msg.sender, tokenCollateralAddress, amountCollateral);`
+
+This line emits an event called `CollateralDeposited` to notify the system that collateral has been deposited. It includes the `msg.sender` (the address of the caller), `tokenCollateralAddress` (the address of the collateral token), and `amountCollateral` (the amount of collateral deposited) as parameters.
+
+### 3. Transfer Collateral
+
+```
+bool success = IERC20(tokenCollateralAddress).transferFrom(msg.sender, address(this), amountCollateral);
+
+```
+
+This line transfers the `amountCollateral` of the specified `tokenCollateralAddress` from the `msg.sender` to the contract (`address(this)`). It uses the `transferFrom` function of the ERC20 token contract to perform the transfer. The function returns a boolean value (`success`) indicating whether the transfer was successful or not.
+
+---
