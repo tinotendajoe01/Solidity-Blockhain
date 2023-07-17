@@ -1,0 +1,34 @@
+{
+  "abi": [],
+  "bytecode": {
+    "object": "0x",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "linkReferences": {}
+  },
+  "ast": {
+    "absolutePath": "test/fuzz/continueOnRevert/ContinueOnRevertInvariants.t.sol",
+    "id": 32432,
+    "exportedSymbols": {},
+    "nodeType": "SourceUnit",
+    "src": "134:2916:34",
+    "nodes": [
+      {
+        "id": 32431,
+        "nodeType": "PragmaDirective",
+        "src": "134:24:34",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".20"
+        ]
+      }
+    ],
+    "license": "MIT"
+  },
+  "id": 34
+}

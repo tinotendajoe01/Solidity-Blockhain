@@ -1,0 +1,34 @@
+{
+  "abi": [],
+  "bytecode": {
+    "object": "0x",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "linkReferences": {}
+  },
+  "ast": {
+    "absolutePath": "test/fuzz/continueOnRevert/ContinueOnRevertHandler.t.sol",
+    "id": 32430,
+    "exportedSymbols": {},
+    "nodeType": "SourceUnit",
+    "src": "134:4881:33",
+    "nodes": [
+      {
+        "id": 32429,
+        "nodeType": "PragmaDirective",
+        "src": "134:24:33",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".20"
+        ]
+      }
+    ],
+    "license": "MIT"
+  },
+  "id": 33
+}

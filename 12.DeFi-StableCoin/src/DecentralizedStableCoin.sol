@@ -1,49 +1,40 @@
 // SPDX-License-Identifier: MIT
 
+pragma solidity ^0.8.20;
 // This is considered an Exogenous, Decentralized, Anchored (pegged), Crypto Collateralized low volitility coin
-
-// Layout of Contract:
-// version
-// imports
-// errors
-// interfaces, libraries, contracts
-// Type declarations
-// State variables
-// Events
-// Modifiers
-// Functions
-
-// Layout of Functions:
-// constructor
-// receive function (if exists)
-// fallback function (if exists)
-// external
-// public
-// internal
-// private
-// view & pure functions
-
-pragma solidity 0.8.20;
 
 import { ERC20Burnable, ERC20 } from "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol";
 import { Ownable } from "@openzeppelin/contracts/access/Ownable.sol";
 
 /**
  * @title DecentralizedStableCoin
+ * @notice This contract represents a crypto collateralized low volatility coin which is pegged to USD.
  * @author Tinotenda Joe
- * Collateral: Exogenous (ETH & BTC)
- * Minting (Stability Mechanism): Decentralized (Algorithmic)
- * Value (Relative Stability): Anchored (Pegged to USD)
- * Collateral Type: Crypto
- *
- * This is the contract meant to be owned by DSCEngine. It is a ERC20 token that can be minted and burned by the DSCEngine smart contract.
+ * This contract can be minted and burned by the DSCEngine smart contract.
  */
+
 contract DecentralizedStableCoin is ERC20Burnable, Ownable {
 	error DecentralizedStableCoin__AmountMustBeMoreThanZero();
 	error DecentralizedStableCoin__BurnAmountExceedsBalance();
 	error DecentralizedStableCoin__NotZeroAddress();
 
+	/**
+     * @notice Constructor for the DecentralizedStableCoin contract.
+     * @dev In future versions of OpenZeppelin contracts package, Ownable must be declared with an address 
+     * of the contract owner as a parameter.
+	 * For example:
+           constructor() ERC20("DecentralizedStableCoin", "DSC") Ownable(0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266) {}
+            Related code changes can be viewed in this commit:
+             https://github.com/OpenZeppelin/openzeppelin-contracts/commit/13d5e0466a9855e9305119ed383e54fc913fdc60
+ */
 	constructor() ERC20("DecentralizedStableCoin", "DSC") {}
+
+	/**
+	 * @notice Allows the contract owner to burn a specified amount of DSC.
+	 * @dev Only the owner can burn the tokens. Also, the amount to burn should be less or equal than the balance
+	 * and greater than zero.
+	 * @param _amount The amount of DSC to be burned
+	 */
 
 	function burn(uint256 _amount) public override onlyOwner {
 		uint256 balance = balanceOf(msg.sender);
@@ -56,6 +47,14 @@ contract DecentralizedStableCoin is ERC20Burnable, Ownable {
 		super.burn(_amount);
 	}
 
+	/**
+	 * @notice Mints a specified amount of DSC to a specified account.
+	 * @dev This function can only be executed by the contract owner and the `_to` address should not be
+	 * a zero address. Also the `_amount` should be greater than zero.
+	 * @param _to The destination address to mint to.
+	 * @param _amount The amount of DSC to be minted.
+	 * @return Returns true if the function executes successfully.
+	 */
 	function mint(
 		address _to,
 		uint256 _amount

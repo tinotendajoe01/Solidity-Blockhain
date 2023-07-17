@@ -10,3 +10,6 @@
 [submodule "12.DeFi-StableCoin/lib/forge-std"]
 	path = 12.DeFi-StableCoin/lib/forge-std
 	url = https://github.com/foundry-rs/forge-std
+[submodule "12.DeFi-StableCoin/lib/openzeppelin-contracts"]
+	path = 12.DeFi-StableCoin/lib/openzeppelin-contracts
+	url = https://github.com/openzeppelin/openzeppelin-contracts
