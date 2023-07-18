@@ -1,4 +1,62 @@
-## VIRTUAL KEYWORD
+# Simple Storage
+
+## Table of Contents
+
+- [Contracts](#Contracts)
+  - [SimpleStorage](#SimpleStorage)
+  - [StorageFactory](#StorageFactory)
+  - [AddFiveStorage](#AddFiveStorage)
+- [Usage](#Usage)
+- [Author](#Author)
+- [License](#License)
+
+<br />
+
+## Contracts
+
+### `SimpleStorage`
+
+This contract allows you to store an array of `Person` structures, each with a name and a favorite number. The contract includes basic CRUD functions for managing people in the array, as well as storing and retrieving a global number.
+
+### StorageFactory
+
+This contract is a Factory contract which deploys instances of the SimpleStorage contract. You can create multiple SimpleStorage contract instances, and store and retrieve an integer from each.
+
+### `AddFiveStorage`
+
+This contract is an extended version of SimpleStorage. It overrides the store function, adding 5 to the number before storing it.
+
+<br />
+
+## Usage
+
+To use these contracts, you need to:
+
+1. Compile the contracts with Solidity compiler (solc). If you're using a platform like Remix, this is done for you automatically.
+2. Deploy the contracts using the Ethereum network of your choice. You can use a service like Metamask or Truffle for this.
+3. Interact with the contracts using Web3 in a web browser or using Hardhat or Truffle scripts.
+
+For more advanced usage, you'll typically want to integrate these contracts into a web interface using a library like Web3.js or Ethers.js.
+
+## License
+
+The contracts in this repository are licensed under the MIT license.
+
+## Author
+
+**Tinotenda Joe**
+
+- [Profile](https://github.com/tinotendajoe01)
+- [Email](mailto:tinotendajoe01@gmail.com)
+- [Twitter](https://twitter.com/tinotendajoe01)
+
+Please note that these contracts are for educational purposes and should not be used in production without further modifications. Always audit and test your contracts before using them in a live environment.
+
+# NOTES
+
+## Undestanding Solidity keywords
+
+## VIRTUAL
 
 In Solidity, the virtual keyword is used to mark a function as overridable in derived contracts. When a function is declared as virtual, it means that the function can be overridden by a function with the same name in a derived contract. The derived contract can provide its own implementation of the function, which will be used instead of the base implementation.
 
@@ -28,7 +86,7 @@ In this case, the store function in AdvancedStorage overrides the base implement
 
 The virtual keyword is important when designing contracts that allow for flexibility and customization in derived contracts. It enables the creation of contract hierarchies and the ability to override and extend functionality in a modular way developer.com.
 
-## VIEW Keyword
+## VIEW
 
 In Solidity, the view keyword is used to indicate that a function does not modify the state of the contract. It is a function modifier that ensures that the function only reads data from the contract without making any changes to the contract's state variables.
 
