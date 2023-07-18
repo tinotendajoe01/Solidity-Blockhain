@@ -166,19 +166,34 @@ contract DSCEngine is ReentrancyGuard {
         revertIfHealthFactorIsBroken(msg.sender); // I don't think this would ever hit...
     }
 
-    /*
-    * @param collateral: The ERC20 token address of the collateral you're using to make the protocol solvent again.
-    * This is collateral that you're going to take from the user who is insolvent.
-    * In return, you have to burn your DSC to pay off their debt, but you don't pay off your own.
-    * @param user: The user who is insolvent. They have to have a _healthFactor below MIN_HEALTH_FACTOR
-    * @param debtToCover: The amount of DSC you want to burn to cover the user's debt.
-    *
-    * @notice: You can partially liquidate a user.
-    * @notice: You will get a 10% LIQUIDATION_BONUS for taking the users funds.
-    * @notice: This function working assumes that the protocol will be roughly 150% overcollateralized in order for this to work.
-    * @notice: A known bug would be if the protocol was only 100% collateralized, we wouldn't be able to liquidate anyone.
-    * For example, if the price of the collateral plummeted before anyone could be liquidated.
-    */
+    /**
+     * @notice Liquidates a user who is insolvent, meaning their _healthFactor is below MIN_HEALTH_FACTOR.
+     * The liquidator will receive a 10% LIQUIDATION_BONUS for taking the user's funds.
+     * This function assumes that the protocol will be roughly 150% overcollateralized in order for it to work.
+     * If the protocol was only 100% collateralized, we wouldn't be able to liquidate anyone, for example if the price of the collateral plummeted before anyone could be liquidated.
+     *
+     * @param collateral The ERC20 token address of the collateral being used to make the protocol solvent again.
+     * This is collateral that will be taken from the user who is insolvent.
+     * In return, the liquidator has to burn their DSC to pay off the user's debt, but they don't have to pay off their own.
+     *
+     * @param user The user who is insolvent and being liquidated.
+     *
+     * @param debtToCover The amount of DSC to burn to cover the user's debt.
+     *
+     * @dev If covering 100 DSC, we need to have $100 worth of collateral.
+     * The tokenAmountFromDebtCovered calculates the required amount of collateral based on the debtToCover amount.
+     * The bonusCollateral is 10% of the tokenAmountFromDebtCovered, which is the liquidation bonus paid to the liquidator.
+     *
+     * @dev This function should be implemented with a feature to liquidate in the event the protocol is insolvent and sweep extra amounts into a treasury.
+     *
+     * @dev This function is non-reentrant.
+     *
+     * @dev The function will revert if:
+     *  - debtToCover is zero
+     *  - the user's healthFactor is greater than or equal to MIN_HEALTH_FACTOR
+     *  - the user's healthFactor does not improve after the liquidation
+     *  - the liquidator's healthFactor is broken after the liquidation
+     */
     function liquidate(address collateral, address user, uint256 debtToCover)
         external
         moreThanZero(debtToCover)
