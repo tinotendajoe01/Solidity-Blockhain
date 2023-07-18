@@ -1,3 +1,93 @@
+# FundMe and PriceConverter
+
+This repository contains two Solidity smart contracts: `FundMe` and `PriceConverter`.
+
+## Table of Contents
+
+- [Contracts](#Contracts)
+  - [FundMe](#FundMe)
+  - [PriceConverter](#PriceConverter)
+- [Usage](#Usage)
+- [Author](#Author)
+- [License](#License)
+- [Disclaimer](#Disclaimer)
+
+## Contracts
+
+### FundMe
+
+`FundMe` is a crowdfunding contract. Funds can be donated in the form of ETH. It uses the PriceConverter contract to convert the donated ETH amount into USD. This conversion ensures that at least a specific minimum USD amount is donated with each contribution. The contract owner has the ability to withdraw funds at any time. There is also a mechanism in place for the return of donations if the funding goal is not met by a certain deadline.
+
+### PriceConverter
+
+`PriceConverter` uses Chainlink's AggregatorV3Interface to access up-to-date ETH to USD conversion rates. It provides functionality to fetch the ETH to USD price and convert a certain ETH amount into its USD equivalent.
+
+## Usage
+
+To utilize these contracts, you need to:
+
+1. Compile the contracts with Solidity compiler (solc). If you are using a platform like Remix, this is done for you automatically.
+2. Deploy the contracts using the Ethereum network of your choice. You can use a service like Metamask or Truffle for this.
+3. Interact with the contracts using Web3 in a web browser or using Hardhat or Truffle scripts.
+
+For more advanced usage, you'll typically want to integrate these contracts into a web interface using a library like Web3.js or Ethers.js.
+
+## License
+
+The contracts in this repository are licensed under the MIT license.
+
+## Author
+
+**Tinotenda Joe**
+
+- [Profile](https://github.com/tinotendajoe01)
+- [Email](mailto:tinotendajoe01@gmail.com)
+- [Twitter](https://twitter.com/tinotendajoe01)
+
+## Disclaimer
+
+Please note that these contracts are for educational purposes and should not be used in production without further modifications. Always audit and test your contracts before using them in a live environment.
+
+### Fallback
+
+In Solidity, "fallback" and "receive" are special functions that are used to handle incoming ether and data that is sent to a contract.
+
+The fallback function is a special function that is executed when a contract receives a transaction that does not match any of its defined functions. This can happen when a user sends ether to the contract without specifying a function to call. The fallback function is optional and has the following signature:
+
+```
+function () external payable {
+    // code to handle incoming ether without data
+}
+```
+
+The fallback function is marked as "payable" to allow it to receive ether. If the fallback function is not defined and a transaction is sent to the contract without specifying a function to call, the transaction will fail and the ether will be returned to the sender.
+
+The receive function is a new function that was introduced in Solidity version 0.6.0. It is similar to the fallback function, but it is specifically designed to handle incoming data without any accompanying ether. The receive function has the following signature:
+
+```
+function () external payable {
+    // code to handle incoming ether without data
+}
+```
+
+The receive function is also marked as "payable" to allow it to receive ether in case it is sent with data. The receive function is called automatically when a contract receives a transaction with data but no function specifier. If the receive function is not defined and a transaction is sent to the contract with data but no function specifier, the transaction will fail.
+
+In summary, the fallback function is used to handle incoming ether and data when no other function matches the transaction, while the receive function is used to handle incoming data without any accompanying ether.
+
+### Decentralized oracles - Chainlink information
+
+Decentralized oracles are a critical component in the development of smart contracts and blockchain applications, as they provide a secure and reliable bridge between off-chain data sources and on-chain smart contracts. Chainlink is a prominent example of a decentralized oracle network that connects real-world data to blockchain-based smart contracts gemini.com.
+
+Smart contracts cannot access external data feeds on their own; they require an intermediary layer for facilitation, which is the role of oracles. However, relying on a single centralized oracle can introduce a single point of failure, compromising the security and reliability of smart contracts blockonomi.com. Decentralized oracles, like Chainlink, eliminate this issue by using a network of independent nodes that provide data inputs and outputs to smart contracts medium.com.
+
+Chainlink uses a decentralized network of nodes to provide tamper-proof inputs and outputs for complex smart contracts on any blockchain, ensuring the same security guarantees as the smart contracts themselves. By allowing multiple nodes to evaluate the same data before it triggers a smart contract, Chainlink eliminates single points of failure and maintains a high level of security, reliability, and trustworthiness medium.com.
+
+Chainlink's decentralized oracle network is designed to be compatible with various blockchain platforms, such as Ethereum, Bitcoin, and Hyperledger. Its modular architecture allows for upgradability, and it incentivizes good behavior among nodes with a reputation system and penalties for bad behavior medium.com.
+
+By providing a secure and reliable connection between off-chain data sources and on-chain smart contracts, Chainlink enables a wide range of use cases. For example, Arbol uses Chainlink for weather data to create weather risk products, and Theta Network leverages Chainlink for viewership data to fight ad fraud for online content https://chain.link/education/blockchain-oracles
+
+In summary, decentralized oracles like Chainlink play a crucial role in the development of smart contracts and blockchain applications. They provide a secure and reliable bridge between off-chain data sources and on-chain smart contracts, enabling more sophisticated and flexible applications on the blockchain gemini.com.
+
 ## FUNDME
 
 This smart contract is called "FundMe" and it is like a digital piggy bank that allows people to send money (in the form of cryptocurrency called Ether) to a specific goal. Here's what it does in simple terms:
