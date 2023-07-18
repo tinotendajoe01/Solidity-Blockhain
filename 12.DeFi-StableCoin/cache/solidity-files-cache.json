@@ -1215,8 +1215,8 @@
       }
     },
     "script/DeployDSC.s.sol": {
-      "lastModificationDate": 1688651145598,
-      "contentHash": "fa4908f472aab4eb46c0f1de3e715e95",
+      "lastModificationDate": 1689708432940,
+      "contentHash": "ad412b52f64df0e7f7b02d3d171b23fc",
       "sourceName": "script/DeployDSC.s.sol",
       "solcConfig": {
         "settings": {
@@ -1282,8 +1282,8 @@
       }
     },
     "script/HelperConfig.s.sol": {
-      "lastModificationDate": 1688651143695,
-      "contentHash": "48f0937df25b369edb07300c80a930eb",
+      "lastModificationDate": 1689607631219,
+      "contentHash": "aadf2b7c87306b4816be612dd88a618d",
       "sourceName": "script/HelperConfig.s.sol",
       "solcConfig": {
         "settings": {
@@ -1341,8 +1341,8 @@
       }
     },
     "src/DSCEngine.sol": {
-      "lastModificationDate": 1689594981735,
-      "contentHash": "2b3192a617c8f656f0e498c3515dc1fa",
+      "lastModificationDate": 1689682394265,
+      "contentHash": "1e24f1e90025d6f2ca1c05712f88cbf7",
       "sourceName": "src/DSCEngine.sol",
       "solcConfig": {
         "settings": {
@@ -1392,8 +1392,8 @@
       }
     },
     "src/DecentralizedStableCoin.sol": {
-      "lastModificationDate": 1689588716079,
-      "contentHash": "1d436680dead5f66d70789ce9a626276",
+      "lastModificationDate": 1689595645087,
+      "contentHash": "8d295a5c4fd2a3253122826c54581f45",
       "sourceName": "src/DecentralizedStableCoin.sol",
       "solcConfig": {
         "settings": {
@@ -1439,8 +1439,8 @@
       }
     },
     "src/libraries/OracleLib.sol": {
-      "lastModificationDate": 1689583962253,
-      "contentHash": "286e9c450e29352d9a5e6faa76e56b96",
+      "lastModificationDate": 1689595645091,
+      "contentHash": "f8a7415ae38f72b395af21566ae1e70b",
       "sourceName": "src/libraries/OracleLib.sol",
       "solcConfig": {
         "settings": {
@@ -1561,8 +1561,8 @@
       }
     },
     "test/fuzz/failOnRevert/StopOnRevertHandler.t.sol": {
-      "lastModificationDate": 1688651156348,
-      "contentHash": "2183f0353a0c62919640c617ceb7262f",
+      "lastModificationDate": 1689595645111,
+      "contentHash": "cf152a4b3ead246e8c824f2d6abc09b8",
       "sourceName": "test/fuzz/failOnRevert/StopOnRevertHandler.t.sol",
       "solcConfig": {
         "settings": {
@@ -1633,8 +1633,8 @@
       }
     },
     "test/fuzz/failOnRevert/StopOnRevertInvariants.t.sol": {
-      "lastModificationDate": 1688651156244,
-      "contentHash": "a87535494181c999caa8663ab5ecde31",
+      "lastModificationDate": 1689595645090,
+      "contentHash": "61b4108a521bc78b5be4a1d7b6368f5a",
       "sourceName": "test/fuzz/failOnRevert/StopOnRevertInvariants.t.sol",
       "solcConfig": {
         "settings": {
@@ -1709,8 +1709,8 @@
       }
     },
     "test/mocks/MockFailedMintDSC.sol": {
-      "lastModificationDate": 1688651154590,
-      "contentHash": "5cbb698663714424951be9aa9a74763e",
+      "lastModificationDate": 1689595645089,
+      "contentHash": "34961f9831776429283412ba27301838",
       "sourceName": "test/mocks/MockFailedMintDSC.sol",
       "solcConfig": {
         "settings": {
@@ -1756,8 +1756,8 @@
       }
     },
     "test/mocks/MockFailedTransfer.sol": {
-      "lastModificationDate": 1688651154611,
-      "contentHash": "d83c6941181c72bd78cf3f12bb6f8c14",
+      "lastModificationDate": 1689595645102,
+      "contentHash": "9cc2cbe626780d4c1ed0b65afce30aaf",
       "sourceName": "test/mocks/MockFailedTransfer.sol",
       "solcConfig": {
         "settings": {
@@ -1803,8 +1803,8 @@
       }
     },
     "test/mocks/MockFailedTransferFrom.sol": {
-      "lastModificationDate": 1688651154611,
-      "contentHash": "13a82ee503fa4f4eaeac77f061b83b2b",
+      "lastModificationDate": 1689595645104,
+      "contentHash": "bc204ead36fa9594450a343794fab8be",
       "sourceName": "test/mocks/MockFailedTransferFrom.sol",
       "solcConfig": {
         "settings": {
@@ -1850,8 +1850,8 @@
       }
     },
     "test/mocks/MockMoreDebtDSC.sol": {
-      "lastModificationDate": 1688651156241,
-      "contentHash": "31be799b391fe6eccf0c5dbe354f2a2c",
+      "lastModificationDate": 1689595645106,
+      "contentHash": "bbde21a8af0043e469393e2bc23bf35d",
       "sourceName": "test/mocks/MockMoreDebtDSC.sol",
       "solcConfig": {
         "settings": {
@@ -1938,8 +1938,8 @@
       }
     },
     "test/unit/DSCEngineTest.t.sol": {
-      "lastModificationDate": 1688651156130,
-      "contentHash": "872ece77d12be54415d65665a6fbc833",
+      "lastModificationDate": 1689595645131,
+      "contentHash": "af43ba3b7e4a1ce83f44b4704c9c4c43",
       "sourceName": "test/unit/DSCEngineTest.t.sol",
       "solcConfig": {
         "settings": {
@@ -2016,8 +2016,8 @@
       }
     },
     "test/unit/DecentralizedStablecoinTest.t.sol": {
-      "lastModificationDate": 1688651154231,
-      "contentHash": "b00bb0756a1627468f28cce0912944c7",
+      "lastModificationDate": 1689595645106,
+      "contentHash": "4a9250c033c150ebbc8030786e59bbb9",
       "sourceName": "test/unit/DecentralizedStablecoinTest.t.sol",
       "solcConfig": {
         "settings": {
@@ -2081,8 +2081,8 @@
       }
     },
     "test/unit/OracleLibTest.t.sol": {
-      "lastModificationDate": 1688651154087,
-      "contentHash": "941d971c100f881dff6f4b7c7f999b8f",
+      "lastModificationDate": 1689595645090,
+      "contentHash": "2d07cda68900d6cd397db6e290d8df80",
       "sourceName": "test/unit/OracleLibTest.t.sol",
       "solcConfig": {
         "settings": {

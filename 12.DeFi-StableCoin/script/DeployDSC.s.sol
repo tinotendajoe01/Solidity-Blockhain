@@ -6,12 +6,6 @@ import {HelperConfig} from "./HelperConfig.s.sol";
 import {DecentralizedStableCoin} from "../src/DecentralizedStableCoin.sol";
 import {DSCEngine} from "../src/DSCEngine.sol";
 
-/**
- * @title DeployDSC
- * @author Tinotenda Joe
- * @dev Deploys the DecentralizedStableCoin, the DSCEngine and setup HelperConfig.
- * @return An instance of the DecentralizedStableCoin, DSCEngine and HelperConfig.
- */
 contract DeployDSC is Script {
     address[] public tokenAddresses;
     address[] public priceFeedAddresses;
