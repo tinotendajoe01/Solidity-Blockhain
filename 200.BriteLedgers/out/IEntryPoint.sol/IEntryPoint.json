@@ -1,0 +1,4870 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "preOpGas",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "paid",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint48",
+          "name": "validAfter",
+          "type": "uint48"
+        },
+        {
+          "internalType": "uint48",
+          "name": "validUntil",
+          "type": "uint48"
+        },
+        {
+          "internalType": "bool",
+          "name": "targetSuccess",
+          "type": "bool"
+        },
+        {
+          "internalType": "bytes",
+          "name": "targetResult",
+          "type": "bytes"
+        }
+      ],
+      "name": "ExecutionResult",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "opIndex",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "reason",
+          "type": "string"
+        }
+      ],
+      "name": "FailedOp",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        }
+      ],
+      "name": "SenderAddressResult",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "aggregator",
+          "type": "address"
+        }
+      ],
+      "name": "SignatureValidationFailed",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "preOpGas",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "prefund",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bool",
+              "name": "sigFailed",
+              "type": "bool"
+            },
+            {
+              "internalType": "uint48",
+              "name": "validAfter",
+              "type": "uint48"
+            },
+            {
+              "internalType": "uint48",
+              "name": "validUntil",
+              "type": "uint48"
+            },
+            {
+              "internalType": "bytes",
+              "name": "paymasterContext",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct IEntryPoint.ReturnInfo",
+          "name": "returnInfo",
+          "type": "tuple"
+        },
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "stake",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "unstakeDelaySec",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct IStakeManager.StakeInfo",
+          "name": "senderInfo",
+          "type": "tuple"
+        },
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "stake",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "unstakeDelaySec",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct IStakeManager.StakeInfo",
+          "name": "factoryInfo",
+          "type": "tuple"
+        },
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "stake",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "unstakeDelaySec",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct IStakeManager.StakeInfo",
+          "name": "paymasterInfo",
+          "type": "tuple"
+        }
+      ],
+      "name": "ValidationResult",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "preOpGas",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "prefund",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bool",
+              "name": "sigFailed",
+              "type": "bool"
+            },
+            {
+              "internalType": "uint48",
+              "name": "validAfter",
+              "type": "uint48"
+            },
+            {
+              "internalType": "uint48",
+              "name": "validUntil",
+              "type": "uint48"
+            },
+            {
+              "internalType": "bytes",
+              "name": "paymasterContext",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct IEntryPoint.ReturnInfo",
+          "name": "returnInfo",
+          "type": "tuple"
+        },
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "stake",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "unstakeDelaySec",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct IStakeManager.StakeInfo",
+          "name": "senderInfo",
+          "type": "tuple"
+        },
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "stake",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "unstakeDelaySec",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct IStakeManager.StakeInfo",
+          "name": "factoryInfo",
+          "type": "tuple"
+        },
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "stake",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "unstakeDelaySec",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct IStakeManager.StakeInfo",
+          "name": "paymasterInfo",
+          "type": "tuple"
+        },
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "aggregator",
+              "type": "address"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "stake",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "unstakeDelaySec",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct IStakeManager.StakeInfo",
+              "name": "stakeInfo",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct IEntryPoint.AggregatorStakeInfo",
+          "name": "aggregatorInfo",
+          "type": "tuple"
+        }
+      ],
+      "name": "ValidationResultWithAggregation",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "userOpHash",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "factory",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "paymaster",
+          "type": "address"
+        }
+      ],
+      "name": "AccountDeployed",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [],
+      "name": "BeforeExecution",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "totalDeposit",
+          "type": "uint256"
+        }
+      ],
+      "name": "Deposited",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "aggregator",
+          "type": "address"
+        }
+      ],
+      "name": "SignatureAggregatorChanged",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "totalStaked",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "unstakeDelaySec",
+          "type": "uint256"
+        }
+      ],
+      "name": "StakeLocked",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "withdrawTime",
+          "type": "uint256"
+        }
+      ],
+      "name": "StakeUnlocked",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "withdrawAddress",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "StakeWithdrawn",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "userOpHash",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "paymaster",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "nonce",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "bool",
+          "name": "success",
+          "type": "bool"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "actualGasCost",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "actualGasUsed",
+          "type": "uint256"
+        }
+      ],
+      "name": "UserOperationEvent",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "userOpHash",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "nonce",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes",
+          "name": "revertReason",
+          "type": "bytes"
+        }
+      ],
+      "name": "UserOperationRevertReason",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "withdrawAddress",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "Withdrawn",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint32",
+          "name": "_unstakeDelaySec",
+          "type": "uint32"
+        }
+      ],
+      "name": "addStake",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "balanceOf",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "depositTo",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "getDepositInfo",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint112",
+              "name": "deposit",
+              "type": "uint112"
+            },
+            {
+              "internalType": "bool",
+              "name": "staked",
+              "type": "bool"
+            },
+            {
+              "internalType": "uint112",
+              "name": "stake",
+              "type": "uint112"
+            },
+            {
+              "internalType": "uint32",
+              "name": "unstakeDelaySec",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint48",
+              "name": "withdrawTime",
+              "type": "uint48"
+            }
+          ],
+          "internalType": "struct IStakeManager.DepositInfo",
+          "name": "info",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "internalType": "uint192",
+          "name": "key",
+          "type": "uint192"
+        }
+      ],
+      "name": "getNonce",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "nonce",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "initCode",
+          "type": "bytes"
+        }
+      ],
+      "name": "getSenderAddress",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "sender",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "nonce",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bytes",
+              "name": "initCode",
+              "type": "bytes"
+            },
+            {
+              "internalType": "bytes",
+              "name": "callData",
+              "type": "bytes"
+            },
+            {
+              "internalType": "uint256",
+              "name": "callGasLimit",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "verificationGasLimit",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "preVerificationGas",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "maxFeePerGas",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "maxPriorityFeePerGas",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bytes",
+              "name": "paymasterAndData",
+              "type": "bytes"
+            },
+            {
+              "internalType": "bytes",
+              "name": "signature",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct UserOperation",
+          "name": "userOp",
+          "type": "tuple"
+        }
+      ],
+      "name": "getUserOpHash",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "components": [
+                {
+                  "internalType": "address",
+                  "name": "sender",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "nonce",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "initCode",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "callData",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "callGasLimit",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "verificationGasLimit",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "preVerificationGas",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "maxFeePerGas",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "maxPriorityFeePerGas",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "paymasterAndData",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "signature",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct UserOperation[]",
+              "name": "userOps",
+              "type": "tuple[]"
+            },
+            {
+              "internalType": "contract IAggregator",
+              "name": "aggregator",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes",
+              "name": "signature",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct IEntryPoint.UserOpsPerAggregator[]",
+          "name": "opsPerAggregator",
+          "type": "tuple[]"
+        },
+        {
+          "internalType": "address payable",
+          "name": "beneficiary",
+          "type": "address"
+        }
+      ],
+      "name": "handleAggregatedOps",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "sender",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "nonce",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bytes",
+              "name": "initCode",
+              "type": "bytes"
+            },
+            {
+              "internalType": "bytes",
+              "name": "callData",
+              "type": "bytes"
+            },
+            {
+              "internalType": "uint256",
+              "name": "callGasLimit",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "verificationGasLimit",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "preVerificationGas",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "maxFeePerGas",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "maxPriorityFeePerGas",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bytes",
+              "name": "paymasterAndData",
+              "type": "bytes"
+            },
+            {
+              "internalType": "bytes",
+              "name": "signature",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct UserOperation[]",
+          "name": "ops",
+          "type": "tuple[]"
+        },
+        {
+          "internalType": "address payable",
+          "name": "beneficiary",
+          "type": "address"
+        }
+      ],
+      "name": "handleOps",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint192",
+          "name": "key",
+          "type": "uint192"
+        }
+      ],
+      "name": "incrementNonce",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "sender",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "nonce",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bytes",
+              "name": "initCode",
+              "type": "bytes"
+            },
+            {
+              "internalType": "bytes",
+              "name": "callData",
+              "type": "bytes"
+            },
+            {
+              "internalType": "uint256",
+              "name": "callGasLimit",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "verificationGasLimit",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "preVerificationGas",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "maxFeePerGas",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "maxPriorityFeePerGas",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bytes",
+              "name": "paymasterAndData",
+              "type": "bytes"
+            },
+            {
+              "internalType": "bytes",
+              "name": "signature",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct UserOperation",
+          "name": "op",
+          "type": "tuple"
+        },
+        {
+          "internalType": "address",
+          "name": "target",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "targetCallData",
+          "type": "bytes"
+        }
+      ],
+      "name": "simulateHandleOp",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "sender",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "nonce",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bytes",
+              "name": "initCode",
+              "type": "bytes"
+            },
+            {
+              "internalType": "bytes",
+              "name": "callData",
+              "type": "bytes"
+            },
+            {
+              "internalType": "uint256",
+              "name": "callGasLimit",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "verificationGasLimit",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "preVerificationGas",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "maxFeePerGas",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "maxPriorityFeePerGas",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bytes",
+              "name": "paymasterAndData",
+              "type": "bytes"
+            },
+            {
+              "internalType": "bytes",
+              "name": "signature",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct UserOperation",
+          "name": "userOp",
+          "type": "tuple"
+        }
+      ],
+      "name": "simulateValidation",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "unlockStake",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address payable",
+          "name": "withdrawAddress",
+          "type": "address"
+        }
+      ],
+      "name": "withdrawStake",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address payable",
+          "name": "withdrawAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "withdrawAmount",
+          "type": "uint256"
+        }
+      ],
+      "name": "withdrawTo",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "addStake(uint32)": "0396cb60",
+    "balanceOf(address)": "70a08231",
+    "depositTo(address)": "b760faf9",
+    "getDepositInfo(address)": "5287ce12",
+    "getNonce(address,uint192)": "35567e1a",
+    "getSenderAddress(bytes)": "9b249f69",
+    "getUserOpHash((address,uint256,bytes,bytes,uint256,uint256,uint256,uint256,uint256,bytes,bytes))": "a6193531",
+    "handleAggregatedOps(((address,uint256,bytes,bytes,uint256,uint256,uint256,uint256,uint256,bytes,bytes)[],address,bytes)[],address)": "4b1d7cf5",
+    "handleOps((address,uint256,bytes,bytes,uint256,uint256,uint256,uint256,uint256,bytes,bytes)[],address)": "1fad948c",
+    "incrementNonce(uint192)": "0bd28e3b",
+    "simulateHandleOp((address,uint256,bytes,bytes,uint256,uint256,uint256,uint256,uint256,bytes,bytes),address,bytes)": "d6383f94",
+    "simulateValidation((address,uint256,bytes,bytes,uint256,uint256,uint256,uint256,uint256,bytes,bytes))": "ee219423",
+    "unlockStake()": "bb9fe6bf",
+    "withdrawStake(address)": "c23a5cea",
+    "withdrawTo(address,uint256)": "205c2878"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"preOpGas\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"paid\",\"type\":\"uint256\"},{\"internalType\":\"uint48\",\"name\":\"validAfter\",\"type\":\"uint48\"},{\"internalType\":\"uint48\",\"name\":\"validUntil\",\"type\":\"uint48\"},{\"internalType\":\"bool\",\"name\":\"targetSuccess\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"targetResult\",\"type\":\"bytes\"}],\"name\":\"ExecutionResult\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"opIndex\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"reason\",\"type\":\"string\"}],\"name\":\"FailedOp\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"SenderAddressResult\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"aggregator\",\"type\":\"address\"}],\"name\":\"SignatureValidationFailed\",\"type\":\"error\"},{\"inputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"preOpGas\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"prefund\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"sigFailed\",\"type\":\"bool\"},{\"internalType\":\"uint48\",\"name\":\"validAfter\",\"type\":\"uint48\"},{\"internalType\":\"uint48\",\"name\":\"validUntil\",\"type\":\"uint48\"},{\"internalType\":\"bytes\",\"name\":\"paymasterContext\",\"type\":\"bytes\"}],\"internalType\":\"struct IEntryPoint.ReturnInfo\",\"name\":\"returnInfo\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"stake\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"unstakeDelaySec\",\"type\":\"uint256\"}],\"internalType\":\"struct IStakeManager.StakeInfo\",\"name\":\"senderInfo\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"stake\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"unstakeDelaySec\",\"type\":\"uint256\"}],\"internalType\":\"struct IStakeManager.StakeInfo\",\"name\":\"factoryInfo\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"stake\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"unstakeDelaySec\",\"type\":\"uint256\"}],\"internalType\":\"struct IStakeManager.StakeInfo\",\"name\":\"paymasterInfo\",\"type\":\"tuple\"}],\"name\":\"ValidationResult\",\"type\":\"error\"},{\"inputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"preOpGas\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"prefund\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"sigFailed\",\"type\":\"bool\"},{\"internalType\":\"uint48\",\"name\":\"validAfter\",\"type\":\"uint48\"},{\"internalType\":\"uint48\",\"name\":\"validUntil\",\"type\":\"uint48\"},{\"internalType\":\"bytes\",\"name\":\"paymasterContext\",\"type\":\"bytes\"}],\"internalType\":\"struct IEntryPoint.ReturnInfo\",\"name\":\"returnInfo\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"stake\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"unstakeDelaySec\",\"type\":\"uint256\"}],\"internalType\":\"struct IStakeManager.StakeInfo\",\"name\":\"senderInfo\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"stake\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"unstakeDelaySec\",\"type\":\"uint256\"}],\"internalType\":\"struct IStakeManager.StakeInfo\",\"name\":\"factoryInfo\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"stake\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"unstakeDelaySec\",\"type\":\"uint256\"}],\"internalType\":\"struct IStakeManager.StakeInfo\",\"name\":\"paymasterInfo\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"aggregator\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"stake\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"unstakeDelaySec\",\"type\":\"uint256\"}],\"internalType\":\"struct IStakeManager.StakeInfo\",\"name\":\"stakeInfo\",\"type\":\"tuple\"}],\"internalType\":\"struct IEntryPoint.AggregatorStakeInfo\",\"name\":\"aggregatorInfo\",\"type\":\"tuple\"}],\"name\":\"ValidationResultWithAggregation\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"userOpHash\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"factory\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"paymaster\",\"type\":\"address\"}],\"name\":\"AccountDeployed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[],\"name\":\"BeforeExecution\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"totalDeposit\",\"type\":\"uint256\"}],\"name\":\"Deposited\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"aggregator\",\"type\":\"address\"}],\"name\":\"SignatureAggregatorChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"totalStaked\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"unstakeDelaySec\",\"type\":\"uint256\"}],\"name\":\"StakeLocked\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"withdrawTime\",\"type\":\"uint256\"}],\"name\":\"StakeUnlocked\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"withdrawAddress\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"StakeWithdrawn\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"userOpHash\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"paymaster\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"nonce\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"success\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"actualGasCost\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"actualGasUsed\",\"type\":\"uint256\"}],\"name\":\"UserOperationEvent\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"userOpHash\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"nonce\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"revertReason\",\"type\":\"bytes\"}],\"name\":\"UserOperationRevertReason\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"withdrawAddress\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Withdrawn\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint32\",\"name\":\"_unstakeDelaySec\",\"type\":\"uint32\"}],\"name\":\"addStake\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"depositTo\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"getDepositInfo\",\"outputs\":[{\"components\":[{\"internalType\":\"uint112\",\"name\":\"deposit\",\"type\":\"uint112\"},{\"internalType\":\"bool\",\"name\":\"staked\",\"type\":\"bool\"},{\"internalType\":\"uint112\",\"name\":\"stake\",\"type\":\"uint112\"},{\"internalType\":\"uint32\",\"name\":\"unstakeDelaySec\",\"type\":\"uint32\"},{\"internalType\":\"uint48\",\"name\":\"withdrawTime\",\"type\":\"uint48\"}],\"internalType\":\"struct IStakeManager.DepositInfo\",\"name\":\"info\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"internalType\":\"uint192\",\"name\":\"key\",\"type\":\"uint192\"}],\"name\":\"getNonce\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"nonce\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"initCode\",\"type\":\"bytes\"}],\"name\":\"getSenderAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"nonce\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"initCode\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"callData\",\"type\":\"bytes\"},{\"internalType\":\"uint256\",\"name\":\"callGasLimit\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"verificationGasLimit\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"preVerificationGas\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"maxFeePerGas\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"maxPriorityFeePerGas\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"paymasterAndData\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"signature\",\"type\":\"bytes\"}],\"internalType\":\"struct UserOperation\",\"name\":\"userOp\",\"type\":\"tuple\"}],\"name\":\"getUserOpHash\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"nonce\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"initCode\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"callData\",\"type\":\"bytes\"},{\"internalType\":\"uint256\",\"name\":\"callGasLimit\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"verificationGasLimit\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"preVerificationGas\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"maxFeePerGas\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"maxPriorityFeePerGas\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"paymasterAndData\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"signature\",\"type\":\"bytes\"}],\"internalType\":\"struct UserOperation[]\",\"name\":\"userOps\",\"type\":\"tuple[]\"},{\"internalType\":\"contract IAggregator\",\"name\":\"aggregator\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"signature\",\"type\":\"bytes\"}],\"internalType\":\"struct IEntryPoint.UserOpsPerAggregator[]\",\"name\":\"opsPerAggregator\",\"type\":\"tuple[]\"},{\"internalType\":\"address payable\",\"name\":\"beneficiary\",\"type\":\"address\"}],\"name\":\"handleAggregatedOps\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"nonce\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"initCode\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"callData\",\"type\":\"bytes\"},{\"internalType\":\"uint256\",\"name\":\"callGasLimit\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"verificationGasLimit\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"preVerificationGas\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"maxFeePerGas\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"maxPriorityFeePerGas\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"paymasterAndData\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"signature\",\"type\":\"bytes\"}],\"internalType\":\"struct UserOperation[]\",\"name\":\"ops\",\"type\":\"tuple[]\"},{\"internalType\":\"address payable\",\"name\":\"beneficiary\",\"type\":\"address\"}],\"name\":\"handleOps\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint192\",\"name\":\"key\",\"type\":\"uint192\"}],\"name\":\"incrementNonce\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"nonce\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"initCode\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"callData\",\"type\":\"bytes\"},{\"internalType\":\"uint256\",\"name\":\"callGasLimit\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"verificationGasLimit\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"preVerificationGas\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"maxFeePerGas\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"maxPriorityFeePerGas\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"paymasterAndData\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"signature\",\"type\":\"bytes\"}],\"internalType\":\"struct UserOperation\",\"name\":\"op\",\"type\":\"tuple\"},{\"internalType\":\"address\",\"name\":\"target\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"targetCallData\",\"type\":\"bytes\"}],\"name\":\"simulateHandleOp\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"nonce\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"initCode\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"callData\",\"type\":\"bytes\"},{\"internalType\":\"uint256\",\"name\":\"callGasLimit\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"verificationGasLimit\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"preVerificationGas\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"maxFeePerGas\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"maxPriorityFeePerGas\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"paymasterAndData\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"signature\",\"type\":\"bytes\"}],\"internalType\":\"struct UserOperation\",\"name\":\"userOp\",\"type\":\"tuple\"}],\"name\":\"simulateValidation\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"unlockStake\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address payable\",\"name\":\"withdrawAddress\",\"type\":\"address\"}],\"name\":\"withdrawStake\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address payable\",\"name\":\"withdrawAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"withdrawAmount\",\"type\":\"uint256\"}],\"name\":\"withdrawTo\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"errors\":{\"FailedOp(uint256,string)\":[{\"params\":{\"opIndex\":\"- index into the array of ops to the failed one (in simulateValidation, this is always zero)\",\"reason\":\"- revert reason      The string starts with a unique code \\\"AAmn\\\", where \\\"m\\\" is \\\"1\\\" for factory, \\\"2\\\" for account and \\\"3\\\" for paymaster issues,      so a failure can be attributed to the correct entity.   Should be caught in off-chain handleOps simulation and not happen on-chain.   Useful for mitigating DoS attempts against batchers or for troubleshooting of factory/account/paymaster reverts.\"}}],\"ValidationResult((uint256,uint256,bool,uint48,uint48,bytes),(uint256,uint256),(uint256,uint256),(uint256,uint256))\":[{\"params\":{\"factoryInfo\":\"stake information about the factory (if any)\",\"paymasterInfo\":\"stake information about the paymaster (if any)\",\"returnInfo\":\"gas and time-range returned values\",\"senderInfo\":\"stake information about the sender\"}}],\"ValidationResultWithAggregation((uint256,uint256,bool,uint48,uint48,bytes),(uint256,uint256),(uint256,uint256),(uint256,uint256),(address,(uint256,uint256)))\":[{\"params\":{\"aggregatorInfo\":\"signature aggregation info (if the account requires signature aggregator)      bundler MUST use it to verify the signature, or reject the UserOperation\",\"factoryInfo\":\"stake information about the factory (if any)\",\"paymasterInfo\":\"stake information about the paymaster (if any)\",\"returnInfo\":\"gas and time-range returned values\",\"senderInfo\":\"stake information about the sender\"}}]},\"events\":{\"AccountDeployed(bytes32,address,address,address)\":{\"params\":{\"factory\":\"the factory used to deploy this account (in the initCode)\",\"paymaster\":\"the paymaster used by this UserOp\",\"sender\":\"the account that is deployed\",\"userOpHash\":\"the userOp that deployed this account. UserOperationEvent will follow.\"}},\"UserOperationRevertReason(bytes32,address,uint256,bytes)\":{\"params\":{\"nonce\":\"the nonce used in the request\",\"revertReason\":\"- the return bytes from the (reverted) call to \\\"callData\\\".\",\"sender\":\"the sender of this request\",\"userOpHash\":\"the request unique identifier.\"}}},\"kind\":\"dev\",\"methods\":{\"addStake(uint32)\":{\"params\":{\"_unstakeDelaySec\":\"the new lock duration before the deposit can be withdrawn.\"}},\"balanceOf(address)\":{\"returns\":{\"_0\":\"the deposit (for gas payment) of the account\"}},\"getDepositInfo(address)\":{\"returns\":{\"info\":\"- full deposit information of given account\"}},\"getNonce(address,uint192)\":{\"params\":{\"key\":\"the high 192 bit of the nonce\",\"sender\":\"the account address\"},\"returns\":{\"nonce\":\"a full nonce to pass for next UserOp with this sender.\"}},\"getSenderAddress(bytes)\":{\"params\":{\"initCode\":\"the constructor code to be passed into the UserOperation.\"}},\"handleAggregatedOps(((address,uint256,bytes,bytes,uint256,uint256,uint256,uint256,uint256,bytes,bytes)[],address,bytes)[],address)\":{\"params\":{\"beneficiary\":\"the address to receive the fees\",\"opsPerAggregator\":\"the operations to execute, grouped by aggregator (or address(0) for no-aggregator accounts)\"}},\"handleOps((address,uint256,bytes,bytes,uint256,uint256,uint256,uint256,uint256,bytes,bytes)[],address)\":{\"params\":{\"beneficiary\":\"the address to receive the fees\",\"ops\":\"the operations to execute\"}},\"simulateHandleOp((address,uint256,bytes,bytes,uint256,uint256,uint256,uint256,uint256,bytes,bytes),address,bytes)\":{\"params\":{\"op\":\"the UserOperation to simulate\",\"target\":\"if nonzero, a target address to call after userop simulation. If called, the targetSuccess and targetResult        are set to the return from that call.\",\"targetCallData\":\"callData to pass to target address\"}},\"simulateValidation((address,uint256,bytes,bytes,uint256,uint256,uint256,uint256,uint256,bytes,bytes))\":{\"details\":\"this method always revert. Successful result is ValidationResult error. other errors are failures.The node must also verify it doesn't use banned opcodes, and that it doesn't reference storage outside the account's data.\",\"params\":{\"userOp\":\"the user operation to validate.\"}},\"withdrawStake(address)\":{\"params\":{\"withdrawAddress\":\"the address to send withdrawn value.\"}},\"withdrawTo(address,uint256)\":{\"params\":{\"withdrawAddress\":\"the address to send withdrawn value.\",\"withdrawAmount\":\"the amount to withdraw.\"}}},\"version\":1},\"userdoc\":{\"errors\":{\"ExecutionResult(uint256,uint256,uint48,uint48,bool,bytes)\":[{\"notice\":\"return value of simulateHandleOp\"}],\"FailedOp(uint256,string)\":[{\"notice\":\"a custom revert error of handleOps, to identify the offending op.  NOTE: if simulateValidation passes successfully, there should be no reason for handleOps to fail on it.\"}],\"SenderAddressResult(address)\":[{\"notice\":\"return value of getSenderAddress\"}],\"SignatureValidationFailed(address)\":[{\"notice\":\"error case when a signature aggregator fails to verify the aggregated signature it had created.\"}],\"ValidationResult((uint256,uint256,bool,uint48,uint48,bytes),(uint256,uint256),(uint256,uint256),(uint256,uint256))\":[{\"notice\":\"Successful result from simulateValidation.\"}],\"ValidationResultWithAggregation((uint256,uint256,bool,uint48,uint48,bytes),(uint256,uint256),(uint256,uint256),(uint256,uint256),(address,(uint256,uint256)))\":[{\"notice\":\"Successful result from simulateValidation, if the account returns a signature aggregator\"}]},\"events\":{\"AccountDeployed(bytes32,address,address,address)\":{\"notice\":\"account \\\"sender\\\" was deployed.\"},\"BeforeExecution()\":{\"notice\":\"an event emitted by handleOps(), before starting the execution loop. any event emitted before this event, is part of the validation.\"},\"SignatureAggregatorChanged(address)\":{\"notice\":\"signature aggregator used by the following UserOperationEvents within this bundle.\"},\"StakeLocked(address,uint256,uint256)\":{\"notice\":\"Emitted when stake or unstake delay are modified\"},\"StakeUnlocked(address,uint256)\":{\"notice\":\"Emitted once a stake is scheduled for withdrawal\"},\"UserOperationRevertReason(bytes32,address,uint256,bytes)\":{\"notice\":\"An event emitted if the UserOperation \\\"callData\\\" reverted with non-zero length\"}},\"kind\":\"user\",\"methods\":{\"addStake(uint32)\":{\"notice\":\"add to the account's stake - amount and delay any pending unstake is first cancelled.\"},\"depositTo(address)\":{\"notice\":\"add to the deposit of the given account\"},\"getNonce(address,uint192)\":{\"notice\":\"Return the next nonce for this sender. Within a given key, the nonce values are sequenced (starting with zero, and incremented by one on each userop) But UserOp with different keys can come with arbitrary order.\"},\"getSenderAddress(bytes)\":{\"notice\":\"Get counterfactual sender address.  Calculate the sender contract address that will be generated by the initCode and salt in the UserOperation. this method always revert, and returns the address in SenderAddressResult error\"},\"getUserOpHash((address,uint256,bytes,bytes,uint256,uint256,uint256,uint256,uint256,bytes,bytes))\":{\"notice\":\"generate a request Id - unique identifier for this request. the request ID is a hash over the content of the userOp (except the signature), the entrypoint and the chainid.\"},\"handleAggregatedOps(((address,uint256,bytes,bytes,uint256,uint256,uint256,uint256,uint256,bytes,bytes)[],address,bytes)[],address)\":{\"notice\":\"Execute a batch of UserOperation with Aggregators\"},\"handleOps((address,uint256,bytes,bytes,uint256,uint256,uint256,uint256,uint256,bytes,bytes)[],address)\":{\"notice\":\"Execute a batch of UserOperation. no signature aggregator is used. if any account requires an aggregator (that is, it returned an aggregator when performing simulateValidation), then handleAggregatedOps() must be used instead.\"},\"incrementNonce(uint192)\":{\"notice\":\"Manually increment the nonce of the sender. This method is exposed just for completeness.. Account does NOT need to call it, neither during validation, nor elsewhere, as the EntryPoint will update the nonce regardless. Possible use-case is call it with various keys to \\\"initialize\\\" their nonces to one, so that future UserOperations will not pay extra for the first transaction with a given key.\"},\"simulateHandleOp((address,uint256,bytes,bytes,uint256,uint256,uint256,uint256,uint256,bytes,bytes),address,bytes)\":{\"notice\":\"simulate full execution of a UserOperation (including both validation and target execution) this method will always revert with \\\"ExecutionResult\\\". it performs full validation of the UserOperation, but ignores signature error. an optional target address is called after the userop succeeds, and its value is returned (before the entire call is reverted) Note that in order to collect the the success/failure of the target call, it must be executed with trace enabled to track the emitted events.\"},\"simulateValidation((address,uint256,bytes,bytes,uint256,uint256,uint256,uint256,uint256,bytes,bytes))\":{\"notice\":\"Simulate a call to account.validateUserOp and paymaster.validatePaymasterUserOp.\"},\"unlockStake()\":{\"notice\":\"attempt to unlock the stake. the value can be withdrawn (using withdrawStake) after the unstake delay.\"},\"withdrawStake(address)\":{\"notice\":\"withdraw from the (unlocked) stake. must first call unlockStake and wait for the unstakeDelay to pass\"},\"withdrawTo(address,uint256)\":{\"notice\":\"withdraw from the deposit.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"lib/eth-infinitism/contracts/interfaces/IEntryPoint.sol\":\"IEntryPoint\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@chainlink/contracts/=lib/chainlink-brownie-contracts/contracts/\",\":@eth-infinitism/contracts/=lib/eth-infinitism/contracts/\",\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":chainlink-brownie-contracts/=lib/chainlink-brownie-contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":eth-infinitism/=lib/eth-infinitism/contracts/\",\":forge-std/=lib/forge-std/src/\",\":foundry-devops/=lib/foundry-devops/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\"]},\"sources\":{\"lib/eth-infinitism/contracts/core/Helpers.sol\":{\"keccak256\":\"0x591c87519f7155d1909210276b77925ab2722a99b7b5d5649aecc36ebbdb045a\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://69643e83f68e6a13d5075c7565bfce326673b0bd98c432033c4603ea84835746\",\"dweb:/ipfs/QmSwSzjYyV7qudi5vvsmzHMG2Z4YJZxX51RRXXVCLaNcEU\"]},\"lib/eth-infinitism/contracts/interfaces/IAggregator.sol\":{\"keccak256\":\"0x060e9ddb0152250c269ba0640dc5753834ac44cf182a2837d508c0c529cae26a\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://20ed837bc5909c89ff1910246bf245a5dad6840aa939382e1694964eb7dbd37b\",\"dweb:/ipfs/QmTMybRq5yyghPDDs1ZCNAVB9sSJ4WHe6Q9mejuKPTAdNP\"]},\"lib/eth-infinitism/contracts/interfaces/IEntryPoint.sol\":{\"keccak256\":\"0x3a90bf308819ed125fa4202f880999caff8a8686633b8ddb79a30ca240d5b8f8\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://d2d21cc92c2fdab2b58d21bc25d4cd0e8c284b922528a186b087b818d54bc6cf\",\"dweb:/ipfs/QmT1qrfuBjsv2rmRCDn8mgPXHp94hARJwzbcDuBLDTbFWd\"]},\"lib/eth-infinitism/contracts/interfaces/INonceManager.sol\":{\"keccak256\":\"0x509871e6c63663cdcc3eba19920fe84e991f38b289b1377ac3c3a6d9f22d7e12\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://00fe21b4349b24c50df60e1a705179293982bd9e7a32b78d4bac9620f89e7fe2\",\"dweb:/ipfs/QmSFFYGfUwQbVa6hASjU7YxTvgi2HkfrPr4X5oPHscHg8b\"]},\"lib/eth-infinitism/contracts/interfaces/IStakeManager.sol\":{\"keccak256\":\"0xd227b02888cd4ac68daebcdfd992ec00f9fff66fa3b3bb16f656cd582fa3480f\",\"license\":\"GPL-3.0-only\",\"urls\":[\"bzz-raw://b389da4714a138be63704a576a482505eab2855e263b38a93706395d8d42e7c3\",\"dweb:/ipfs/QmeeAZpdHwUXxqP8pxA7GNtoCGBmmH4FaqLLwScVKGxtxZ\"]},\"lib/eth-infinitism/contracts/interfaces/UserOperation.sol\":{\"keccak256\":\"0x61374003361059087fdcf17967a7bba052badeaf5c7f0ae689166f8aafd3a45c\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://6ff83c59432e733bf6304dda27cd4b0f34401917dd535e2669cc842d2d26568c\",\"dweb:/ipfs/QmPJbHU5TAjHqUTZzAcicEeG2nknmwCN43L4EW9LHbknTN\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.20+commit.a1b79de6"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "preOpGas",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "paid",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint48",
+              "name": "validAfter",
+              "type": "uint48"
+            },
+            {
+              "internalType": "uint48",
+              "name": "validUntil",
+              "type": "uint48"
+            },
+            {
+              "internalType": "bool",
+              "name": "targetSuccess",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "targetResult",
+              "type": "bytes"
+            }
+          ],
+          "type": "error",
+          "name": "ExecutionResult"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "opIndex",
+              "type": "uint256"
+            },
+            {
+              "internalType": "string",
+              "name": "reason",
+              "type": "string"
+            }
+          ],
+          "type": "error",
+          "name": "FailedOp"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "sender",
+              "type": "address"
+            }
+          ],
+          "type": "error",
+          "name": "SenderAddressResult"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "aggregator",
+              "type": "address"
+            }
+          ],
+          "type": "error",
+          "name": "SignatureValidationFailed"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "struct IEntryPoint.ReturnInfo",
+              "name": "returnInfo",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "preOpGas",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "prefund",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "sigFailed",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "uint48",
+                  "name": "validAfter",
+                  "type": "uint48"
+                },
+                {
+                  "internalType": "uint48",
+                  "name": "validUntil",
+                  "type": "uint48"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "paymasterContext",
+                  "type": "bytes"
+                }
+              ]
+            },
+            {
+              "internalType": "struct IStakeManager.StakeInfo",
+              "name": "senderInfo",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "stake",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "unstakeDelaySec",
+                  "type": "uint256"
+                }
+              ]
+            },
+            {
+              "internalType": "struct IStakeManager.StakeInfo",
+              "name": "factoryInfo",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "stake",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "unstakeDelaySec",
+                  "type": "uint256"
+                }
+              ]
+            },
+            {
+              "internalType": "struct IStakeManager.StakeInfo",
+              "name": "paymasterInfo",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "stake",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "unstakeDelaySec",
+                  "type": "uint256"
+                }
+              ]
+            }
+          ],
+          "type": "error",
+          "name": "ValidationResult"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "struct IEntryPoint.ReturnInfo",
+              "name": "returnInfo",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "preOpGas",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "prefund",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "sigFailed",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "uint48",
+                  "name": "validAfter",
+                  "type": "uint48"
+                },
+                {
+                  "internalType": "uint48",
+                  "name": "validUntil",
+                  "type": "uint48"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "paymasterContext",
+                  "type": "bytes"
+                }
+              ]
+            },
+            {
+              "internalType": "struct IStakeManager.StakeInfo",
+              "name": "senderInfo",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "stake",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "unstakeDelaySec",
+                  "type": "uint256"
+                }
+              ]
+            },
+            {
+              "internalType": "struct IStakeManager.StakeInfo",
+              "name": "factoryInfo",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "stake",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "unstakeDelaySec",
+                  "type": "uint256"
+                }
+              ]
+            },
+            {
+              "internalType": "struct IStakeManager.StakeInfo",
+              "name": "paymasterInfo",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "stake",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "unstakeDelaySec",
+                  "type": "uint256"
+                }
+              ]
+            },
+            {
+              "internalType": "struct IEntryPoint.AggregatorStakeInfo",
+              "name": "aggregatorInfo",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "address",
+                  "name": "aggregator",
+                  "type": "address"
+                },
+                {
+                  "internalType": "struct IStakeManager.StakeInfo",
+                  "name": "stakeInfo",
+                  "type": "tuple",
+                  "components": [
+                    {
+                      "internalType": "uint256",
+                      "name": "stake",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "unstakeDelaySec",
+                      "type": "uint256"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "type": "error",
+          "name": "ValidationResultWithAggregation"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32",
+              "name": "userOpHash",
+              "type": "bytes32",
+              "indexed": true
+            },
+            {
+              "internalType": "address",
+              "name": "sender",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "address",
+              "name": "factory",
+              "type": "address",
+              "indexed": false
+            },
+            {
+              "internalType": "address",
+              "name": "paymaster",
+              "type": "address",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "AccountDeployed",
+          "anonymous": false
+        },
+        {
+          "inputs": [],
+          "type": "event",
+          "name": "BeforeExecution",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "account",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "totalDeposit",
+              "type": "uint256",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "Deposited",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "aggregator",
+              "type": "address",
+              "indexed": true
+            }
+          ],
+          "type": "event",
+          "name": "SignatureAggregatorChanged",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "account",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "totalStaked",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "unstakeDelaySec",
+              "type": "uint256",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "StakeLocked",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "account",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "withdrawTime",
+              "type": "uint256",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "StakeUnlocked",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "account",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "address",
+              "name": "withdrawAddress",
+              "type": "address",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "StakeWithdrawn",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32",
+              "name": "userOpHash",
+              "type": "bytes32",
+              "indexed": true
+            },
+            {
+              "internalType": "address",
+              "name": "sender",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "address",
+              "name": "paymaster",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "nonce",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "bool",
+              "name": "success",
+              "type": "bool",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "actualGasCost",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "actualGasUsed",
+              "type": "uint256",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "UserOperationEvent",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32",
+              "name": "userOpHash",
+              "type": "bytes32",
+              "indexed": true
+            },
+            {
+              "internalType": "address",
+              "name": "sender",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "nonce",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "bytes",
+              "name": "revertReason",
+              "type": "bytes",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "UserOperationRevertReason",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "account",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "address",
+              "name": "withdrawAddress",
+              "type": "address",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "Withdrawn",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint32",
+              "name": "_unstakeDelaySec",
+              "type": "uint32"
+            }
+          ],
+          "stateMutability": "payable",
+          "type": "function",
+          "name": "addStake"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "account",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "balanceOf",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "account",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "payable",
+          "type": "function",
+          "name": "depositTo"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "account",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getDepositInfo",
+          "outputs": [
+            {
+              "internalType": "struct IStakeManager.DepositInfo",
+              "name": "info",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "uint112",
+                  "name": "deposit",
+                  "type": "uint112"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "staked",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "uint112",
+                  "name": "stake",
+                  "type": "uint112"
+                },
+                {
+                  "internalType": "uint32",
+                  "name": "unstakeDelaySec",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "uint48",
+                  "name": "withdrawTime",
+                  "type": "uint48"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "sender",
+              "type": "address"
+            },
+            {
+              "internalType": "uint192",
+              "name": "key",
+              "type": "uint192"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getNonce",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "nonce",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes",
+              "name": "initCode",
+              "type": "bytes"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "getSenderAddress"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "struct UserOperation",
+              "name": "userOp",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "address",
+                  "name": "sender",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "nonce",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "initCode",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "callData",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "callGasLimit",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "verificationGasLimit",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "preVerificationGas",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "maxFeePerGas",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "maxPriorityFeePerGas",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "paymasterAndData",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "signature",
+                  "type": "bytes"
+                }
+              ]
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getUserOpHash",
+          "outputs": [
+            {
+              "internalType": "bytes32",
+              "name": "",
+              "type": "bytes32"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "struct IEntryPoint.UserOpsPerAggregator[]",
+              "name": "opsPerAggregator",
+              "type": "tuple[]",
+              "components": [
+                {
+                  "internalType": "struct UserOperation[]",
+                  "name": "userOps",
+                  "type": "tuple[]",
+                  "components": [
+                    {
+                      "internalType": "address",
+                      "name": "sender",
+                      "type": "address"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "nonce",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "bytes",
+                      "name": "initCode",
+                      "type": "bytes"
+                    },
+                    {
+                      "internalType": "bytes",
+                      "name": "callData",
+                      "type": "bytes"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "callGasLimit",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "verificationGasLimit",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "preVerificationGas",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "maxFeePerGas",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "maxPriorityFeePerGas",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "bytes",
+                      "name": "paymasterAndData",
+                      "type": "bytes"
+                    },
+                    {
+                      "internalType": "bytes",
+                      "name": "signature",
+                      "type": "bytes"
+                    }
+                  ]
+                },
+                {
+                  "internalType": "contract IAggregator",
+                  "name": "aggregator",
+                  "type": "address"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "signature",
+                  "type": "bytes"
+                }
+              ]
+            },
+            {
+              "internalType": "address payable",
+              "name": "beneficiary",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "handleAggregatedOps"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "struct UserOperation[]",
+              "name": "ops",
+              "type": "tuple[]",
+              "components": [
+                {
+                  "internalType": "address",
+                  "name": "sender",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "nonce",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "initCode",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "callData",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "callGasLimit",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "verificationGasLimit",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "preVerificationGas",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "maxFeePerGas",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "maxPriorityFeePerGas",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "paymasterAndData",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "signature",
+                  "type": "bytes"
+                }
+              ]
+            },
+            {
+              "internalType": "address payable",
+              "name": "beneficiary",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "handleOps"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint192",
+              "name": "key",
+              "type": "uint192"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "incrementNonce"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "struct UserOperation",
+              "name": "op",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "address",
+                  "name": "sender",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "nonce",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "initCode",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "callData",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "callGasLimit",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "verificationGasLimit",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "preVerificationGas",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "maxFeePerGas",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "maxPriorityFeePerGas",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "paymasterAndData",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "signature",
+                  "type": "bytes"
+                }
+              ]
+            },
+            {
+              "internalType": "address",
+              "name": "target",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes",
+              "name": "targetCallData",
+              "type": "bytes"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "simulateHandleOp"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "struct UserOperation",
+              "name": "userOp",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "address",
+                  "name": "sender",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "nonce",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "initCode",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "callData",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "callGasLimit",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "verificationGasLimit",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "preVerificationGas",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "maxFeePerGas",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "maxPriorityFeePerGas",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "paymasterAndData",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "signature",
+                  "type": "bytes"
+                }
+              ]
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "simulateValidation"
+        },
+        {
+          "inputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "unlockStake"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address payable",
+              "name": "withdrawAddress",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "withdrawStake"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address payable",
+              "name": "withdrawAddress",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "withdrawAmount",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "withdrawTo"
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {
+          "addStake(uint32)": {
+            "params": {
+              "_unstakeDelaySec": "the new lock duration before the deposit can be withdrawn."
+            }
+          },
+          "balanceOf(address)": {
+            "returns": {
+              "_0": "the deposit (for gas payment) of the account"
+            }
+          },
+          "getDepositInfo(address)": {
+            "returns": {
+              "info": "- full deposit information of given account"
+            }
+          },
+          "getNonce(address,uint192)": {
+            "params": {
+              "key": "the high 192 bit of the nonce",
+              "sender": "the account address"
+            },
+            "returns": {
+              "nonce": "a full nonce to pass for next UserOp with this sender."
+            }
+          },
+          "getSenderAddress(bytes)": {
+            "params": {
+              "initCode": "the constructor code to be passed into the UserOperation."
+            }
+          },
+          "handleAggregatedOps(((address,uint256,bytes,bytes,uint256,uint256,uint256,uint256,uint256,bytes,bytes)[],address,bytes)[],address)": {
+            "params": {
+              "beneficiary": "the address to receive the fees",
+              "opsPerAggregator": "the operations to execute, grouped by aggregator (or address(0) for no-aggregator accounts)"
+            }
+          },
+          "handleOps((address,uint256,bytes,bytes,uint256,uint256,uint256,uint256,uint256,bytes,bytes)[],address)": {
+            "params": {
+              "beneficiary": "the address to receive the fees",
+              "ops": "the operations to execute"
+            }
+          },
+          "simulateHandleOp((address,uint256,bytes,bytes,uint256,uint256,uint256,uint256,uint256,bytes,bytes),address,bytes)": {
+            "params": {
+              "op": "the UserOperation to simulate",
+              "target": "if nonzero, a target address to call after userop simulation. If called, the targetSuccess and targetResult        are set to the return from that call.",
+              "targetCallData": "callData to pass to target address"
+            }
+          },
+          "simulateValidation((address,uint256,bytes,bytes,uint256,uint256,uint256,uint256,uint256,bytes,bytes))": {
+            "details": "this method always revert. Successful result is ValidationResult error. other errors are failures.The node must also verify it doesn't use banned opcodes, and that it doesn't reference storage outside the account's data.",
+            "params": {
+              "userOp": "the user operation to validate."
+            }
+          },
+          "withdrawStake(address)": {
+            "params": {
+              "withdrawAddress": "the address to send withdrawn value."
+            }
+          },
+          "withdrawTo(address,uint256)": {
+            "params": {
+              "withdrawAddress": "the address to send withdrawn value.",
+              "withdrawAmount": "the amount to withdraw."
+            }
+          }
+        },
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {
+          "addStake(uint32)": {
+            "notice": "add to the account's stake - amount and delay any pending unstake is first cancelled."
+          },
+          "depositTo(address)": {
+            "notice": "add to the deposit of the given account"
+          },
+          "getNonce(address,uint192)": {
+            "notice": "Return the next nonce for this sender. Within a given key, the nonce values are sequenced (starting with zero, and incremented by one on each userop) But UserOp with different keys can come with arbitrary order."
+          },
+          "getSenderAddress(bytes)": {
+            "notice": "Get counterfactual sender address.  Calculate the sender contract address that will be generated by the initCode and salt in the UserOperation. this method always revert, and returns the address in SenderAddressResult error"
+          },
+          "getUserOpHash((address,uint256,bytes,bytes,uint256,uint256,uint256,uint256,uint256,bytes,bytes))": {
+            "notice": "generate a request Id - unique identifier for this request. the request ID is a hash over the content of the userOp (except the signature), the entrypoint and the chainid."
+          },
+          "handleAggregatedOps(((address,uint256,bytes,bytes,uint256,uint256,uint256,uint256,uint256,bytes,bytes)[],address,bytes)[],address)": {
+            "notice": "Execute a batch of UserOperation with Aggregators"
+          },
+          "handleOps((address,uint256,bytes,bytes,uint256,uint256,uint256,uint256,uint256,bytes,bytes)[],address)": {
+            "notice": "Execute a batch of UserOperation. no signature aggregator is used. if any account requires an aggregator (that is, it returned an aggregator when performing simulateValidation), then handleAggregatedOps() must be used instead."
+          },
+          "incrementNonce(uint192)": {
+            "notice": "Manually increment the nonce of the sender. This method is exposed just for completeness.. Account does NOT need to call it, neither during validation, nor elsewhere, as the EntryPoint will update the nonce regardless. Possible use-case is call it with various keys to \"initialize\" their nonces to one, so that future UserOperations will not pay extra for the first transaction with a given key."
+          },
+          "simulateHandleOp((address,uint256,bytes,bytes,uint256,uint256,uint256,uint256,uint256,bytes,bytes),address,bytes)": {
+            "notice": "simulate full execution of a UserOperation (including both validation and target execution) this method will always revert with \"ExecutionResult\". it performs full validation of the UserOperation, but ignores signature error. an optional target address is called after the userop succeeds, and its value is returned (before the entire call is reverted) Note that in order to collect the the success/failure of the target call, it must be executed with trace enabled to track the emitted events."
+          },
+          "simulateValidation((address,uint256,bytes,bytes,uint256,uint256,uint256,uint256,uint256,bytes,bytes))": {
+            "notice": "Simulate a call to account.validateUserOp and paymaster.validatePaymasterUserOp."
+          },
+          "unlockStake()": {
+            "notice": "attempt to unlock the stake. the value can be withdrawn (using withdrawStake) after the unstake delay."
+          },
+          "withdrawStake(address)": {
+            "notice": "withdraw from the (unlocked) stake. must first call unlockStake and wait for the unstakeDelay to pass"
+          },
+          "withdrawTo(address,uint256)": {
+            "notice": "withdraw from the deposit."
+          }
+        },
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        ":@chainlink/contracts/=lib/chainlink-brownie-contracts/contracts/",
+        ":@eth-infinitism/contracts/=lib/eth-infinitism/contracts/",
+        ":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+        ":chainlink-brownie-contracts/=lib/chainlink-brownie-contracts/",
+        ":ds-test/=lib/forge-std/lib/ds-test/src/",
+        ":eth-infinitism/=lib/eth-infinitism/contracts/",
+        ":forge-std/=lib/forge-std/src/",
+        ":foundry-devops/=lib/foundry-devops/src/",
+        ":openzeppelin-contracts/=lib/openzeppelin-contracts/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "lib/eth-infinitism/contracts/interfaces/IEntryPoint.sol": "IEntryPoint"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "lib/eth-infinitism/contracts/core/Helpers.sol": {
+        "keccak256": "0x591c87519f7155d1909210276b77925ab2722a99b7b5d5649aecc36ebbdb045a",
+        "urls": [
+          "bzz-raw://69643e83f68e6a13d5075c7565bfce326673b0bd98c432033c4603ea84835746",
+          "dweb:/ipfs/QmSwSzjYyV7qudi5vvsmzHMG2Z4YJZxX51RRXXVCLaNcEU"
+        ],
+        "license": "GPL-3.0"
+      },
+      "lib/eth-infinitism/contracts/interfaces/IAggregator.sol": {
+        "keccak256": "0x060e9ddb0152250c269ba0640dc5753834ac44cf182a2837d508c0c529cae26a",
+        "urls": [
+          "bzz-raw://20ed837bc5909c89ff1910246bf245a5dad6840aa939382e1694964eb7dbd37b",
+          "dweb:/ipfs/QmTMybRq5yyghPDDs1ZCNAVB9sSJ4WHe6Q9mejuKPTAdNP"
+        ],
+        "license": "GPL-3.0"
+      },
+      "lib/eth-infinitism/contracts/interfaces/IEntryPoint.sol": {
+        "keccak256": "0x3a90bf308819ed125fa4202f880999caff8a8686633b8ddb79a30ca240d5b8f8",
+        "urls": [
+          "bzz-raw://d2d21cc92c2fdab2b58d21bc25d4cd0e8c284b922528a186b087b818d54bc6cf",
+          "dweb:/ipfs/QmT1qrfuBjsv2rmRCDn8mgPXHp94hARJwzbcDuBLDTbFWd"
+        ],
+        "license": "GPL-3.0"
+      },
+      "lib/eth-infinitism/contracts/interfaces/INonceManager.sol": {
+        "keccak256": "0x509871e6c63663cdcc3eba19920fe84e991f38b289b1377ac3c3a6d9f22d7e12",
+        "urls": [
+          "bzz-raw://00fe21b4349b24c50df60e1a705179293982bd9e7a32b78d4bac9620f89e7fe2",
+          "dweb:/ipfs/QmSFFYGfUwQbVa6hASjU7YxTvgi2HkfrPr4X5oPHscHg8b"
+        ],
+        "license": "GPL-3.0"
+      },
+      "lib/eth-infinitism/contracts/interfaces/IStakeManager.sol": {
+        "keccak256": "0xd227b02888cd4ac68daebcdfd992ec00f9fff66fa3b3bb16f656cd582fa3480f",
+        "urls": [
+          "bzz-raw://b389da4714a138be63704a576a482505eab2855e263b38a93706395d8d42e7c3",
+          "dweb:/ipfs/QmeeAZpdHwUXxqP8pxA7GNtoCGBmmH4FaqLLwScVKGxtxZ"
+        ],
+        "license": "GPL-3.0-only"
+      },
+      "lib/eth-infinitism/contracts/interfaces/UserOperation.sol": {
+        "keccak256": "0x61374003361059087fdcf17967a7bba052badeaf5c7f0ae689166f8aafd3a45c",
+        "urls": [
+          "bzz-raw://6ff83c59432e733bf6304dda27cd4b0f34401917dd535e2669cc842d2d26568c",
+          "dweb:/ipfs/QmPJbHU5TAjHqUTZzAcicEeG2nknmwCN43L4EW9LHbknTN"
+        ],
+        "license": "GPL-3.0"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "lib/eth-infinitism/contracts/interfaces/IEntryPoint.sol",
+    "id": 638,
+    "exportedSymbols": {
+      "IAggregator": [
+        431
+      ],
+      "IEntryPoint": [
+        637
+      ],
+      "INonceManager": [
+        656
+      ],
+      "IStakeManager": [
+        762
+      ],
+      "UserOperation": [
+        790
+      ],
+      "UserOperationLib": [
+        960
+      ],
+      "calldataKeccak": [
+        380
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "163:9251:4",
+    "nodes": [
+      {
+        "id": 433,
+        "nodeType": "PragmaDirective",
+        "src": "163:24:4",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".12"
+        ]
+      },
+      {
+        "id": 434,
+        "nodeType": "ImportDirective",
+        "src": "311:29:4",
+        "nodes": [],
+        "absolutePath": "lib/eth-infinitism/contracts/interfaces/UserOperation.sol",
+        "file": "./UserOperation.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 638,
+        "sourceUnit": 961,
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "id": 435,
+        "nodeType": "ImportDirective",
+        "src": "341:29:4",
+        "nodes": [],
+        "absolutePath": "lib/eth-infinitism/contracts/interfaces/IStakeManager.sol",
+        "file": "./IStakeManager.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 638,
+        "sourceUnit": 763,
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "id": 436,
+        "nodeType": "ImportDirective",
+        "src": "371:27:4",
+        "nodes": [],
+        "absolutePath": "lib/eth-infinitism/contracts/interfaces/IAggregator.sol",
+        "file": "./IAggregator.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 638,
+        "sourceUnit": 432,
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "id": 437,
+        "nodeType": "ImportDirective",
+        "src": "399:29:4",
+        "nodes": [],
+        "absolutePath": "lib/eth-infinitism/contracts/interfaces/INonceManager.sol",
+        "file": "./INonceManager.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 638,
+        "sourceUnit": 657,
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "id": 637,
+        "nodeType": "ContractDefinition",
+        "src": "430:8982:4",
+        "nodes": [
+          {
+            "id": 457,
+            "nodeType": "EventDefinition",
+            "src": "1185:179:4",
+            "nodes": [],
+            "anonymous": false,
+            "eventSelector": "49628fd1471006c1482da88028e9ce4dbb080b815c9b0344d39e5a8e6ec1419f",
+            "name": "UserOperationEvent",
+            "nameLocation": "1191:18:4",
+            "parameters": {
+              "id": 456,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 443,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "userOpHash",
+                  "nameLocation": "1226:10:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 457,
+                  "src": "1210:26:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 442,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1210:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 445,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "sender",
+                  "nameLocation": "1254:6:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 457,
+                  "src": "1238:22:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 444,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1238:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 447,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "paymaster",
+                  "nameLocation": "1278:9:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 457,
+                  "src": "1262:25:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 446,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1262:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 449,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "nonce",
+                  "nameLocation": "1297:5:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 457,
+                  "src": "1289:13:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 448,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1289:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 451,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "success",
+                  "nameLocation": "1309:7:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 457,
+                  "src": "1304:12:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 450,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1304:4:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 453,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "actualGasCost",
+                  "nameLocation": "1326:13:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 457,
+                  "src": "1318:21:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 452,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1318:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 455,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "actualGasUsed",
+                  "nameLocation": "1349:13:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 457,
+                  "src": "1341:21:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 454,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1341:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1209:154:4"
+            }
+          },
+          {
+            "id": 468,
+            "nodeType": "EventDefinition",
+            "src": "1708:110:4",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 458,
+              "nodeType": "StructuredDocumentation",
+              "src": "1370:333:4",
+              "text": " account \"sender\" was deployed.\n @param userOpHash the userOp that deployed this account. UserOperationEvent will follow.\n @param sender the account that is deployed\n @param factory the factory used to deploy this account (in the initCode)\n @param paymaster the paymaster used by this UserOp"
+            },
+            "eventSelector": "d51a9c61267aa6196961883ecf5ff2da6619c37dac0fa92122513fb32c032d2d",
+            "name": "AccountDeployed",
+            "nameLocation": "1714:15:4",
+            "parameters": {
+              "id": 467,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 460,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "userOpHash",
+                  "nameLocation": "1746:10:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 468,
+                  "src": "1730:26:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 459,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1730:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 462,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "sender",
+                  "nameLocation": "1774:6:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 468,
+                  "src": "1758:22:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 461,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1758:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 464,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "factory",
+                  "nameLocation": "1790:7:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 468,
+                  "src": "1782:15:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 463,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1782:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 466,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "paymaster",
+                  "nameLocation": "1807:9:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 468,
+                  "src": "1799:17:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 465,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1799:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1729:88:4"
+            }
+          },
+          {
+            "id": 479,
+            "nodeType": "EventDefinition",
+            "src": "2166:119:4",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 469,
+              "nodeType": "StructuredDocumentation",
+              "src": "1824:337:4",
+              "text": " An event emitted if the UserOperation \"callData\" reverted with non-zero length\n @param userOpHash the request unique identifier.\n @param sender the sender of this request\n @param nonce the nonce used in the request\n @param revertReason - the return bytes from the (reverted) call to \"callData\"."
+            },
+            "eventSelector": "1c4fada7374c0a9ee8841fc38afe82932dc0f8e69012e927f061a8bae611a201",
+            "name": "UserOperationRevertReason",
+            "nameLocation": "2172:25:4",
+            "parameters": {
+              "id": 478,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 471,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "userOpHash",
+                  "nameLocation": "2214:10:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 479,
+                  "src": "2198:26:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 470,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2198:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 473,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "sender",
+                  "nameLocation": "2242:6:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 479,
+                  "src": "2226:22:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 472,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2226:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 475,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "nonce",
+                  "nameLocation": "2258:5:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 479,
+                  "src": "2250:13:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 474,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2250:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 477,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "revertReason",
+                  "nameLocation": "2271:12:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 479,
+                  "src": "2265:18:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 476,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2265:5:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2197:87:4"
+            }
+          },
+          {
+            "id": 482,
+            "nodeType": "EventDefinition",
+            "src": "2454:24:4",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 480,
+              "nodeType": "StructuredDocumentation",
+              "src": "2291:158:4",
+              "text": " an event emitted by handleOps(), before starting the execution loop.\n any event emitted before this event, is part of the validation."
+            },
+            "eventSelector": "bb47ee3e183a558b1a2ff0874b079f3fc5478b7454eacf2bfc5af2ff5878f972",
+            "name": "BeforeExecution",
+            "nameLocation": "2460:15:4",
+            "parameters": {
+              "id": 481,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2475:2:4"
+            }
+          },
+          {
+            "id": 487,
+            "nodeType": "EventDefinition",
+            "src": "2590:61:4",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 483,
+              "nodeType": "StructuredDocumentation",
+              "src": "2484:101:4",
+              "text": " signature aggregator used by the following UserOperationEvents within this bundle."
+            },
+            "eventSelector": "575ff3acadd5ab348fe1855e217e0f3678f8d767d7494c9f9fefbee2e17cca4d",
+            "name": "SignatureAggregatorChanged",
+            "nameLocation": "2596:26:4",
+            "parameters": {
+              "id": 486,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 485,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "aggregator",
+                  "nameLocation": "2639:10:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 487,
+                  "src": "2623:26:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 484,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2623:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2622:28:4"
+            }
+          },
+          {
+            "id": 494,
+            "nodeType": "ErrorDefinition",
+            "src": "3418:47:4",
+            "nodes": [],
+            "documentation": {
+              "id": 488,
+              "nodeType": "StructuredDocumentation",
+              "src": "2657:756:4",
+              "text": " a custom revert error of handleOps, to identify the offending op.\n  NOTE: if simulateValidation passes successfully, there should be no reason for handleOps to fail on it.\n  @param opIndex - index into the array of ops to the failed one (in simulateValidation, this is always zero)\n  @param reason - revert reason\n      The string starts with a unique code \"AAmn\", where \"m\" is \"1\" for factory, \"2\" for account and \"3\" for paymaster issues,\n      so a failure can be attributed to the correct entity.\n   Should be caught in off-chain handleOps simulation and not happen on-chain.\n   Useful for mitigating DoS attempts against batchers or for troubleshooting of factory/account/paymaster reverts."
+            },
+            "errorSelector": "220266b6",
+            "name": "FailedOp",
+            "nameLocation": "3424:8:4",
+            "parameters": {
+              "id": 493,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 490,
+                  "mutability": "mutable",
+                  "name": "opIndex",
+                  "nameLocation": "3441:7:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 494,
+                  "src": "3433:15:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 489,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3433:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 492,
+                  "mutability": "mutable",
+                  "name": "reason",
+                  "nameLocation": "3457:6:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 494,
+                  "src": "3450:13:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 491,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3450:6:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3432:32:4"
+            }
+          },
+          {
+            "id": 499,
+            "nodeType": "ErrorDefinition",
+            "src": "3590:52:4",
+            "nodes": [],
+            "documentation": {
+              "id": 495,
+              "nodeType": "StructuredDocumentation",
+              "src": "3471:114:4",
+              "text": " error case when a signature aggregator fails to verify the aggregated signature it had created."
+            },
+            "errorSelector": "86a9f750",
+            "name": "SignatureValidationFailed",
+            "nameLocation": "3596:25:4",
+            "parameters": {
+              "id": 498,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 497,
+                  "mutability": "mutable",
+                  "name": "aggregator",
+                  "nameLocation": "3630:10:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 499,
+                  "src": "3622:18:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 496,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3622:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3621:20:4"
+            }
+          },
+          {
+            "id": 514,
+            "nodeType": "ErrorDefinition",
+            "src": "3980:124:4",
+            "nodes": [],
+            "documentation": {
+              "id": 500,
+              "nodeType": "StructuredDocumentation",
+              "src": "3648:327:4",
+              "text": " Successful result from simulateValidation.\n @param returnInfo gas and time-range returned values\n @param senderInfo stake information about the sender\n @param factoryInfo stake information about the factory (if any)\n @param paymasterInfo stake information about the paymaster (if any)"
+            },
+            "errorSelector": "e0cff05f",
+            "name": "ValidationResult",
+            "nameLocation": "3986:16:4",
+            "parameters": {
+              "id": 513,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 503,
+                  "mutability": "mutable",
+                  "name": "returnInfo",
+                  "nameLocation": "4014:10:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 514,
+                  "src": "4003:21:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_ReturnInfo_$612_memory_ptr",
+                    "typeString": "struct IEntryPoint.ReturnInfo"
+                  },
+                  "typeName": {
+                    "id": 502,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 501,
+                      "name": "ReturnInfo",
+                      "nameLocations": [
+                        "4003:10:4"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 612,
+                      "src": "4003:10:4"
+                    },
+                    "referencedDeclaration": 612,
+                    "src": "4003:10:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_ReturnInfo_$612_storage_ptr",
+                      "typeString": "struct IEntryPoint.ReturnInfo"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 506,
+                  "mutability": "mutable",
+                  "name": "senderInfo",
+                  "nameLocation": "4044:10:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 514,
+                  "src": "4034:20:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_StakeInfo_$714_memory_ptr",
+                    "typeString": "struct IStakeManager.StakeInfo"
+                  },
+                  "typeName": {
+                    "id": 505,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 504,
+                      "name": "StakeInfo",
+                      "nameLocations": [
+                        "4034:9:4"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 714,
+                      "src": "4034:9:4"
+                    },
+                    "referencedDeclaration": 714,
+                    "src": "4034:9:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_StakeInfo_$714_storage_ptr",
+                      "typeString": "struct IStakeManager.StakeInfo"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 509,
+                  "mutability": "mutable",
+                  "name": "factoryInfo",
+                  "nameLocation": "4066:11:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 514,
+                  "src": "4056:21:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_StakeInfo_$714_memory_ptr",
+                    "typeString": "struct IStakeManager.StakeInfo"
+                  },
+                  "typeName": {
+                    "id": 508,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 507,
+                      "name": "StakeInfo",
+                      "nameLocations": [
+                        "4056:9:4"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 714,
+                      "src": "4056:9:4"
+                    },
+                    "referencedDeclaration": 714,
+                    "src": "4056:9:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_StakeInfo_$714_storage_ptr",
+                      "typeString": "struct IStakeManager.StakeInfo"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 512,
+                  "mutability": "mutable",
+                  "name": "paymasterInfo",
+                  "nameLocation": "4089:13:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 514,
+                  "src": "4079:23:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_StakeInfo_$714_memory_ptr",
+                    "typeString": "struct IStakeManager.StakeInfo"
+                  },
+                  "typeName": {
+                    "id": 511,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 510,
+                      "name": "StakeInfo",
+                      "nameLocations": [
+                        "4079:9:4"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 714,
+                      "src": "4079:9:4"
+                    },
+                    "referencedDeclaration": 714,
+                    "src": "4079:9:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_StakeInfo_$714_storage_ptr",
+                      "typeString": "struct IStakeManager.StakeInfo"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4002:101:4"
+            }
+          },
+          {
+            "id": 532,
+            "nodeType": "ErrorDefinition",
+            "src": "4676:183:4",
+            "nodes": [],
+            "documentation": {
+              "id": 515,
+              "nodeType": "StructuredDocumentation",
+              "src": "4110:561:4",
+              "text": " Successful result from simulateValidation, if the account returns a signature aggregator\n @param returnInfo gas and time-range returned values\n @param senderInfo stake information about the sender\n @param factoryInfo stake information about the factory (if any)\n @param paymasterInfo stake information about the paymaster (if any)\n @param aggregatorInfo signature aggregation info (if the account requires signature aggregator)\n      bundler MUST use it to verify the signature, or reject the UserOperation"
+            },
+            "errorSelector": "faecb4e4",
+            "name": "ValidationResultWithAggregation",
+            "nameLocation": "4682:31:4",
+            "parameters": {
+              "id": 531,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 518,
+                  "mutability": "mutable",
+                  "name": "returnInfo",
+                  "nameLocation": "4725:10:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 532,
+                  "src": "4714:21:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_ReturnInfo_$612_memory_ptr",
+                    "typeString": "struct IEntryPoint.ReturnInfo"
+                  },
+                  "typeName": {
+                    "id": 517,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 516,
+                      "name": "ReturnInfo",
+                      "nameLocations": [
+                        "4714:10:4"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 612,
+                      "src": "4714:10:4"
+                    },
+                    "referencedDeclaration": 612,
+                    "src": "4714:10:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_ReturnInfo_$612_storage_ptr",
+                      "typeString": "struct IEntryPoint.ReturnInfo"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 521,
+                  "mutability": "mutable",
+                  "name": "senderInfo",
+                  "nameLocation": "4755:10:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 532,
+                  "src": "4745:20:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_StakeInfo_$714_memory_ptr",
+                    "typeString": "struct IStakeManager.StakeInfo"
+                  },
+                  "typeName": {
+                    "id": 520,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 519,
+                      "name": "StakeInfo",
+                      "nameLocations": [
+                        "4745:9:4"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 714,
+                      "src": "4745:9:4"
+                    },
+                    "referencedDeclaration": 714,
+                    "src": "4745:9:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_StakeInfo_$714_storage_ptr",
+                      "typeString": "struct IStakeManager.StakeInfo"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 524,
+                  "mutability": "mutable",
+                  "name": "factoryInfo",
+                  "nameLocation": "4777:11:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 532,
+                  "src": "4767:21:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_StakeInfo_$714_memory_ptr",
+                    "typeString": "struct IStakeManager.StakeInfo"
+                  },
+                  "typeName": {
+                    "id": 523,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 522,
+                      "name": "StakeInfo",
+                      "nameLocations": [
+                        "4767:9:4"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 714,
+                      "src": "4767:9:4"
+                    },
+                    "referencedDeclaration": 714,
+                    "src": "4767:9:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_StakeInfo_$714_storage_ptr",
+                      "typeString": "struct IStakeManager.StakeInfo"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 527,
+                  "mutability": "mutable",
+                  "name": "paymasterInfo",
+                  "nameLocation": "4800:13:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 532,
+                  "src": "4790:23:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_StakeInfo_$714_memory_ptr",
+                    "typeString": "struct IStakeManager.StakeInfo"
+                  },
+                  "typeName": {
+                    "id": 526,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 525,
+                      "name": "StakeInfo",
+                      "nameLocations": [
+                        "4790:9:4"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 714,
+                      "src": "4790:9:4"
+                    },
+                    "referencedDeclaration": 714,
+                    "src": "4790:9:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_StakeInfo_$714_storage_ptr",
+                      "typeString": "struct IStakeManager.StakeInfo"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 530,
+                  "mutability": "mutable",
+                  "name": "aggregatorInfo",
+                  "nameLocation": "4843:14:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 532,
+                  "src": "4823:34:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_AggregatorStakeInfo_$619_memory_ptr",
+                    "typeString": "struct IEntryPoint.AggregatorStakeInfo"
+                  },
+                  "typeName": {
+                    "id": 529,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 528,
+                      "name": "AggregatorStakeInfo",
+                      "nameLocations": [
+                        "4823:19:4"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 619,
+                      "src": "4823:19:4"
+                    },
+                    "referencedDeclaration": 619,
+                    "src": "4823:19:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_AggregatorStakeInfo_$619_storage_ptr",
+                      "typeString": "struct IEntryPoint.AggregatorStakeInfo"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4713:145:4"
+            }
+          },
+          {
+            "id": 537,
+            "nodeType": "ErrorDefinition",
+            "src": "4921:42:4",
+            "nodes": [],
+            "documentation": {
+              "id": 533,
+              "nodeType": "StructuredDocumentation",
+              "src": "4865:51:4",
+              "text": " return value of getSenderAddress"
+            },
+            "errorSelector": "6ca7b806",
+            "name": "SenderAddressResult",
+            "nameLocation": "4927:19:4",
+            "parameters": {
+              "id": 536,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 535,
+                  "mutability": "mutable",
+                  "name": "sender",
+                  "nameLocation": "4955:6:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 537,
+                  "src": "4947:14:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 534,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4947:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4946:16:4"
+            }
+          },
+          {
+            "id": 552,
+            "nodeType": "ErrorDefinition",
+            "src": "5025:132:4",
+            "nodes": [],
+            "documentation": {
+              "id": 538,
+              "nodeType": "StructuredDocumentation",
+              "src": "4969:51:4",
+              "text": " return value of simulateHandleOp"
+            },
+            "errorSelector": "8b7ac980",
+            "name": "ExecutionResult",
+            "nameLocation": "5031:15:4",
+            "parameters": {
+              "id": 551,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 540,
+                  "mutability": "mutable",
+                  "name": "preOpGas",
+                  "nameLocation": "5055:8:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 552,
+                  "src": "5047:16:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 539,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5047:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 542,
+                  "mutability": "mutable",
+                  "name": "paid",
+                  "nameLocation": "5073:4:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 552,
+                  "src": "5065:12:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 541,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5065:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 544,
+                  "mutability": "mutable",
+                  "name": "validAfter",
+                  "nameLocation": "5086:10:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 552,
+                  "src": "5079:17:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint48",
+                    "typeString": "uint48"
+                  },
+                  "typeName": {
+                    "id": 543,
+                    "name": "uint48",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5079:6:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint48",
+                      "typeString": "uint48"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 546,
+                  "mutability": "mutable",
+                  "name": "validUntil",
+                  "nameLocation": "5105:10:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 552,
+                  "src": "5098:17:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint48",
+                    "typeString": "uint48"
+                  },
+                  "typeName": {
+                    "id": 545,
+                    "name": "uint48",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5098:6:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint48",
+                      "typeString": "uint48"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 548,
+                  "mutability": "mutable",
+                  "name": "targetSuccess",
+                  "nameLocation": "5122:13:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 552,
+                  "src": "5117:18:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 547,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5117:4:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 550,
+                  "mutability": "mutable",
+                  "name": "targetResult",
+                  "nameLocation": "5143:12:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 552,
+                  "src": "5137:18:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 549,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5137:5:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5046:110:4"
+            }
+          },
+          {
+            "id": 562,
+            "nodeType": "StructDefinition",
+            "src": "5201:188:4",
+            "nodes": [],
+            "canonicalName": "IEntryPoint.UserOpsPerAggregator",
+            "members": [
+              {
+                "constant": false,
+                "id": 556,
+                "mutability": "mutable",
+                "name": "userOps",
+                "nameLocation": "5255:7:4",
+                "nodeType": "VariableDeclaration",
+                "scope": 562,
+                "src": "5239:23:4",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_struct$_UserOperation_$790_storage_$dyn_storage_ptr",
+                  "typeString": "struct UserOperation[]"
+                },
+                "typeName": {
+                  "baseType": {
+                    "id": 554,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 553,
+                      "name": "UserOperation",
+                      "nameLocations": [
+                        "5239:13:4"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 790,
+                      "src": "5239:13:4"
+                    },
+                    "referencedDeclaration": 790,
+                    "src": "5239:13:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_UserOperation_$790_storage_ptr",
+                      "typeString": "struct UserOperation"
+                    }
+                  },
+                  "id": 555,
+                  "nodeType": "ArrayTypeName",
+                  "src": "5239:15:4",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_UserOperation_$790_storage_$dyn_storage_ptr",
+                    "typeString": "struct UserOperation[]"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 559,
+                "mutability": "mutable",
+                "name": "aggregator",
+                "nameLocation": "5315:10:4",
+                "nodeType": "VariableDeclaration",
+                "scope": 562,
+                "src": "5303:22:4",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_contract$_IAggregator_$431",
+                  "typeString": "contract IAggregator"
+                },
+                "typeName": {
+                  "id": 558,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 557,
+                    "name": "IAggregator",
+                    "nameLocations": [
+                      "5303:11:4"
+                    ],
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 431,
+                    "src": "5303:11:4"
+                  },
+                  "referencedDeclaration": 431,
+                  "src": "5303:11:4",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IAggregator_$431",
+                    "typeString": "contract IAggregator"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 561,
+                "mutability": "mutable",
+                "name": "signature",
+                "nameLocation": "5373:9:4",
+                "nodeType": "VariableDeclaration",
+                "scope": 562,
+                "src": "5367:15:4",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes_storage_ptr",
+                  "typeString": "bytes"
+                },
+                "typeName": {
+                  "id": 560,
+                  "name": "bytes",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "5367:5:4",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_storage_ptr",
+                    "typeString": "bytes"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "UserOpsPerAggregator",
+            "nameLocation": "5208:20:4",
+            "scope": 637,
+            "visibility": "public"
+          },
+          {
+            "id": 572,
+            "nodeType": "FunctionDefinition",
+            "src": "5768:87:4",
+            "nodes": [],
+            "documentation": {
+              "id": 563,
+              "nodeType": "StructuredDocumentation",
+              "src": "5395:368:4",
+              "text": " Execute a batch of UserOperation.\n no signature aggregator is used.\n if any account requires an aggregator (that is, it returned an aggregator when\n performing simulateValidation), then handleAggregatedOps() must be used instead.\n @param ops the operations to execute\n @param beneficiary the address to receive the fees"
+            },
+            "functionSelector": "1fad948c",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "handleOps",
+            "nameLocation": "5777:9:4",
+            "parameters": {
+              "id": 570,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 567,
+                  "mutability": "mutable",
+                  "name": "ops",
+                  "nameLocation": "5812:3:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 572,
+                  "src": "5787:28:4",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_UserOperation_$790_calldata_ptr_$dyn_calldata_ptr",
+                    "typeString": "struct UserOperation[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 565,
+                      "nodeType": "UserDefinedTypeName",
+                      "pathNode": {
+                        "id": 564,
+                        "name": "UserOperation",
+                        "nameLocations": [
+                          "5787:13:4"
+                        ],
+                        "nodeType": "IdentifierPath",
+                        "referencedDeclaration": 790,
+                        "src": "5787:13:4"
+                      },
+                      "referencedDeclaration": 790,
+                      "src": "5787:13:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_UserOperation_$790_storage_ptr",
+                        "typeString": "struct UserOperation"
+                      }
+                    },
+                    "id": 566,
+                    "nodeType": "ArrayTypeName",
+                    "src": "5787:15:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_UserOperation_$790_storage_$dyn_storage_ptr",
+                      "typeString": "struct UserOperation[]"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 569,
+                  "mutability": "mutable",
+                  "name": "beneficiary",
+                  "nameLocation": "5833:11:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 572,
+                  "src": "5817:27:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 568,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5817:15:4",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5786:59:4"
+            },
+            "returnParameters": {
+              "id": 571,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "5854:0:4"
+            },
+            "scope": 637,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 582,
+            "nodeType": "FunctionDefinition",
+            "src": "6115:139:4",
+            "nodes": [],
+            "documentation": {
+              "id": 573,
+              "nodeType": "StructuredDocumentation",
+              "src": "5861:249:4",
+              "text": " Execute a batch of UserOperation with Aggregators\n @param opsPerAggregator the operations to execute, grouped by aggregator (or address(0) for no-aggregator accounts)\n @param beneficiary the address to receive the fees"
+            },
+            "functionSelector": "4b1d7cf5",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "handleAggregatedOps",
+            "nameLocation": "6124:19:4",
+            "parameters": {
+              "id": 580,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 577,
+                  "mutability": "mutable",
+                  "name": "opsPerAggregator",
+                  "nameLocation": "6185:16:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 582,
+                  "src": "6153:48:4",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_UserOpsPerAggregator_$562_calldata_ptr_$dyn_calldata_ptr",
+                    "typeString": "struct IEntryPoint.UserOpsPerAggregator[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 575,
+                      "nodeType": "UserDefinedTypeName",
+                      "pathNode": {
+                        "id": 574,
+                        "name": "UserOpsPerAggregator",
+                        "nameLocations": [
+                          "6153:20:4"
+                        ],
+                        "nodeType": "IdentifierPath",
+                        "referencedDeclaration": 562,
+                        "src": "6153:20:4"
+                      },
+                      "referencedDeclaration": 562,
+                      "src": "6153:20:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_UserOpsPerAggregator_$562_storage_ptr",
+                        "typeString": "struct IEntryPoint.UserOpsPerAggregator"
+                      }
+                    },
+                    "id": 576,
+                    "nodeType": "ArrayTypeName",
+                    "src": "6153:22:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_UserOpsPerAggregator_$562_storage_$dyn_storage_ptr",
+                      "typeString": "struct IEntryPoint.UserOpsPerAggregator[]"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 579,
+                  "mutability": "mutable",
+                  "name": "beneficiary",
+                  "nameLocation": "6227:11:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 582,
+                  "src": "6211:27:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 578,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6211:15:4",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6143:101:4"
+            },
+            "returnParameters": {
+              "id": 581,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "6253:0:4"
+            },
+            "scope": 637,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 591,
+            "nodeType": "FunctionDefinition",
+            "src": "6462:86:4",
+            "nodes": [],
+            "documentation": {
+              "id": 583,
+              "nodeType": "StructuredDocumentation",
+              "src": "6260:197:4",
+              "text": " generate a request Id - unique identifier for this request.\n the request ID is a hash over the content of the userOp (except the signature), the entrypoint and the chainid."
+            },
+            "functionSelector": "a6193531",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getUserOpHash",
+            "nameLocation": "6471:13:4",
+            "parameters": {
+              "id": 587,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 586,
+                  "mutability": "mutable",
+                  "name": "userOp",
+                  "nameLocation": "6508:6:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 591,
+                  "src": "6485:29:4",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_UserOperation_$790_calldata_ptr",
+                    "typeString": "struct UserOperation"
+                  },
+                  "typeName": {
+                    "id": 585,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 584,
+                      "name": "UserOperation",
+                      "nameLocations": [
+                        "6485:13:4"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 790,
+                      "src": "6485:13:4"
+                    },
+                    "referencedDeclaration": 790,
+                    "src": "6485:13:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_UserOperation_$790_storage_ptr",
+                      "typeString": "struct UserOperation"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6484:31:4"
+            },
+            "returnParameters": {
+              "id": 590,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 589,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 591,
+                  "src": "6539:7:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 588,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6539:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6538:9:4"
+            },
+            "scope": 637,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 598,
+            "nodeType": "FunctionDefinition",
+            "src": "6957:68:4",
+            "nodes": [],
+            "documentation": {
+              "id": 592,
+              "nodeType": "StructuredDocumentation",
+              "src": "6554:398:4",
+              "text": " Simulate a call to account.validateUserOp and paymaster.validatePaymasterUserOp.\n @dev this method always revert. Successful result is ValidationResult error. other errors are failures.\n @dev The node must also verify it doesn't use banned opcodes, and that it doesn't reference storage outside the account's data.\n @param userOp the user operation to validate."
+            },
+            "functionSelector": "ee219423",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "simulateValidation",
+            "nameLocation": "6966:18:4",
+            "parameters": {
+              "id": 596,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 595,
+                  "mutability": "mutable",
+                  "name": "userOp",
+                  "nameLocation": "7008:6:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 598,
+                  "src": "6985:29:4",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_UserOperation_$790_calldata_ptr",
+                    "typeString": "struct UserOperation"
+                  },
+                  "typeName": {
+                    "id": 594,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 593,
+                      "name": "UserOperation",
+                      "nameLocations": [
+                        "6985:13:4"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 790,
+                      "src": "6985:13:4"
+                    },
+                    "referencedDeclaration": 790,
+                    "src": "6985:13:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_UserOperation_$790_storage_ptr",
+                      "typeString": "struct UserOperation"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6984:31:4"
+            },
+            "returnParameters": {
+              "id": 597,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "7024:0:4"
+            },
+            "scope": 637,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 612,
+            "nodeType": "StructDefinition",
+            "src": "7624:186:4",
+            "nodes": [],
+            "canonicalName": "IEntryPoint.ReturnInfo",
+            "documentation": {
+              "id": 599,
+              "nodeType": "StructuredDocumentation",
+              "src": "7031:588:4",
+              "text": " gas and return values during simulation\n @param preOpGas the gas used for validation (including preValidationGas)\n @param prefund the required prefund for this operation\n @param sigFailed validateUserOp's (or paymaster's) signature check failed\n @param validAfter - first timestamp this UserOp is valid (merging account and paymaster time-range)\n @param validUntil - last timestamp this UserOp is valid (merging account and paymaster time-range)\n @param paymasterContext returned by validatePaymasterUserOp (to be passed into postOp)"
+            },
+            "members": [
+              {
+                "constant": false,
+                "id": 601,
+                "mutability": "mutable",
+                "name": "preOpGas",
+                "nameLocation": "7660:8:4",
+                "nodeType": "VariableDeclaration",
+                "scope": 612,
+                "src": "7652:16:4",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 600,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "7652:7:4",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 603,
+                "mutability": "mutable",
+                "name": "prefund",
+                "nameLocation": "7686:7:4",
+                "nodeType": "VariableDeclaration",
+                "scope": 612,
+                "src": "7678:15:4",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 602,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "7678:7:4",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 605,
+                "mutability": "mutable",
+                "name": "sigFailed",
+                "nameLocation": "7708:9:4",
+                "nodeType": "VariableDeclaration",
+                "scope": 612,
+                "src": "7703:14:4",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 604,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "7703:4:4",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 607,
+                "mutability": "mutable",
+                "name": "validAfter",
+                "nameLocation": "7734:10:4",
+                "nodeType": "VariableDeclaration",
+                "scope": 612,
+                "src": "7727:17:4",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint48",
+                  "typeString": "uint48"
+                },
+                "typeName": {
+                  "id": 606,
+                  "name": "uint48",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "7727:6:4",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint48",
+                    "typeString": "uint48"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 609,
+                "mutability": "mutable",
+                "name": "validUntil",
+                "nameLocation": "7761:10:4",
+                "nodeType": "VariableDeclaration",
+                "scope": 612,
+                "src": "7754:17:4",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint48",
+                  "typeString": "uint48"
+                },
+                "typeName": {
+                  "id": 608,
+                  "name": "uint48",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "7754:6:4",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint48",
+                    "typeString": "uint48"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 611,
+                "mutability": "mutable",
+                "name": "paymasterContext",
+                "nameLocation": "7787:16:4",
+                "nodeType": "VariableDeclaration",
+                "scope": 612,
+                "src": "7781:22:4",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes_storage_ptr",
+                  "typeString": "bytes"
+                },
+                "typeName": {
+                  "id": 610,
+                  "name": "bytes",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "7781:5:4",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_storage_ptr",
+                    "typeString": "bytes"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "ReturnInfo",
+            "nameLocation": "7631:10:4",
+            "scope": 637,
+            "visibility": "public"
+          },
+          {
+            "id": 619,
+            "nodeType": "StructDefinition",
+            "src": "7945:91:4",
+            "nodes": [],
+            "canonicalName": "IEntryPoint.AggregatorStakeInfo",
+            "documentation": {
+              "id": 613,
+              "nodeType": "StructuredDocumentation",
+              "src": "7816:124:4",
+              "text": " returned aggregated signature info.\n the aggregator returned by the account, and its current stake."
+            },
+            "members": [
+              {
+                "constant": false,
+                "id": 615,
+                "mutability": "mutable",
+                "name": "aggregator",
+                "nameLocation": "7990:10:4",
+                "nodeType": "VariableDeclaration",
+                "scope": 619,
+                "src": "7982:18:4",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 614,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "7982:7:4",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 618,
+                "mutability": "mutable",
+                "name": "stakeInfo",
+                "nameLocation": "8020:9:4",
+                "nodeType": "VariableDeclaration",
+                "scope": 619,
+                "src": "8010:19:4",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_StakeInfo_$714_storage_ptr",
+                  "typeString": "struct IStakeManager.StakeInfo"
+                },
+                "typeName": {
+                  "id": 617,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 616,
+                    "name": "StakeInfo",
+                    "nameLocations": [
+                      "8010:9:4"
+                    ],
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 714,
+                    "src": "8010:9:4"
+                  },
+                  "referencedDeclaration": 714,
+                  "src": "8010:9:4",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_StakeInfo_$714_storage_ptr",
+                    "typeString": "struct IStakeManager.StakeInfo"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "AggregatorStakeInfo",
+            "nameLocation": "7952:19:4",
+            "scope": 637,
+            "visibility": "public"
+          },
+          {
+            "id": 625,
+            "nodeType": "FunctionDefinition",
+            "src": "8384:58:4",
+            "nodes": [],
+            "documentation": {
+              "id": 620,
+              "nodeType": "StructuredDocumentation",
+              "src": "8042:337:4",
+              "text": " Get counterfactual sender address.\n  Calculate the sender contract address that will be generated by the initCode and salt in the UserOperation.\n this method always revert, and returns the address in SenderAddressResult error\n @param initCode the constructor code to be passed into the UserOperation."
+            },
+            "functionSelector": "9b249f69",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getSenderAddress",
+            "nameLocation": "8393:16:4",
+            "parameters": {
+              "id": 623,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 622,
+                  "mutability": "mutable",
+                  "name": "initCode",
+                  "nameLocation": "8423:8:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 625,
+                  "src": "8410:21:4",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 621,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "8410:5:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "8409:23:4"
+            },
+            "returnParameters": {
+              "id": 624,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "8441:0:4"
+            },
+            "scope": 637,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 636,
+            "nodeType": "FunctionDefinition",
+            "src": "9301:109:4",
+            "nodes": [],
+            "documentation": {
+              "id": 626,
+              "nodeType": "StructuredDocumentation",
+              "src": "8449:847:4",
+              "text": " simulate full execution of a UserOperation (including both validation and target execution)\n this method will always revert with \"ExecutionResult\".\n it performs full validation of the UserOperation, but ignores signature error.\n an optional target address is called after the userop succeeds, and its value is returned\n (before the entire call is reverted)\n Note that in order to collect the the success/failure of the target call, it must be executed\n with trace enabled to track the emitted events.\n @param op the UserOperation to simulate\n @param target if nonzero, a target address to call after userop simulation. If called, the targetSuccess and targetResult\n        are set to the return from that call.\n @param targetCallData callData to pass to target address"
+            },
+            "functionSelector": "d6383f94",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "simulateHandleOp",
+            "nameLocation": "9310:16:4",
+            "parameters": {
+              "id": 634,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 629,
+                  "mutability": "mutable",
+                  "name": "op",
+                  "nameLocation": "9350:2:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 636,
+                  "src": "9327:25:4",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_UserOperation_$790_calldata_ptr",
+                    "typeString": "struct UserOperation"
+                  },
+                  "typeName": {
+                    "id": 628,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 627,
+                      "name": "UserOperation",
+                      "nameLocations": [
+                        "9327:13:4"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 790,
+                      "src": "9327:13:4"
+                    },
+                    "referencedDeclaration": 790,
+                    "src": "9327:13:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_UserOperation_$790_storage_ptr",
+                      "typeString": "struct UserOperation"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 631,
+                  "mutability": "mutable",
+                  "name": "target",
+                  "nameLocation": "9362:6:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 636,
+                  "src": "9354:14:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 630,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "9354:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 633,
+                  "mutability": "mutable",
+                  "name": "targetCallData",
+                  "nameLocation": "9385:14:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 636,
+                  "src": "9370:29:4",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 632,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "9370:5:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "9326:74:4"
+            },
+            "returnParameters": {
+              "id": 635,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "9409:0:4"
+            },
+            "scope": 637,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 438,
+              "name": "IStakeManager",
+              "nameLocations": [
+                "455:13:4"
+              ],
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 762,
+              "src": "455:13:4"
+            },
+            "id": 439,
+            "nodeType": "InheritanceSpecifier",
+            "src": "455:13:4"
+          },
+          {
+            "baseName": {
+              "id": 440,
+              "name": "INonceManager",
+              "nameLocations": [
+                "470:13:4"
+              ],
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 656,
+              "src": "470:13:4"
+            },
+            "id": 441,
+            "nodeType": "InheritanceSpecifier",
+            "src": "470:13:4"
+          }
+        ],
+        "canonicalName": "IEntryPoint",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          637,
+          656,
+          762
+        ],
+        "name": "IEntryPoint",
+        "nameLocation": "440:11:4",
+        "scope": 638,
+        "usedErrors": [
+          494,
+          499,
+          514,
+          532,
+          537,
+          552
+        ],
+        "usedEvents": [
+          457,
+          468,
+          479,
+          482,
+          487,
+          665,
+          673,
+          682,
+          689,
+          697
+        ]
+      }
+    ],
+    "license": "GPL-3.0"
+  },
+  "id": 4
+}

@@ -2,7 +2,7 @@
 src = "src"
 out = "out"
 libs = ["lib"]
-remappings = ['@chainlink/contracts/=lib/chainlink-brownie-contracts/contracts/', '@openzeppelin/contracts=lib/openzeppelin-contracts/contracts']
+remappings = ['@eth-infinitism/contracts/=lib/eth-infinitism/contracts/', '@chainlink/contracts/=lib/chainlink-brownie-contracts/contracts/', '@openzeppelin/contracts=lib/openzeppelin-contracts/contracts']
 
 [etherscan]
 mainnet = { key = "${ETHERSCAN_API_KEY}" }
