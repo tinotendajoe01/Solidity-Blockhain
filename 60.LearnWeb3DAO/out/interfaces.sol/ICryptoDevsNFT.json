@@ -1,0 +1,684 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        }
+      ],
+      "name": "balanceOf",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "index",
+          "type": "uint256"
+        }
+      ],
+      "name": "tokenOfOwnerByIndex",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "balanceOf(address)": "70a08231",
+    "tokenOfOwnerByIndex(address,uint256)": "2f745c59"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"index\",\"type\":\"uint256\"}],\"name\":\"tokenOfOwnerByIndex\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"balanceOf(address)\":{\"details\":\"balanceOf returns the number of NFTs owned by the given address\",\"params\":{\"owner\":\"- address to fetch number of NFTs for\"},\"returns\":{\"_0\":\"Returns the number of NFTs owned\"}},\"tokenOfOwnerByIndex(address,uint256)\":{\"details\":\"tokenOfOwnerByIndex returns a tokenID at given index for owner\",\"params\":{\"index\":\"- index of NFT in owned tokens array to fetch\",\"owner\":\"- address to fetch the NFT TokenID for\"},\"returns\":{\"_0\":\"Returns the TokenID of the NFT\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"Minimal interface for CryptoDevsNFT containing only two functions that we are interested in\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/CryptoDevs/interfaces/interfaces.sol\":\"ICryptoDevsNFT\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@chainlink/contracts/=lib/chainlink-brownie-contracts/contracts/\",\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":chainlink-brownie-contracts/=lib/chainlink-brownie-contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\",\":foundry-devops/=lib/foundry-devops/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\"]},\"sources\":{\"src/CryptoDevs/interfaces/interfaces.sol\":{\"keccak256\":\"0x0c25731f689edd56aa2fe5edfa3c87122799d77fa9beb639d91ac704bb6ef688\",\"license\":\"SEE LICENSE IN LICENSE\",\"urls\":[\"bzz-raw://31cff1b87dceb50865676d87fcb1be919c903d165a21838292ff59adecf68353\",\"dweb:/ipfs/QmPWkir2jcg5MhqmJUwoPnMDXFHFxbWGoRfRkjYYv9Vamw\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.20+commit.a1b79de6"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "balanceOf",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "index",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "tokenOfOwnerByIndex",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {
+          "balanceOf(address)": {
+            "details": "balanceOf returns the number of NFTs owned by the given address",
+            "params": {
+              "owner": "- address to fetch number of NFTs for"
+            },
+            "returns": {
+              "_0": "Returns the number of NFTs owned"
+            }
+          },
+          "tokenOfOwnerByIndex(address,uint256)": {
+            "details": "tokenOfOwnerByIndex returns a tokenID at given index for owner",
+            "params": {
+              "index": "- index of NFT in owned tokens array to fetch",
+              "owner": "- address to fetch the NFT TokenID for"
+            },
+            "returns": {
+              "_0": "Returns the TokenID of the NFT"
+            }
+          }
+        },
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        ":@chainlink/contracts/=lib/chainlink-brownie-contracts/contracts/",
+        ":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+        ":chainlink-brownie-contracts/=lib/chainlink-brownie-contracts/",
+        ":ds-test/=lib/forge-std/lib/ds-test/src/",
+        ":forge-std/=lib/forge-std/src/",
+        ":foundry-devops/=lib/foundry-devops/src/",
+        ":openzeppelin-contracts/=lib/openzeppelin-contracts/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "src/CryptoDevs/interfaces/interfaces.sol": "ICryptoDevsNFT"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "src/CryptoDevs/interfaces/interfaces.sol": {
+        "keccak256": "0x0c25731f689edd56aa2fe5edfa3c87122799d77fa9beb639d91ac704bb6ef688",
+        "urls": [
+          "bzz-raw://31cff1b87dceb50865676d87fcb1be919c903d165a21838292ff59adecf68353",
+          "dweb:/ipfs/QmPWkir2jcg5MhqmJUwoPnMDXFHFxbWGoRfRkjYYv9Vamw"
+        ],
+        "license": "SEE LICENSE IN LICENSE"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "src/CryptoDevs/interfaces/interfaces.sol",
+    "id": 3685,
+    "exportedSymbols": {
+      "ICryptoDevsNFT": [
+        3684
+      ],
+      "IFakeNFTMarketplace": [
+        3664
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "51:1462:16",
+    "nodes": [
+      {
+        "id": 3642,
+        "nodeType": "PragmaDirective",
+        "src": "51:23:16",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "0.8",
+          ".20"
+        ]
+      },
+      {
+        "id": 3664,
+        "nodeType": "ContractDefinition",
+        "src": "124:649:16",
+        "nodes": [
+          {
+            "id": 3649,
+            "nodeType": "FunctionDefinition",
+            "src": "292:52:16",
+            "nodes": [],
+            "documentation": {
+              "id": 3644,
+              "nodeType": "StructuredDocumentation",
+              "src": "160:127:16",
+              "text": "@dev getPrice() returns the price of an NFT from the FakeNFTMarketplace\n @return Returns the price in Wei for an NFT"
+            },
+            "functionSelector": "98d5fdca",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getPrice",
+            "nameLocation": "301:8:16",
+            "parameters": {
+              "id": 3645,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "309:2:16"
+            },
+            "returnParameters": {
+              "id": 3648,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3647,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3649,
+                  "src": "335:7:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3646,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "335:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "334:9:16"
+            },
+            "scope": 3664,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 3657,
+            "nodeType": "FunctionDefinition",
+            "src": "518:66:16",
+            "nodes": [],
+            "documentation": {
+              "id": 3650,
+              "nodeType": "StructuredDocumentation",
+              "src": "350:163:16",
+              "text": "@dev available() returns whether or not the given _tokenId has already been purchased\n @return Returns a boolean value - true if available, false if not"
+            },
+            "functionSelector": "96e494e8",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "available",
+            "nameLocation": "527:9:16",
+            "parameters": {
+              "id": 3653,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3652,
+                  "mutability": "mutable",
+                  "name": "_tokenId",
+                  "nameLocation": "545:8:16",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3657,
+                  "src": "537:16:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3651,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "537:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "536:18:16"
+            },
+            "returnParameters": {
+              "id": 3656,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3655,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3657,
+                  "src": "578:4:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 3654,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "578:4:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "577:6:16"
+            },
+            "scope": 3664,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 3663,
+            "nodeType": "FunctionDefinition",
+            "src": "718:53:16",
+            "nodes": [],
+            "documentation": {
+              "id": 3658,
+              "nodeType": "StructuredDocumentation",
+              "src": "590:123:16",
+              "text": "@dev purchase() purchases an NFT from the FakeNFTMarketplace\n @param _tokenId - the fake NFT tokenID to purchase"
+            },
+            "functionSelector": "efef39a1",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "purchase",
+            "nameLocation": "727:8:16",
+            "parameters": {
+              "id": 3661,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3660,
+                  "mutability": "mutable",
+                  "name": "_tokenId",
+                  "nameLocation": "744:8:16",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3663,
+                  "src": "736:16:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3659,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "736:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "735:18:16"
+            },
+            "returnParameters": {
+              "id": 3662,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "770:0:16"
+            },
+            "scope": 3664,
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IFakeNFTMarketplace",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 3643,
+          "nodeType": "StructuredDocumentation",
+          "src": "75:47:16",
+          "text": " Interface for the FakeNFTMarketplace"
+        },
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          3664
+        ],
+        "name": "IFakeNFTMarketplace",
+        "nameLocation": "134:19:16",
+        "scope": 3685,
+        "usedErrors": [],
+        "usedEvents": []
+      },
+      {
+        "id": 3684,
+        "nodeType": "ContractDefinition",
+        "src": "881:631:16",
+        "nodes": [
+          {
+            "id": 3673,
+            "nodeType": "FunctionDefinition",
+            "src": "1097:66:16",
+            "nodes": [],
+            "documentation": {
+              "id": 3666,
+              "nodeType": "StructuredDocumentation",
+              "src": "912:180:16",
+              "text": "@dev balanceOf returns the number of NFTs owned by the given address\n @param owner - address to fetch number of NFTs for\n @return Returns the number of NFTs owned"
+            },
+            "functionSelector": "70a08231",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "balanceOf",
+            "nameLocation": "1106:9:16",
+            "parameters": {
+              "id": 3669,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3668,
+                  "mutability": "mutable",
+                  "name": "owner",
+                  "nameLocation": "1124:5:16",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3673,
+                  "src": "1116:13:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3667,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1116:7:16",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1115:15:16"
+            },
+            "returnParameters": {
+              "id": 3672,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3671,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3673,
+                  "src": "1154:7:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3670,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1154:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1153:9:16"
+            },
+            "scope": 3684,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 3683,
+            "nodeType": "FunctionDefinition",
+            "src": "1419:91:16",
+            "nodes": [],
+            "documentation": {
+              "id": 3674,
+              "nodeType": "StructuredDocumentation",
+              "src": "1169:245:16",
+              "text": "@dev tokenOfOwnerByIndex returns a tokenID at given index for owner\n @param owner - address to fetch the NFT TokenID for\n @param index - index of NFT in owned tokens array to fetch\n @return Returns the TokenID of the NFT"
+            },
+            "functionSelector": "2f745c59",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "tokenOfOwnerByIndex",
+            "nameLocation": "1428:19:16",
+            "parameters": {
+              "id": 3679,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3676,
+                  "mutability": "mutable",
+                  "name": "owner",
+                  "nameLocation": "1456:5:16",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3683,
+                  "src": "1448:13:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3675,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1448:7:16",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3678,
+                  "mutability": "mutable",
+                  "name": "index",
+                  "nameLocation": "1471:5:16",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3683,
+                  "src": "1463:13:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3677,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1463:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1447:30:16"
+            },
+            "returnParameters": {
+              "id": 3682,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3681,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3683,
+                  "src": "1501:7:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3680,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1501:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1500:9:16"
+            },
+            "scope": 3684,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "ICryptoDevsNFT",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 3665,
+          "nodeType": "StructuredDocumentation",
+          "src": "775:105:16",
+          "text": " Minimal interface for CryptoDevsNFT containing only two functions\n that we are interested in"
+        },
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          3684
+        ],
+        "name": "ICryptoDevsNFT",
+        "nameLocation": "891:14:16",
+        "scope": 3685,
+        "usedErrors": [],
+        "usedEvents": []
+      }
+    ],
+    "license": "SEE LICENSE IN LICENSE"
+  },
+  "id": 16
+}

@@ -796,10 +796,10 @@
         }
       }
     },
-    "script/DeployGas.s.sol": {
-      "lastModificationDate": 1690224661609,
-      "contentHash": "b7351cd4932273ac210621ab08b3194f",
-      "sourceName": "script/DeployGas.s.sol",
+    "script/DeployEverything.s.sol": {
+      "lastModificationDate": 1690281199192,
+      "contentHash": "726204d1015b82603199e2fc11c0f068",
+      "sourceName": "script/DeployEverything.s.sol",
       "solcConfig": {
         "settings": {
           "optimizer": {
@@ -841,19 +841,19 @@
         "lib/forge-std/src/console.sol",
         "lib/forge-std/src/console2.sol",
         "lib/forge-std/src/interfaces/IMulticall3.sol",
-        "src/gas.sol"
+        "src/everything.sol"
       ],
       "versionRequirement": "=0.8.20",
       "artifacts": {
-        "DeployGas": {
-          "0.8.20+commit.a1b79de6.Darwin.appleclang": "DeployGas.s.sol/DeployGas.json"
+        "DeployEverything": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "DeployEverything.s.sol/DeployEverything.json"
         }
       }
     },
-    "src/gas.sol": {
-      "lastModificationDate": 1690224657150,
-      "contentHash": "54244b2a2bfa6b515456b90aa3570ec6",
-      "sourceName": "src/gas.sol",
+    "src/everything.sol": {
+      "lastModificationDate": 1690280970284,
+      "contentHash": "54502146b9139af3c5086520a1605383",
+      "sourceName": "src/everything.sol",
       "solcConfig": {
         "settings": {
           "optimizer": {
@@ -883,17 +883,17 @@
         }
       },
       "imports": [],
-      "versionRequirement": "^0.8.20",
+      "versionRequirement": "=0.8.20",
       "artifacts": {
-        "Gas": {
-          "0.8.20+commit.a1b79de6.Darwin.appleclang": "gas.sol/Gas.json"
+        "Everything": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "everything.sol/Everything.json"
         }
       }
     },
-    "test/testGas.t.sol": {
-      "lastModificationDate": 1690225734538,
-      "contentHash": "abbb2c08bf6ae76e82bc792423ff148d",
-      "sourceName": "test/testGas.t.sol",
+    "test/testEverything.t.sol": {
+      "lastModificationDate": 1690284609790,
+      "contentHash": "9101d2c3251f6a5ef8a86e70730481b6",
+      "sourceName": "test/testEverything.t.sol",
       "solcConfig": {
         "settings": {
           "optimizer": {
@@ -941,13 +941,13 @@
         "lib/forge-std/src/console.sol",
         "lib/forge-std/src/console2.sol",
         "lib/forge-std/src/interfaces/IMulticall3.sol",
-        "script/DeployGas.s.sol",
-        "src/gas.sol"
+        "script/DeployEverything.s.sol",
+        "src/everything.sol"
       ],
       "versionRequirement": "=0.8.20",
       "artifacts": {
-        "GasTest": {
-          "0.8.20+commit.a1b79de6.Darwin.appleclang": "testGas.t.sol/GasTest.json"
+        "EverythingTest": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "testEverything.t.sol/EverythingTest.json"
         }
       }
     }
