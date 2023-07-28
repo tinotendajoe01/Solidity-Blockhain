@@ -2,7 +2,7 @@
 pragma solidity ^0.8.20;
 
 /**
- * @title Transactions
+ * @title Transactions contract
  * @author Tinotenda Joe
  * @dev A contract for creating and retrieving transaction entries.
  */
@@ -13,7 +13,7 @@ contract Transactions {
 
     error TRANSACTION_ERROR_OCCURRED();
 
-    uint256 transactionCount;
+    uint256 public transactionCount;
     mapping(uint256 => transactions) public txns;
 
     /**
@@ -95,5 +95,18 @@ contract Transactions {
             retainedTransactions[i] = txns[i];
         }
         return retainedTransactions;
+    }
+
+    function getAllTransactionsCount() public view returns (uint256) {
+        return transactionCount;
+    }
+
+    function getTransaction(uint256 id)
+        public
+        view
+        returns (bytes32, address, address, bytes32, string memory, string memory, uint256)
+    {
+        transactions memory t = txns[id];
+        return (t.transactionHash, t.fromAddr, t.toAddr, t.prevTransaction, t.latitude, t.longitude, t.timestamp);
     }
 }
