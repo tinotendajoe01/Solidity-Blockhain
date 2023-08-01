@@ -3,7 +3,7 @@ pragma solidity ^0.8.20;
 
 import {Test} from "forge-std/Test.sol";
 import {DeployTransactions} from "../../script/DeployTransactions.s.sol";
-import {Transactions} from "../../src/Transactions.sol";
+import {Transactions} from "../../src//LedgerContracts/Transactions.sol";
 
 contract TestTransactions is Test {
     //test type variables

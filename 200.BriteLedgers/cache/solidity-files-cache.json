@@ -797,8 +797,8 @@
       }
     },
     "script/DeployTransactions.s.sol": {
-      "lastModificationDate": 1690577059605,
-      "contentHash": "fc97014bf0a6646794f188077a89c26e",
+      "lastModificationDate": 1690893913754,
+      "contentHash": "22a997fbe706bbf215f9e686720f7d4d",
       "sourceName": "script/DeployTransactions.s.sol",
       "solcConfig": {
         "settings": {
@@ -841,7 +841,7 @@
         "lib/forge-std/src/console.sol",
         "lib/forge-std/src/console2.sol",
         "lib/forge-std/src/interfaces/IMulticall3.sol",
-        "src/Transactions.sol"
+        "src/LedgerContracts/Transactions.sol"
       ],
       "versionRequirement": "^0.8.20",
       "artifacts": {
@@ -850,10 +850,94 @@
         }
       }
     },
-    "src/Transactions.sol": {
-      "lastModificationDate": 1690579376825,
-      "contentHash": "0581ff1ea223590bc07de907581d1f7c",
-      "sourceName": "src/Transactions.sol",
+    "src/LedgerContracts/Commodity.sol": {
+      "lastModificationDate": 1690894899441,
+      "contentHash": "891feb1b92142822d1b0a95afc9d4db6",
+      "sourceName": "src/LedgerContracts/Commodity.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "src/LedgerContracts/Transactions.sol"
+      ],
+      "versionRequirement": "^0.8.20",
+      "artifacts": {
+        "Commodity": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "Commodity.sol/Commodity.json"
+        }
+      }
+    },
+    "src/LedgerContracts/RawMaterial.sol": {
+      "lastModificationDate": 1690893887978,
+      "contentHash": "fe3791a3022faee529e814595502d9b3",
+      "sourceName": "src/LedgerContracts/RawMaterial.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "src/LedgerContracts/Transactions.sol"
+      ],
+      "versionRequirement": "^0.8.20",
+      "artifacts": {
+        "RawMaterial": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "RawMaterial.sol/RawMaterial.json"
+        }
+      }
+    },
+    "src/LedgerContracts/Transactions.sol": {
+      "lastModificationDate": 1690893887975,
+      "contentHash": "a3b591e65926c9f4dd09ec505df25514",
+      "sourceName": "src/LedgerContracts/Transactions.sol",
       "solcConfig": {
         "settings": {
           "optimizer": {
@@ -971,8 +1055,8 @@
       }
     },
     "test/unit/testTransactions.t.sol": {
-      "lastModificationDate": 1690585609619,
-      "contentHash": "ed59e07c963e15f7a7f7549f91626eb1",
+      "lastModificationDate": 1690893918140,
+      "contentHash": "3f1b590e3257b5613a7b01feace80727",
       "sourceName": "test/unit/testTransactions.t.sol",
       "solcConfig": {
         "settings": {
@@ -1022,7 +1106,7 @@
         "lib/forge-std/src/console2.sol",
         "lib/forge-std/src/interfaces/IMulticall3.sol",
         "script/DeployTransactions.s.sol",
-        "src/Transactions.sol"
+        "src/LedgerContracts/Transactions.sol"
       ],
       "versionRequirement": "^0.8.20",
       "artifacts": {
