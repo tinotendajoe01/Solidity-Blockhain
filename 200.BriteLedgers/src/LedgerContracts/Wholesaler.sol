@@ -15,7 +15,6 @@ contract Wholesaler {
     mapping(address => address[]) public CommodityWtoD;
     /// @notice Maps a commodity's address to the CommodityW_D contract address that manages its transfer from a wholesaler to a distributor.
     mapping(address => address) public CommodityWtoDTxContract;
-\
 
     /// @notice Marks a commodity as received by the wholesaler.
     /// @dev Calls the receivedCommodity function of the Commodity contract.

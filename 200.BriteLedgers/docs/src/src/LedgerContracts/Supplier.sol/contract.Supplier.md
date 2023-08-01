@@ -1,5 +1,5 @@
 # Supplier
-[Git Source](https://github.com/tinotendajoe01/Solidity-Blochain/blob/cf463adb86eb681dea89cb8178867ce0ef041f33/src/LedgerContracts/Supplier.sol)
+[Git Source](https://github.com/tinotendajoe01/Solidity-Blochain/blob/eacbf6f1ab8174a4c8abbfec3ad125841d672252/src/LedgerContracts/Supplier.sol)
 
 **Author:**
 Tinotenda Joe
@@ -18,18 +18,11 @@ mapping(address => address[]) public supplierRawMaterials;
 
 
 ## Functions
-### constructor
-
-*Constructor to set the initial storage*
-
-
-```solidity
-constructor() public;
-```
-
 ### createRawMaterialPackage
 
 Create a new raw material package
+
+*Constructor to set the initial storage*
 
 *Ensure the proper access controls and error handling (if needed), add events to capture the important state changes
 TODO: Require checks can be added for inputs*

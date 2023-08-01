@@ -850,6 +850,58 @@
         }
       }
     },
+    "src/LedgerContracts/BriteLedgersV1.sol": {
+      "lastModificationDate": 1690902879180,
+      "contentHash": "c82a12fbbdbedc77bc47c1ddd7747e55",
+      "sourceName": "src/LedgerContracts/BriteLedgersV1.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "src/LedgerContracts/Commodity.sol",
+        "src/LedgerContracts/CommodityD_C.sol",
+        "src/LedgerContracts/CommodityW_D.sol",
+        "src/LedgerContracts/Distributor.sol",
+        "src/LedgerContracts/FinalConsumer.sol",
+        "src/LedgerContracts/Manufacturer.sol",
+        "src/LedgerContracts/RawMaterial.sol",
+        "src/LedgerContracts/Supplier.sol",
+        "src/LedgerContracts/Transactions.sol",
+        "src/LedgerContracts/Transporter.sol",
+        "src/LedgerContracts/Wholesaler.sol"
+      ],
+      "versionRequirement": "^0.8.20",
+      "artifacts": {
+        "BriteLedgersV1": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "BriteLedgersV1.sol/BriteLedgersV1.json"
+        }
+      }
+    },
     "src/LedgerContracts/Commodity.sol": {
       "lastModificationDate": 1690894899441,
       "contentHash": "891feb1b92142822d1b0a95afc9d4db6",
@@ -889,6 +941,225 @@
       "artifacts": {
         "Commodity": {
           "0.8.20+commit.a1b79de6.Darwin.appleclang": "Commodity.sol/Commodity.json"
+        }
+      }
+    },
+    "src/LedgerContracts/CommodityD_C.sol": {
+      "lastModificationDate": 1690899060935,
+      "contentHash": "04252da397ddd66047dd25c382434530",
+      "sourceName": "src/LedgerContracts/CommodityD_C.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "src/LedgerContracts/Commodity.sol",
+        "src/LedgerContracts/Transactions.sol"
+      ],
+      "versionRequirement": "^0.8.20",
+      "artifacts": {
+        "CommodityD_C": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "CommodityD_C.sol/CommodityD_C.json"
+        }
+      }
+    },
+    "src/LedgerContracts/CommodityW_D.sol": {
+      "lastModificationDate": 1690898588311,
+      "contentHash": "e9822dfbd988664345a5dc33c479fb79",
+      "sourceName": "src/LedgerContracts/CommodityW_D.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "src/LedgerContracts/Commodity.sol",
+        "src/LedgerContracts/Transactions.sol"
+      ],
+      "versionRequirement": "^0.8.20",
+      "artifacts": {
+        "CommodityW_D": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "CommodityW_D.sol/CommodityW_D.json"
+        }
+      }
+    },
+    "src/LedgerContracts/Distributor.sol": {
+      "lastModificationDate": 1690902008783,
+      "contentHash": "92155b56dfdd9317b919991af5239c7d",
+      "sourceName": "src/LedgerContracts/Distributor.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "src/LedgerContracts/Commodity.sol",
+        "src/LedgerContracts/CommodityD_C.sol",
+        "src/LedgerContracts/CommodityW_D.sol",
+        "src/LedgerContracts/Transactions.sol"
+      ],
+      "versionRequirement": "^0.8.20",
+      "artifacts": {
+        "Distributor": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "Distributor.sol/Distributor.json"
+        }
+      }
+    },
+    "src/LedgerContracts/FinalConsumer.sol": {
+      "lastModificationDate": 1690902796242,
+      "contentHash": "3b7fd0c2f2c88d9041f5cee749515a23",
+      "sourceName": "src/LedgerContracts/FinalConsumer.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "src/LedgerContracts/Commodity.sol",
+        "src/LedgerContracts/CommodityD_C.sol",
+        "src/LedgerContracts/Transactions.sol"
+      ],
+      "versionRequirement": "^0.8.20",
+      "artifacts": {
+        "FinalConsumer": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "FinalConsumer.sol/FinalConsumer.json"
+        }
+      }
+    },
+    "src/LedgerContracts/Manufacturer.sol": {
+      "lastModificationDate": 1690900209129,
+      "contentHash": "c239bcf7207d029a8840c10c25533678",
+      "sourceName": "src/LedgerContracts/Manufacturer.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "src/LedgerContracts/Commodity.sol",
+        "src/LedgerContracts/RawMaterial.sol",
+        "src/LedgerContracts/Transactions.sol"
+      ],
+      "versionRequirement": "^0.8.20",
+      "artifacts": {
+        "Manufacturer": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "Manufacturer.sol/Manufacturer.json"
         }
       }
     },
@@ -934,6 +1205,49 @@
         }
       }
     },
+    "src/LedgerContracts/Supplier.sol": {
+      "lastModificationDate": 1690902943123,
+      "contentHash": "43428ce20576e8361e51ac0ffb72dc14",
+      "sourceName": "src/LedgerContracts/Supplier.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "src/LedgerContracts/RawMaterial.sol",
+        "src/LedgerContracts/Transactions.sol"
+      ],
+      "versionRequirement": "^0.8.20",
+      "artifacts": {
+        "Supplier": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "Supplier.sol/Supplier.json"
+        }
+      }
+    },
     "src/LedgerContracts/Transactions.sol": {
       "lastModificationDate": 1690893887975,
       "contentHash": "a3b591e65926c9f4dd09ec505df25514",
@@ -971,6 +1285,96 @@
       "artifacts": {
         "Transactions": {
           "0.8.20+commit.a1b79de6.Darwin.appleclang": "Transactions.sol/Transactions.json"
+        }
+      }
+    },
+    "src/LedgerContracts/Transporter.sol": {
+      "lastModificationDate": 1690901986556,
+      "contentHash": "bed0c2b639eba6df5c175dfdff405f23",
+      "sourceName": "src/LedgerContracts/Transporter.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "src/LedgerContracts/Commodity.sol",
+        "src/LedgerContracts/CommodityD_C.sol",
+        "src/LedgerContracts/CommodityW_D.sol",
+        "src/LedgerContracts/RawMaterial.sol",
+        "src/LedgerContracts/Transactions.sol"
+      ],
+      "versionRequirement": "^0.8.20",
+      "artifacts": {
+        "Transporter": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "Transporter.sol/Transporter.json"
+        }
+      }
+    },
+    "src/LedgerContracts/Wholesaler.sol": {
+      "lastModificationDate": 1690902367677,
+      "contentHash": "a3c6456e15aa244f5a70eb542166e452",
+      "sourceName": "src/LedgerContracts/Wholesaler.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "src/LedgerContracts/Commodity.sol",
+        "src/LedgerContracts/CommodityW_D.sol",
+        "src/LedgerContracts/Transactions.sol"
+      ],
+      "versionRequirement": "^0.8.20",
+      "artifacts": {
+        "Wholesaler": {
+          "0.8.20+commit.a1b79de6.Darwin.appleclang": "Wholesaler.sol/Wholesaler.json"
         }
       }
     },

@@ -7,10 +7,10 @@ pragma solidity ^0.8.20;
 import {CommodityD_C} from "./CommodityD_C.sol";
 
 /// @title Model of Consumer's interaction with commodity
-contract FinalCunsumer {
+contract FinalConsumer {
     /// @notice Tracks the commodities at the Consumer
     /// @dev mapping of Consumer address to array of addresses
-    mapping(address => address[]) public CommodityBatchAtConsumer;
+    mapping(address => address[]) public CommodityBatchAtFinalConsumer;
 
     /// @notice Tracks the sale status of commodities
     /// @dev mapping of address to sale status
@@ -32,9 +32,9 @@ contract FinalCunsumer {
     /// @notice Function to be called when the Consumer receives a commodity
     /// @param _address The address of the commodity
     /// @param cid The identifier for the commodity
-    function CommodityRecievedAtConsumer(address _address, address cid) public {
+    function commodityRecievedAtFinalConsumer(address _address, address cid) public {
         CommodityD_C(cid).receiveDC(_address, msg.sender);
-        CommodityBatchAtConsumer[msg.sender].push(_address);
+        CommodityBatchAtFinalConsumer[msg.sender].push(_address);
         sale[_address] = salestatus(1);
     }
 

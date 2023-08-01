@@ -1,13 +1,7 @@
 // SPDX-License-Identifier: SEE LICENSE IN LICENSE
-pragma solidity ^0.6.6;
-/*
-  Import the library from Openzeppelin for safe mathematical operations: 
-  https://github.com/OpenZeppelin/openzeppelin-contracts/tree/master/contracts/math
-*/
+pragma solidity ^0.8.20;
 
-import "@openzeppelin/contracts/math/SafeMath.sol";
-// Import your RawMaterial contract
-import "./RawMaterial.sol";
+import {RawMaterial} from "./RawMaterial.sol";
 
 /**
  * @title Supplier Contract for Supply Chain Protocol
@@ -15,10 +9,8 @@ import "./RawMaterial.sol";
  * @notice This contract serves as a decentralized platform for suppliers to manage their raw materials in a supply chain protocol.
  * @dev Following is just a simple explanation, consider implementing more complex logic in accordance with your needs.
  */
-contract Supplier {
-    // Use SafeMath library to perform safe arithmetic operations
-    using SafeMath for uint256;
 
+contract Supplier {
     // Mapping to keep track of supplier raw materials
     mapping(address => address[]) public supplierRawMaterials;
 
@@ -27,7 +19,6 @@ contract Supplier {
     /**
      * @dev Constructor to set the initial storage
      */
-    constructor() public {}
 
     /**
      * @notice Create a new raw material package
@@ -46,7 +37,7 @@ contract Supplier {
     ) public {
         RawMaterial rawMaterial = new RawMaterial(
             msg.sender,
-            address(bytes20(sha256(abi.encodePacked(msg.sender, now)))),
+            address(bytes20(sha256(abi.encodePacked(msg.sender,block.timestamp)))),
             _description,
             _quantity,
             _transporterAddr,

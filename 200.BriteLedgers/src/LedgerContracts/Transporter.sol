@@ -1,9 +1,9 @@
 /// @title Transporter Contract
 /// @author Tinotenda Joe
 /// @notice This contract manages the handling of packages in the supply chain
-pragma solidity ^0.6.20;
+pragma solidity ^0.8.20;
 
-import {Rawmaterial} from "./RawMaterial.sol";
+import {RawMaterial} from "./RawMaterial.sol";
 import {Commodity} from "./Commodity.sol";
 import {CommodityW_D} from "./CommodityW_D.sol";
 import {CommodityD_C} from "./CommodityD_C.sol";

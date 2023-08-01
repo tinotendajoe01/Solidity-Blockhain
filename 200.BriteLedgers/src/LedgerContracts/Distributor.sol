@@ -1,7 +1,7 @@
 /// @title Commodity Distributor Contract
 /// @author Tinotenda Joe
 /// @notice This contract manages commodities received by distributor and their transfer
-pragma solidity ^0.6.6;
+pragma solidity ^0.8.20;
 
 import {CommodityW_D} from "./CommodityW_D.sol";
 import {Commodity} from "./Commodity.sol";
