@@ -1,0 +1,600 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>BriteLedgersV1</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../../favicon.svg">
+        <link rel="shortcut icon" href="../../../favicon.png">
+        <link rel="stylesheet" href="../../../css/variables.css">
+        <link rel="stylesheet" href="../../../css/general.css">
+        <link rel="stylesheet" href="../../../css/chrome.css">
+        <link rel="stylesheet" href="../../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../../highlight.css">
+        <link rel="stylesheet" href="../../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../book.css">
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item "><a href="../../../index.html">Home</a></li><li class="chapter-item affix "><li class="part-title">src</li><li class="chapter-item expanded "><a href="../../../src/LedgerContracts/index.html">❱ LedgerContracts</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../src/LedgerContracts/BriteLedgersV1.sol/contract.BriteLedgersV1.html" class="active">BriteLedgersV1</a></li><li class="chapter-item "><a href="../../../src/LedgerContracts/Commodity.sol/contract.Commodity.html">Commodity</a></li><li class="chapter-item "><a href="../../../src/LedgerContracts/CommodityD_C.sol/contract.CommodityD_C.html">CommodityD_C</a></li><li class="chapter-item "><a href="../../../src/LedgerContracts/CommodityW_D.sol/contract.CommodityW_D.html">CommodityW_D</a></li><li class="chapter-item "><a href="../../../src/LedgerContracts/Distributor.sol/contract.Distributor.html">Distributor</a></li><li class="chapter-item "><a href="../../../src/LedgerContracts/FinalConsumer.sol/contract.FinalConsumer.html">FinalConsumer</a></li><li class="chapter-item "><a href="../../../src/LedgerContracts/Manufacturer.sol/contract.Manufacturer.html">Manufacturer</a></li><li class="chapter-item "><a href="../../../src/LedgerContracts/RawMaterial.sol/contract.RawMaterial.html">RawMaterial</a></li><li class="chapter-item "><a href="../../../src/LedgerContracts/Supplier.sol/contract.Supplier.html">Supplier</a></li><li class="chapter-item "><a href="../../../src/LedgerContracts/Transactions.sol/contract.Transactions.html">Transactions</a></li><li class="chapter-item "><a href="../../../src/LedgerContracts/Transporter.sol/contract.Transporter.html">Transporter</a></li><li class="chapter-item "><a href="../../../src/LedgerContracts/Wholesaler.sol/contract.Wholesaler.html">Wholesaler</a></li></ol></li><li class="chapter-item "><a href="../../../src/interfaces/index.html">❱ interfaces</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../src/interfaces/IOracle.sol/interface.IOracle.html">IOracle</a></li><li class="chapter-item "><a href="../../../src/interfaces/IPharmaceutics.sol/interface.IPharmaceutics.html">IPharmaceutics</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/tinotendajoe01/Solidity-Blochain" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="briteledgersv1"><a class="header" href="#briteledgersv1">BriteLedgersV1</a></h1>
+<p><a href="https://github.com/tinotendajoe01/Solidity-Blochain/blob/ff16ce828605953df6269c504e03d920866d1c6f/src/LedgerContracts/BriteLedgersV1.sol">Git Source</a></p>
+<p><strong>Inherits:</strong>
+<a href="/src/LedgerContracts/Supplier.sol/contract.Supplier.html">Supplier</a>, <a href="/src/LedgerContracts/Transporter.sol/contract.Transporter.html">Transporter</a>, <a href="/src/LedgerContracts/Manufacturer.sol/contract.Manufacturer.html">Manufacturer</a>, <a href="/src/LedgerContracts/Wholesaler.sol/contract.Wholesaler.html">Wholesaler</a>, <a href="/src/LedgerContracts/Distributor.sol/contract.Distributor.html">Distributor</a>, <a href="/src/LedgerContracts/FinalConsumer.sol/contract.FinalConsumer.html">FinalConsumer</a></p>
+<p><strong>Author:</strong>
+Tinotenda Joe</p>
+<p>The contract's core is a 'Tokenized Shared Ledger' that logs every transaction and interaction in the supply chain. This ledger provides an immutable, transparent, and verifiable record of the entire process, from the supplier to the consumer.</p>
+<p>The contract can connect with existing off-chain, legacy supply chain systems. It incorporates both on and off-chain security measures to protect sensitive data while maintaining its transparent and traceable nature .</p>
+<p><em>This contract  models multiple roles within the supply chain: Supplier, Transporter, Manufacturer, Wholesaler, Distributor, and Consumer. Each role is tied to a unique address and has role-specific functions.</em></p>
+<p><em>The contract integrates the Industrial Internet of Things (IIOT) for real-time data monitoring and recording at various stages of the supply chain. .</em></p>
+<h2 id="state-variables"><a class="header" href="#state-variables">State Variables</a></h2>
+<h3 id="owner"><a class="header" href="#owner">Owner</a></h3>
+<p>Owner of the contract</p>
+<pre><code class="language-solidity">address public Owner;
+</code></pre>
+<h3 id="userinfo"><a class="header" href="#userinfo">userInfo</a></h3>
+<p>Mapping from address to userData</p>
+<pre><code class="language-solidity">mapping(address =&gt; userData) public userInfo;
+</code></pre>
+<h2 id="functions"><a class="header" href="#functions">Functions</a></h2>
+<h3 id="constructor"><a class="header" href="#constructor">constructor</a></h3>
+<pre><code class="language-solidity">constructor();
+</code></pre>
+<h3 id="onlyowner"><a class="header" href="#onlyowner">onlyOwner</a></h3>
+<p>Ensures that only the owner can call the function</p>
+<pre><code class="language-solidity">modifier onlyOwner();
+</code></pre>
+<h3 id="checkuser"><a class="header" href="#checkuser">checkUser</a></h3>
+<p>Validates handed-over users</p>
+<pre><code class="language-solidity">modifier checkUser(address addr);
+</code></pre>
+<h3 id="registeruser"><a class="header" href="#registeruser">registerUser</a></h3>
+<p><em>Registers a user with a given name, location, role, and address.
+Can only be executed by the owner of the contract.
+Emits a UserRegister event after successful registration.</em></p>
+<pre><code class="language-solidity">function registerUser(bytes32 name, string[] memory loc, uint256 role, address _userAddr) external onlyOwner;
+</code></pre>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>name</code></td><td><code>bytes32</code></td><td>user's name</td></tr>
+<tr><td><code>loc</code></td><td><code>string[]</code></td><td>user's location</td></tr>
+<tr><td><code>role</code></td><td><code>uint256</code></td><td>user's role</td></tr>
+<tr><td><code>_userAddr</code></td><td><code>address</code></td><td>user's address</td></tr>
+</tbody></table>
+</div>
+<h3 id="changeuserrole"><a class="header" href="#changeuserrole">changeUserRole</a></h3>
+<p><em>Allows the owner to change the role of a user.</em></p>
+<pre><code class="language-solidity">function changeUserRole(uint256 _role, address _addr) external onlyOwner returns (string memory);
+</code></pre>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>_role</code></td><td><code>uint256</code></td><td>The new role of the user.</td></tr>
+<tr><td><code>_addr</code></td><td><code>address</code></td><td>The address of the user.</td></tr>
+</tbody></table>
+</div>
+<p><strong>Returns</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>&lt;none&gt;</code></td><td><code>string</code></td><td>Status of the operation.</td></tr>
+</tbody></table>
+</div>
+<h3 id="getuserinfo"><a class="header" href="#getuserinfo">getUserInfo</a></h3>
+<p><em>Allows the owner to get the user information of the given address.</em></p>
+<pre><code class="language-solidity">function getUserInfo(address _address) external view onlyOwner returns (userData memory);
+</code></pre>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>_address</code></td><td><code>address</code></td><td>Address of the user.</td></tr>
+</tbody></table>
+</div>
+<p><strong>Returns</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>&lt;none&gt;</code></td><td><code>userData</code></td><td>User information.</td></tr>
+</tbody></table>
+</div>
+<h3 id="suppliercreatesrawpackage"><a class="header" href="#suppliercreatesrawpackage">supplierCreatesRawPackage</a></h3>
+<p>Creates a package of raw material</p>
+<p><em>Can only be executed by a supplier</em></p>
+<pre><code class="language-solidity">function supplierCreatesRawPackage(
+    bytes32 _description,
+    uint256 _quantity,
+    address _transporterAddr,
+    address _manufacturerAddr
+) external;
+</code></pre>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>_description</code></td><td><code>bytes32</code></td><td>Description of the raw material</td></tr>
+<tr><td><code>_quantity</code></td><td><code>uint256</code></td><td>Quantity of the raw material</td></tr>
+<tr><td><code>_transporterAddr</code></td><td><code>address</code></td><td>Address of the transporter</td></tr>
+<tr><td><code>_manufacturerAddr</code></td><td><code>address</code></td><td>Address of the manufacturer</td></tr>
+</tbody></table>
+</div>
+<h3 id="suppliergetpackagecount"><a class="header" href="#suppliergetpackagecount">supplierGetPackageCount</a></h3>
+<p>Returns the count of packages created by the supplier</p>
+<p><em>Can only be executed by a supplier</em></p>
+<pre><code class="language-solidity">function supplierGetPackageCount() external view returns (uint256);
+</code></pre>
+<p><strong>Returns</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>&lt;none&gt;</code></td><td><code>uint256</code></td><td>The number of packages created by the supplier</td></tr>
+</tbody></table>
+</div>
+<h3 id="suppliergetrawmaterialaddresses"><a class="header" href="#suppliergetrawmaterialaddresses">supplierGetRawMaterialAddresses</a></h3>
+<p>Returns the addresses of all packages created by the supplier</p>
+<p><em>Can only be executed by a supplier</em></p>
+<pre><code class="language-solidity">function supplierGetRawMaterialAddresses() external view returns (address[] memory);
+</code></pre>
+<p><strong>Returns</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>&lt;none&gt;</code></td><td><code>address[]</code></td><td>An array of addresses of all packages created by the supplier</td></tr>
+</tbody></table>
+</div>
+<h3 id="transporterhandlepackage"><a class="header" href="#transporterhandlepackage">transporterHandlePackage</a></h3>
+<p>Handles the package by the transporter</p>
+<p><em>Can only be executed by a transporter</em></p>
+<pre><code class="language-solidity">function transporterHandlePackage(address _address, uint256 transporterType, address cid) external;
+</code></pre>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>_address</code></td><td><code>address</code></td><td>The address of the package</td></tr>
+<tr><td><code>transporterType</code></td><td><code>uint256</code></td><td>The type of the transporter</td></tr>
+<tr><td><code>cid</code></td><td><code>address</code></td><td>The id of the commodity</td></tr>
+</tbody></table>
+</div>
+<h3 id="manufacturerreceivedrawmaterials"><a class="header" href="#manufacturerreceivedrawmaterials">manufacturerReceivedRawMaterials</a></h3>
+<p>Handles the receipt of raw materials by the manufacturer</p>
+<p><em>Can only be executed by a manufacturer</em></p>
+<pre><code class="language-solidity">function manufacturerReceivedRawMaterials(address _addr) external;
+</code></pre>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>_addr</code></td><td><code>address</code></td><td>The address of the raw material package</td></tr>
+</tbody></table>
+</div>
+<h3 id="manufacturercreatesnewcommodity"><a class="header" href="#manufacturercreatesnewcommodity">manufacturerCreatesNewCommodity</a></h3>
+<p>Creates a new commodity by the manufacturer</p>
+<p><em>Can only be executed by a manufacturer</em></p>
+<pre><code class="language-solidity">function manufacturerCreatesNewCommodity(
+    bytes32 _description,
+    address[] memory _rawAddr,
+    uint256 _quantity,
+    address[] memory _transporterAddr,
+    address _receiverAddr,
+    uint256 RcvrType
+) external returns (string memory);
+</code></pre>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>_description</code></td><td><code>bytes32</code></td><td>The description of the commodity</td></tr>
+<tr><td><code>_rawAddr</code></td><td><code>address[]</code></td><td>The addresses of the raw materials</td></tr>
+<tr><td><code>_quantity</code></td><td><code>uint256</code></td><td>The quantity of the commodity</td></tr>
+<tr><td><code>_transporterAddr</code></td><td><code>address[]</code></td><td>The addresses of the transporters</td></tr>
+<tr><td><code>_receiverAddr</code></td><td><code>address</code></td><td>The address of the receiver</td></tr>
+<tr><td><code>RcvrType</code></td><td><code>uint256</code></td><td>The type of the receiver</td></tr>
+</tbody></table>
+</div>
+<p><strong>Returns</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>&lt;none&gt;</code></td><td><code>string</code></td><td>A message indicating the commodity has been created</td></tr>
+</tbody></table>
+</div>
+<h3 id="wholesalerreceivedcommodity"><a class="header" href="#wholesalerreceivedcommodity">wholesalerReceivedCommodity</a></h3>
+<p>Handles the receipt of a commodity by the wholesaler</p>
+<p><em>Can only be executed by a wholesaler or a distributor</em></p>
+<pre><code class="language-solidity">function wholesalerReceivedCommodity(address _address) external;
+</code></pre>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>_address</code></td><td><code>address</code></td><td>The address of the commodity</td></tr>
+</tbody></table>
+</div>
+<h3 id="transfercommodityw_d"><a class="header" href="#transfercommodityw_d">transferCommodityW_D</a></h3>
+<p>Transfers a commodity from a wholesaler to a distributor</p>
+<p><em>Can only be executed by a wholesaler or the current owner of the package</em></p>
+<pre><code class="language-solidity">function transferCommodityW_D(address _address, address transporter, address receiver) external;
+</code></pre>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>_address</code></td><td><code>address</code></td><td>The address of the commodity</td></tr>
+<tr><td><code>transporter</code></td><td><code>address</code></td><td>The address of the transporter</td></tr>
+<tr><td><code>receiver</code></td><td><code>address</code></td><td>The address of the receiver</td></tr>
+</tbody></table>
+</div>
+<h3 id="getbatchidbyindexwd"><a class="header" href="#getbatchidbyindexwd">getBatchIdByIndexWD</a></h3>
+<p>Returns the batch id by index for a wholesaler</p>
+<p><em>Can only be executed by a wholesaler</em></p>
+<pre><code class="language-solidity">function getBatchIdByIndexWD(uint256 index) external view returns (address packageID);
+</code></pre>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>index</code></td><td><code>uint256</code></td><td>The index of the batch</td></tr>
+</tbody></table>
+</div>
+<p><strong>Returns</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>packageID</code></td><td><code>address</code></td><td>The id of the package</td></tr>
+</tbody></table>
+</div>
+<h3 id="getsubcontractwd"><a class="header" href="#getsubcontractwd">getSubContractWD</a></h3>
+<p>Returns the sub contract for a wholesaler</p>
+<p><em>Can only be executed by a wholesaler</em></p>
+<pre><code class="language-solidity">function getSubContractWD(address _address) external view returns (address SubContractWD);
+</code></pre>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>_address</code></td><td><code>address</code></td><td>The address of the wholesaler</td></tr>
+</tbody></table>
+</div>
+<p><strong>Returns</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>SubContractWD</code></td><td><code>address</code></td><td>The address of the sub contract</td></tr>
+</tbody></table>
+</div>
+<h3 id="distributorreceivedcommodity"><a class="header" href="#distributorreceivedcommodity">distributorReceivedCommodity</a></h3>
+<p>This function is called when a distributor receives a commodity</p>
+<p><em>Only a distributor or the current owner of the package can call this function</em></p>
+<pre><code class="language-solidity">function distributorReceivedCommodity(address _address, address cid) external;
+</code></pre>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>_address</code></td><td><code>address</code></td><td>The address of the distributor</td></tr>
+<tr><td><code>cid</code></td><td><code>address</code></td><td>The commodity id</td></tr>
+</tbody></table>
+</div>
+<h3 id="distributortransfercommoditytofinalconsumer"><a class="header" href="#distributortransfercommoditytofinalconsumer">distributorTransferCommoditytoFinalConsumer</a></h3>
+<p>This function transfers a commodity from a distributor to a final consumer</p>
+<p><em>Only a distributor or the current owner of the package can call this function</em></p>
+<pre><code class="language-solidity">function distributorTransferCommoditytoFinalConsumer(address _address, address transporter, address receiver)
+    external;
+</code></pre>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>_address</code></td><td><code>address</code></td><td>The address of the commodity</td></tr>
+<tr><td><code>transporter</code></td><td><code>address</code></td><td>The address of the transporter</td></tr>
+<tr><td><code>receiver</code></td><td><code>address</code></td><td>The address of the receiver</td></tr>
+</tbody></table>
+</div>
+<h3 id="getbatchescountdc"><a class="header" href="#getbatchescountdc">getBatchesCountDC</a></h3>
+<p>This function returns the count of batches for a distributor</p>
+<p><em>Only a distributor can call this function</em></p>
+<pre><code class="language-solidity">function getBatchesCountDC() external view returns (uint256 count);
+</code></pre>
+<p><strong>Returns</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>count</code></td><td><code>uint256</code></td><td>The count of batches</td></tr>
+</tbody></table>
+</div>
+<h3 id="getbatchidbyindexdc"><a class="header" href="#getbatchidbyindexdc">getBatchIdByIndexDC</a></h3>
+<p>This function returns the batch id by index for a distributor</p>
+<p><em>Only a distributor can call this function</em></p>
+<pre><code class="language-solidity">function getBatchIdByIndexDC(uint256 index) external view returns (address packageID);
+</code></pre>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>index</code></td><td><code>uint256</code></td><td>The index of the batch</td></tr>
+</tbody></table>
+</div>
+<p><strong>Returns</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>packageID</code></td><td><code>address</code></td><td>The id of the package</td></tr>
+</tbody></table>
+</div>
+<h3 id="getsubcontractdc"><a class="header" href="#getsubcontractdc">getSubContractDC</a></h3>
+<p>This function returns the sub contract for a distributor</p>
+<pre><code class="language-solidity">function getSubContractDC(address _address) external view returns (address SubContractDP);
+</code></pre>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>_address</code></td><td><code>address</code></td><td>The address of the distributor</td></tr>
+</tbody></table>
+</div>
+<p><strong>Returns</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>SubContractDP</code></td><td><code>address</code></td><td>The address of the sub contract</td></tr>
+</tbody></table>
+</div>
+<h3 id="consumerreceivedcommodity"><a class="header" href="#consumerreceivedcommodity">consumerReceivedCommodity</a></h3>
+<p>This function is called when a consumer receives a commodity</p>
+<p><em>Only a consumer can call this function</em></p>
+<pre><code class="language-solidity">function consumerReceivedCommodity(address _address, address cid) external;
+</code></pre>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>_address</code></td><td><code>address</code></td><td>The address of the consumer</td></tr>
+<tr><td><code>cid</code></td><td><code>address</code></td><td>The commodity id</td></tr>
+</tbody></table>
+</div>
+<h3 id="updatestatus"><a class="header" href="#updatestatus">updateStatus</a></h3>
+<p>This function updates the status of a commodity</p>
+<p><em>Only the consumer or the current owner of the package can call this function</em></p>
+<pre><code class="language-solidity">function updateStatus(address _address, uint256 Status) external;
+</code></pre>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>_address</code></td><td><code>address</code></td><td>The address of the commodity</td></tr>
+<tr><td><code>Status</code></td><td><code>uint256</code></td><td>The new status of the commodity</td></tr>
+</tbody></table>
+</div>
+<h3 id="getbatchescountc"><a class="header" href="#getbatchescountc">getBatchesCountC</a></h3>
+<p>This function returns the count of batches for a consumer</p>
+<p><em>Only a wholesaler or the current owner of the package can call this function</em></p>
+<pre><code class="language-solidity">function getBatchesCountC() external view returns (uint256 count);
+</code></pre>
+<p><strong>Returns</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>count</code></td><td><code>uint256</code></td><td>The count of batches</td></tr>
+</tbody></table>
+</div>
+<h3 id="getbatchidbyindexc"><a class="header" href="#getbatchidbyindexc">getBatchIdByIndexC</a></h3>
+<p>This function returns the batch id by index for a consumer</p>
+<p><em>Only a wholesaler or the current owner of the package can call this function</em></p>
+<pre><code class="language-solidity">function getBatchIdByIndexC(uint256 index) external view returns (address _address);
+</code></pre>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>index</code></td><td><code>uint256</code></td><td>The index of the batch</td></tr>
+</tbody></table>
+</div>
+<p><strong>Returns</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>_address</code></td><td><code>address</code></td><td>The address of the batch</td></tr>
+</tbody></table>
+</div>
+<h3 id="verify"><a class="header" href="#verify">verify</a></h3>
+<p>This function verifies a signature</p>
+<pre><code class="language-solidity">function verify(address p, bytes32 hash, uint8 v, bytes32 r, bytes32 s) external pure returns (bool);
+</code></pre>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>p</code></td><td><code>address</code></td><td>The address that is claimed to be the signer</td></tr>
+<tr><td><code>hash</code></td><td><code>bytes32</code></td><td>The hash of the signed message</td></tr>
+<tr><td><code>v</code></td><td><code>uint8</code></td><td>The recovery id of the signature</td></tr>
+<tr><td><code>r</code></td><td><code>bytes32</code></td><td>The r value of the signature</td></tr>
+<tr><td><code>s</code></td><td><code>bytes32</code></td><td>The s value of the signature</td></tr>
+</tbody></table>
+</div>
+<p><strong>Returns</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>&lt;none&gt;</code></td><td><code>bool</code></td><td>bool Whether the signature is valid or not</td></tr>
+</tbody></table>
+</div>
+<h2 id="events"><a class="header" href="#events">Events</a></h2>
+<h3 id="userregister"><a class="header" href="#userregister">UserRegister</a></h3>
+<p>Events to make the smart contract interaction transparent</p>
+<pre><code class="language-solidity">event UserRegister(address indexed _address, bytes32 name);
+</code></pre>
+<h3 id="buyevent"><a class="header" href="#buyevent">buyEvent</a></h3>
+<pre><code class="language-solidity">event buyEvent(address buyer, address seller, address packageAddr, bytes32 signature, uint256 indexed now);
+</code></pre>
+<h3 id="respondevent"><a class="header" href="#respondevent">respondEvent</a></h3>
+<pre><code class="language-solidity">event respondEvent(address buyer, address seller, address packageAddr, bytes32 signature, uint256 indexed now);
+</code></pre>
+<h3 id="sendevent"><a class="header" href="#sendevent">sendEvent</a></h3>
+<pre><code class="language-solidity">event sendEvent(address seller, address buyer, address packageAddr, bytes32 signature, uint256 indexed now);
+</code></pre>
+<h3 id="receivedevent"><a class="header" href="#receivedevent">receivedEvent</a></h3>
+<pre><code class="language-solidity">event receivedEvent(address buyer, address seller, address packageAddr, bytes32 signature, uint256 indexed now);
+</code></pre>
+<h2 id="structs"><a class="header" href="#structs">Structs</a></h2>
+<h3 id="userdata"><a class="header" href="#userdata">userData</a></h3>
+<p>Struct to define a user</p>
+<pre><code class="language-solidity">struct userData {
+    bytes32 name;
+    string[] userLoc;
+    roles role;
+    address userAddr;
+}
+</code></pre>
+<h2 id="enums"><a class="header" href="#enums">Enums</a></h2>
+<h3 id="roles"><a class="header" href="#roles">roles</a></h3>
+<p><em>Enum which defines the different actors in the system</em></p>
+<pre><code class="language-solidity">enum roles {
+    noRole,
+    supplier,
+    transporter,
+    manufacturer,
+    wholesaler,
+    distributor,
+    consumer
+}
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../src/LedgerContracts/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../../../src/LedgerContracts/Commodity.sol/contract.Commodity.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../src/LedgerContracts/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../../../src/LedgerContracts/Commodity.sol/contract.Commodity.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../../elasticlunr.min.js"></script>
+        <script src="../../../mark.min.js"></script>
+        <script src="../../../searcher.js"></script>
+
+        <script src="../../../clipboard.min.js"></script>
+        <script src="../../../highlight.js"></script>
+        <script src="../../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../../solidity.min.js"></script>
+
+
+    </div>
+    </body>
+</html>
