@@ -19,7 +19,7 @@ This repository is part of my in-depth learning journey following the Blockchain
 ## Setup & Installation <a name="setup"></a>
 
 1. Clone this repository: `git clone https://github.com/tinotenda01/blockchain-solidity.git`
-2. Set up foundery: `curl -L https://foundry.paradigm.xyz | bash`.
+2. Set up foundry: `curl -L https://foundry.paradigm.xyz | bash`.
 
 - This will install Foundryup, then simply follow the instructions on-screen, which will make the `foundryup` command available in your CLI.
 
